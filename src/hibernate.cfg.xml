@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        <property name="show_sql">false</property>
+        <mapping class="org.dental.entidades.Doctor" />
+        <mapping class="org.dental.entidades.Paciente" />
+        <mapping class="org.dental.entidades.Sexo" />
+        <mapping class="org.dental.entidades.Usuario" />
+        <mapping class="org.dental.entidades.Perfil" />
+        <!--
+        <property name="connection.url">jdbc:mysql://sql2.freemysqlhosting.net:3306/sql239416</property>
+        <property name="connection.username">sql239416</property>
+        <property name="connection.password">gR2%hS1!</property>
+        -->
+    </session-factory>
+</hibernate-configuration>
