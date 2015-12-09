@@ -8,10 +8,10 @@ import java.io.Serializable;
 import java.util.List;
 import org.apache.log4j.Logger;
 import org.dental.conexion.HibernateAbstractSessionFactory;
-import org.dental.dao.GenericDao;
 import org.hibernate.PropertyValueException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.dental.dao.IGenericDao;
 
 /**
  *
@@ -20,9 +20,9 @@ import org.hibernate.Transaction;
  * @param <E>
  * @param <PK>
  */
-public class GenericDaoImplemen<E, PK extends Serializable> extends HibernateAbstractSessionFactory implements GenericDao<E, PK> {
+public class IGenericDaoImplemen<E, PK extends Serializable> extends HibernateAbstractSessionFactory implements IGenericDao<E, PK> {
 
-    private static final Logger LOG = Logger.getLogger(GenericDaoImplemen.class);
+    private static final Logger LOG = Logger.getLogger(IGenericDaoImplemen.class);
 
     @Override    
     public PK save(E object) throws Exception {

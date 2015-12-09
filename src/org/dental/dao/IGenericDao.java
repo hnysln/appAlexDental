@@ -14,7 +14,7 @@ import java.util.List;
  * @param <E>
  * @param <PK>
  */
-public interface GenericDao<E, PK extends Serializable> {
+public interface IGenericDao<E, PK extends Serializable> {
 
     public PK save(E object) throws Exception;
 

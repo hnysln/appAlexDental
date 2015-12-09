@@ -12,6 +12,6 @@ import org.dental.entidades.Doctor;
  * @author Henry Salinas A.
  * @version: 1.0
  */
-public class IDoctorImple extends GenericDaoImplemen<Doctor, Integer> implements IDoctor {
+public class IDoctorImple extends IGenericDaoImplemen<Doctor, Integer> implements IDoctor {
 
 }
