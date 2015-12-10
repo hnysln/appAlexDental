@@ -10,6 +10,7 @@ import java.awt.Insets;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
+import org.dental.constantes.Constantes;
 import org.dental.constantes.ConstantesURLS;
 import org.dental.utilitarios.Util;
 
@@ -26,16 +27,15 @@ public class JFrmIngreso extends javax.swing.JFrame {
     public JFrmIngreso() {
         initComponents();
         this.setResizable(false);
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        Insets screenMax = Toolkit.getDefaultToolkit().getScreenInsets(getGraphicsConfiguration());
-        int taskBarSize = screenMax.bottom;
-        this.setSize(screenSize.width, screenSize.height - taskBarSize);
+        Dimension screenSize = Constantes.dimensionScreen(getGraphicsConfiguration());
+        this.setSize(screenSize.width, screenSize.height);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         ImageIcon iconoVentana = new ImageIcon(getClass().getResource(ConstantesURLS.RUTA_IMAGEN_FONDO_SECUNDARIO));
         Image imagen = iconoVentana.getImage().getScaledInstance((screenSize.width), (screenSize.height), Image.SCALE_AREA_AVERAGING);
         jLblImagenFondo.setIcon(new ImageIcon(imagen));
         jLblImagenFondo.setSize(screenSize);
+
     }
 
     /**
@@ -53,6 +53,7 @@ public class JFrmIngreso extends javax.swing.JFrame {
         jTxtUsuario = new javax.swing.JTextField();
         jTxtContrasenia = new javax.swing.JPasswordField();
         jBntIngreso = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         jLblImagenFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -92,6 +93,11 @@ public class JFrmIngreso extends javax.swing.JFrame {
                 jBntIngresoMouseClicked(evt);
             }
         });
+        jBntIngreso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBntIngresoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelIngresoLayout = new javax.swing.GroupLayout(jPanelIngreso);
         jPanelIngreso.setLayout(jPanelIngresoLayout);
@@ -128,6 +134,12 @@ public class JFrmIngreso extends javax.swing.JFrame {
 
         getContentPane().add(jPanelIngreso);
         jPanelIngreso.setBounds(340, 110, 410, 224);
+
+        jLabel4.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 48)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel4.setText("PERIODONTAL P.P.I");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(270, 50, 550, 50);
 
         jLblImagenFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/FondoSecundario.jpg"))); // NOI18N
         getContentPane().add(jLblImagenFondo);
@@ -210,6 +222,12 @@ public class JFrmIngreso extends javax.swing.JFrame {
 //        }
     }//GEN-LAST:event_jBntIngresoMouseClicked
 
+    private void jBntIngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBntIngresoActionPerformed
+        JFrmMenuPrincipal jFrmMenuPrincipal = new JFrmMenuPrincipal();
+        jFrmMenuPrincipal.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jBntIngresoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -247,6 +265,7 @@ public class JFrmIngreso extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBntIngreso;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLblContrasenia;
     private javax.swing.JLabel jLblImagenFondo;
     private javax.swing.JLabel jLblUsuario;

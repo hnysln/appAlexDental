@@ -21,4 +21,20 @@ public final class ConstantesTipoLetra {
     public static final Integer COPPERPLATE_STYLE = 0;
     public static final Integer TAMANIO_LETRA_MENU = 22;
 
+    /**
+     * Clase para configurar el color seg&uacute;n RGB
+     */
+    public static enum ColorLetraToolTipTextMenu {
+        RED(0), GREEN(0), BLUE(204);
+        private final int codigo;
+
+        private ColorLetraToolTipTextMenu(int code) {
+            this.codigo = code;
+        }
+
+        public int toInt() {
+            return codigo;
+        }
+    }
+
 }
