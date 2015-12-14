@@ -11,6 +11,6 @@ import org.dental.entidades.Doctor;
  *
  * @author Henry Salinas A.
  */
-public interface IDoctor extends IGenericDao<Doctor, Integer> {
+public interface IDoctor extends IGenericDao<Doctor, Long> {
 
 }

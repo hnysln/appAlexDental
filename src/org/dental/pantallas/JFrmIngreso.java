@@ -6,9 +6,6 @@ package org.dental.pantallas;
 
 import java.awt.Dimension;
 import java.awt.Image;
-import java.awt.Insets;
-import java.awt.Toolkit;
-import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 import org.dental.constantes.Constantes;
 import org.dental.constantes.ConstantesURLS;
@@ -31,11 +28,11 @@ public class JFrmIngreso extends javax.swing.JFrame {
         this.setSize(screenSize.width, screenSize.height);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource(ConstantesURLS.RUTA_ICONO_LOGIN)).getImage());
         ImageIcon iconoVentana = new ImageIcon(getClass().getResource(ConstantesURLS.RUTA_IMAGEN_FONDO_SECUNDARIO));
         Image imagen = iconoVentana.getImage().getScaledInstance((screenSize.width), (screenSize.height), Image.SCALE_AREA_AVERAGING);
         jLblImagenFondo.setIcon(new ImageIcon(imagen));
         jLblImagenFondo.setSize(screenSize);
-
     }
 
     /**
@@ -53,7 +50,8 @@ public class JFrmIngreso extends javax.swing.JFrame {
         jTxtUsuario = new javax.swing.JTextField();
         jTxtContrasenia = new javax.swing.JPasswordField();
         jBntIngreso = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        jLblTitulo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLblImagenFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -109,12 +107,14 @@ public class JFrmIngreso extends javax.swing.JFrame {
                     .addComponent(jLblUsuario)
                     .addComponent(jLblContrasenia))
                 .addGap(28, 28, 28)
-                .addGroup(jPanelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBntIngreso)
-                    .addGroup(jPanelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTxtUsuario)
-                        .addComponent(jTxtContrasenia, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)))
+                .addGroup(jPanelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTxtUsuario)
+                    .addComponent(jTxtContrasenia, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
                 .addContainerGap(95, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelIngresoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jBntIngreso)
+                .addGap(135, 135, 135))
         );
         jPanelIngresoLayout.setVerticalGroup(
             jPanelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,23 +127,27 @@ public class JFrmIngreso extends javax.swing.JFrame {
                 .addGroup(jPanelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLblContrasenia)
                     .addComponent(jTxtContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                .addGap(27, 27, 27)
                 .addComponent(jBntIngreso)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelIngreso);
-        jPanelIngreso.setBounds(340, 110, 410, 224);
+        jPanelIngreso.setBounds(220, 110, 410, 224);
 
-        jLabel4.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 48)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel4.setText("PERIODONTAL P.P.I");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(270, 50, 550, 50);
+        jLblTitulo.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 48)); // NOI18N
+        jLblTitulo.setForeground(new java.awt.Color(0, 153, 153));
+        jLblTitulo.setText("PERIODONTAL P.P.I");
+        getContentPane().add(jLblTitulo);
+        jLblTitulo.setBounds(160, 50, 520, 50);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/login.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(790, 320, 450, 400);
 
         jLblImagenFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/FondoSecundario.jpg"))); // NOI18N
         getContentPane().add(jLblImagenFondo);
-        jLblImagenFondo.setBounds(0, 0, 1060, 480);
+        jLblImagenFondo.setBounds(0, 0, 1920, 880);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -265,9 +269,10 @@ public class JFrmIngreso extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBntIngreso;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLblContrasenia;
     private javax.swing.JLabel jLblImagenFondo;
+    private javax.swing.JLabel jLblTitulo;
     private javax.swing.JLabel jLblUsuario;
     private javax.swing.JPanel jPanelIngreso;
     private javax.swing.JPasswordField jTxtContrasenia;

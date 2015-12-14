@@ -47,7 +47,7 @@ public class Doctor implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "IDDOCTOR")
-    private Integer iddoctor;
+    private Long iddoctor;
     @Basic(optional = false)
     @Column(name = "IDENTIFICACIONDOCTOR")
     private String identificaciondoctor;
@@ -73,11 +73,11 @@ public class Doctor implements Serializable {
     public Doctor() {
     }
 
-    public Doctor(Integer iddoctor) {
+    public Doctor(Long iddoctor) {
         this.iddoctor = iddoctor;
     }
 
-    public Doctor(Integer iddoctor, String identificaciondoctor, String nombresdoctor, String apellidosdoctor, Date fecharegistro) {
+    public Doctor(Long iddoctor, String identificaciondoctor, String nombresdoctor, String apellidosdoctor, Date fecharegistro) {
         this.iddoctor = iddoctor;
         this.identificaciondoctor = identificaciondoctor;
         this.nombresdoctor = nombresdoctor;
@@ -85,11 +85,11 @@ public class Doctor implements Serializable {
         this.fecharegistro = fecharegistro;
     }
 
-    public Integer getIddoctor() {
+    public Long getIddoctor() {
         return iddoctor;
     }
 
-    public void setIddoctor(Integer iddoctor) {
+    public void setIddoctor(Long iddoctor) {
         this.iddoctor = iddoctor;
     }
 

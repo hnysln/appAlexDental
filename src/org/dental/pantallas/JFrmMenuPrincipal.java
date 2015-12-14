@@ -39,7 +39,7 @@ public class JFrmMenuPrincipal extends javax.swing.JFrame {
         Dimension screenSize = Constantes.dimensionScreen(getGraphicsConfiguration());
         this.setSize(screenSize.width, screenSize.height);
         this.setLocationRelativeTo(null);
-        setIconImage(new ImageIcon(getClass().getResource(ConstantesURLS.RUTA_IMAGEN_FONDO_MENU_PRINCIPAL)).getImage());
+        setIconImage(new ImageIcon(getClass().getResource(ConstantesURLS.RUTA_ICONO_HOME)).getImage());
     }
 
     private void initJpanelGroups() {
@@ -84,7 +84,6 @@ public class JFrmMenuPrincipal extends javax.swing.JFrame {
         jLblImagenFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1240, 720));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -201,7 +200,6 @@ public class JFrmMenuPrincipal extends javax.swing.JFrame {
         jLblImagenFondo.setBounds(0, 0, 1920, 880);
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBntUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBntUsuariosMouseClicked

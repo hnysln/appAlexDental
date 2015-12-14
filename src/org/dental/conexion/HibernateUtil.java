@@ -82,7 +82,7 @@ public class HibernateUtil {
             annotationConfiguration.configure(doc);
             SessionFactory sessionFactory = annotationConfiguration.buildSessionFactory();
             return sessionFactory;
-        } catch (Throwable ex) {
+        } catch (Exception ex) {
             LOG.error(ex);
             throw new ExceptionInInitializerError(ex);
         }

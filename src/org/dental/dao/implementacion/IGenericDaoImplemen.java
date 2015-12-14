@@ -24,8 +24,12 @@ public class IGenericDaoImplemen<E, PK extends Serializable> extends HibernateAb
 
     private static final Logger LOG = Logger.getLogger(IGenericDaoImplemen.class);
 
-    @Override    
+    @Override
     public PK save(E object) throws Exception {
+        if (object == null) {
+            throw new IllegalArgumentException("Objeto null");
+        }
+
         Session session = null;
         Transaction transaction = null;
         try {
