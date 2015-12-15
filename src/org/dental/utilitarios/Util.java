@@ -102,7 +102,7 @@ public class Util {
         }
     }
 
-    public static JLabel mensajeShowOptionPanel(String mensajeMostrar) {
+    public static JLabel mensajeShowOptionPanelNOUTILIZAR(String mensajeMostrar) {
         JLabel jLabel = new JLabel(mensajeMostrar);
         jLabel.setFont(Constantes.FONT_COPPERPLATE_TYPE);
         return jLabel;

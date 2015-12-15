@@ -12,6 +12,9 @@ package org.dental.constantes;
 public final class ConstantesMenuPrincipal {
 
     public static final String USUARIOS = "Usuarios";
-    
+
+    public enum opcionesSubMenu {
+        GRUPO_USUARIOS, PACIENTES, EXAMINADORES, EXAMEN, REPORTES, MANTENIMIENTO
+    }
 
 }

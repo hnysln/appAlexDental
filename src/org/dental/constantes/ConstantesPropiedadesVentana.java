@@ -4,8 +4,6 @@
  */
 package org.dental.constantes;
 
-import java.awt.Dimension;
-
 /**
  *
  * @author Henry Salinas A.
