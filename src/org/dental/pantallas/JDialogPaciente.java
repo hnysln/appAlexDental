@@ -10,13 +10,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Date;
 import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import org.dental.constantes.ConstantesTipoLetra;
 import org.dental.constantes.ConstantesURLS;
 
 /**
@@ -62,32 +57,19 @@ public class JDialogPaciente extends javax.swing.JDialog {
         jLayeredPacientes = new javax.swing.JLayeredPane();
         jLlbIdentificacion = new javax.swing.JLabel();
         jLblLeyendaInformacionPersonal = new javax.swing.JLabel();
-        jLblLeyendaInformacionContacto = new javax.swing.JLabel();
         jLlbNombres = new javax.swing.JLabel();
         jLlbApellidos = new javax.swing.JLabel();
         jTxtIdentificacion = new javax.swing.JTextField();
         jTxtApellidos = new javax.swing.JTextField();
         jTxtNombres = new javax.swing.JTextField();
-        jLblTelefono = new javax.swing.JLabel();
-        jLblMail = new javax.swing.JLabel();
-        jTxtCelular = new javax.swing.JTextField();
-        jTxtTelefono = new javax.swing.JTextField();
         jLlbHistoriaClinica = new javax.swing.JLabel();
         jTxtNumHistoriaClinica = new javax.swing.JTextField();
         jLlbFechaNacimiento = new javax.swing.JLabel();
         jDateFechaNacimiento = new com.toedter.calendar.JDateChooser();
-        jlblImagen = new javax.swing.JLabel();
-        jBntImagen = new javax.swing.JButton();
-        jlblImagenCargada = new javax.swing.JLabel();
-        jBntQuitarFoto = new javax.swing.JButton();
-        jScrollPanelAlertas = new javax.swing.JScrollPane();
-        jTblProductos = new javax.swing.JTable();
         jLlbGenero = new javax.swing.JLabel();
         jComboGenero = new javax.swing.JComboBox<>();
-        jLblCelular1 = new javax.swing.JLabel();
-        jTxtCelular1 = new javax.swing.JTextField();
-        jBntagregarAlertas = new javax.swing.JButton();
-        jlblImagen1 = new javax.swing.JLabel();
+        jLlbGenero1 = new javax.swing.JLabel();
+        jComboGenero1 = new javax.swing.JComboBox<>();
         btnGuardar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         jLblFondo = new javax.swing.JLabel();
@@ -109,11 +91,6 @@ public class JDialogPaciente extends javax.swing.JDialog {
         jLblLeyendaInformacionPersonal.setText("Información Personal");
         jLayeredPacientes.add(jLblLeyendaInformacionPersonal, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 30, -1, -1));
 
-        jLblLeyendaInformacionContacto.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
-        jLblLeyendaInformacionContacto.setForeground(new java.awt.Color(0, 102, 153));
-        jLblLeyendaInformacionContacto.setText("Información Contacto");
-        jLayeredPacientes.add(jLblLeyendaInformacionContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 265, -1, -1));
-
         jLlbNombres.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbNombres.setText("Nombres:");
         jLayeredPacientes.add(jLlbNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 127, -1, -1));
@@ -131,20 +108,6 @@ public class JDialogPaciente extends javax.swing.JDialog {
         jTxtNombres.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLayeredPacientes.add(jTxtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 121, 234, -1));
 
-        jLblTelefono.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
-        jLblTelefono.setText("Teléfono:");
-        jLayeredPacientes.add(jLblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 290, -1, -1));
-
-        jLblMail.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
-        jLblMail.setText("Mail:");
-        jLayeredPacientes.add(jLblMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 346, -1, -1));
-
-        jTxtCelular.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLayeredPacientes.add(jTxtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 340, 230, -1));
-
-        jTxtTelefono.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLayeredPacientes.add(jTxtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 285, 230, -1));
-
         jLlbHistoriaClinica.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbHistoriaClinica.setText("N° Historia Clínica:");
         jLayeredPacientes.add(jLlbHistoriaClinica, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 97, 132, -1));
@@ -159,79 +122,19 @@ public class JDialogPaciente extends javax.swing.JDialog {
         jDateFechaNacimiento.setMaxSelectableDate(new Date());
         jLayeredPacientes.add(jDateFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 177, 232, -1));
 
-        jlblImagen.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
-        jlblImagen.setForeground(new java.awt.Color(0, 102, 153));
-        jlblImagen.setText("Imagen");
-        jLayeredPacientes.add(jlblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 30, -1, -1));
-
-        jBntImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/SeleccionarFoto_24x24.png"))); // NOI18N
-        jBntImagen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBntImagen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBntImagenActionPerformed(evt);
-            }
-        });
-        jLayeredPacientes.add(jBntImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 63, 30, 30));
-
-        jlblImagenCargada.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, new java.awt.Color(0, 102, 153)));
-        jlblImagenCargada.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLayeredPacientes.add(jlblImagenCargada, new org.netbeans.lib.awtextra.AbsoluteConstraints(573, 62, 180, 180));
-
-        jBntQuitarFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/Suprimir_24x24.png"))); // NOI18N
-        jBntQuitarFoto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBntQuitarFoto.setEnabled(false);
-        jBntQuitarFoto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBntQuitarFotoActionPerformed(evt);
-            }
-        });
-        jLayeredPacientes.add(jBntQuitarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 110, 30, 30));
-
-        jTblProductos.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jTblProductos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                ""
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTblProductos.setEnabled(false);
-        jTblProductos.setRowHeight(25);
-        jScrollPanelAlertas.setViewportView(jTblProductos);
-
-        jLayeredPacientes.add(jScrollPanelAlertas, new org.netbeans.lib.awtextra.AbsoluteConstraints(573, 285, 180, 130));
-
         jLlbGenero.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
-        jLlbGenero.setText("Género:");
-        jLayeredPacientes.add(jLlbGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 217, -1, -1));
+        jLlbGenero.setText("Alerta médica:");
+        jLayeredPacientes.add(jLlbGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
 
-        jComboGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
-        jLayeredPacientes.add(jComboGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 232, -1));
+        jComboGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No", "Si" }));
+        jLayeredPacientes.add(jComboGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 232, -1));
 
-        jLblCelular1.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
-        jLblCelular1.setText("Celular:");
-        jLayeredPacientes.add(jLblCelular1, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 318, -1, -1));
+        jLlbGenero1.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
+        jLlbGenero1.setText("Género:");
+        jLayeredPacientes.add(jLlbGenero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 217, -1, -1));
 
-        jTxtCelular1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLayeredPacientes.add(jTxtCelular1, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 313, 230, -1));
-
-        jBntagregarAlertas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/Agregar_24x24.png"))); // NOI18N
-        jBntagregarAlertas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLayeredPacientes.add(jBntagregarAlertas, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 285, 30, 30));
-
-        jlblImagen1.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
-        jlblImagen1.setForeground(new java.awt.Color(0, 102, 153));
-        jlblImagen1.setText("Alertas Médicas");
-        jLayeredPacientes.add(jlblImagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 265, -1, -1));
+        jComboGenero1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
+        jLayeredPacientes.add(jComboGenero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 232, -1));
 
         getContentPane().add(jLayeredPacientes);
         jLayeredPacientes.setBounds(30, 30, 790, 450);
@@ -252,36 +155,6 @@ public class JDialogPaciente extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jBntImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBntImagenActionPerformed
-        JFileChooser dialogo = new JFileChooser();
-        dialogo.setFileFilter(new FileNameExtensionFilter("Imagenes JPG", "jpg"));
-        dialogo.setDialogTitle("Seleccione la imagen del producto");
-        int opcionSeleccion = dialogo.showOpenDialog(this);
-        if (opcionSeleccion == JFileChooser.APPROVE_OPTION) {
-            jlblImagenCargada.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font(ConstantesTipoLetra.COPPERPLATE_TYPE, ConstantesTipoLetra.COPPERPLATE_STYLE, 13), new java.awt.Color(0, 0, 255)));
-            //LOG.info("Imagen seleccionada: " + dialogo.getSelectedFile().toString());
-            PATH_IMAGEN = dialogo.getSelectedFile().toString();
-            URL url = null;
-            try {
-                url = dialogo.getSelectedFile().toURL();
-            } catch (MalformedURLException ex) {
-                //LOG.error("Error al escoger la imagen. ", ex);
-            }
-            ImageIcon icon = new ImageIcon(url);
-            Image imagen = icon.getImage().getScaledInstance((jlblImagenCargada.getWidth() - 20), (jlblImagenCargada.getHeight() - 20), Image.SCALE_AREA_AVERAGING);
-            jlblImagenCargada.setIcon(new ImageIcon(imagen));
-            ARREGLO_BYTES_FOTO = convertirImagenArregloBytes();
-            jBntQuitarFoto.setEnabled(true);
-        }
-    }//GEN-LAST:event_jBntImagenActionPerformed
-
-    private void jBntQuitarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBntQuitarFotoActionPerformed
-        ARREGLO_BYTES_FOTO = null;
-        PATH_IMAGEN = "";
-        jlblImagenCargada.setIcon(null);
-        jBntQuitarFoto.setEnabled(false);
-    }//GEN-LAST:event_jBntQuitarFotoActionPerformed
 
     private byte[] convertirImagenArregloBytes() {
         byte[] bufferImagen = null;
@@ -348,35 +221,22 @@ public class JDialogPaciente extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton jBntImagen;
-    private javax.swing.JButton jBntQuitarFoto;
-    private javax.swing.JButton jBntagregarAlertas;
     private javax.swing.JComboBox<String> jComboGenero;
+    private javax.swing.JComboBox<String> jComboGenero1;
     private com.toedter.calendar.JDateChooser jDateFechaNacimiento;
     private javax.swing.JLayeredPane jLayeredPacientes;
-    private javax.swing.JLabel jLblCelular1;
     private javax.swing.JLabel jLblFondo;
-    private javax.swing.JLabel jLblLeyendaInformacionContacto;
     private javax.swing.JLabel jLblLeyendaInformacionPersonal;
-    private javax.swing.JLabel jLblMail;
-    private javax.swing.JLabel jLblTelefono;
     private javax.swing.JLabel jLlbApellidos;
     private javax.swing.JLabel jLlbFechaNacimiento;
     private javax.swing.JLabel jLlbGenero;
+    private javax.swing.JLabel jLlbGenero1;
     private javax.swing.JLabel jLlbHistoriaClinica;
     private javax.swing.JLabel jLlbIdentificacion;
     private javax.swing.JLabel jLlbNombres;
-    private javax.swing.JScrollPane jScrollPanelAlertas;
-    private javax.swing.JTable jTblProductos;
     private javax.swing.JTextField jTxtApellidos;
-    private javax.swing.JTextField jTxtCelular;
-    private javax.swing.JTextField jTxtCelular1;
     private javax.swing.JTextField jTxtIdentificacion;
     private javax.swing.JTextField jTxtNombres;
     private javax.swing.JTextField jTxtNumHistoriaClinica;
-    private javax.swing.JTextField jTxtTelefono;
-    private javax.swing.JLabel jlblImagen;
-    private javax.swing.JLabel jlblImagen1;
-    private javax.swing.JLabel jlblImagenCargada;
     // End of variables declaration//GEN-END:variables
 }

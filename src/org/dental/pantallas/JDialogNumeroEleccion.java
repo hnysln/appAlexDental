@@ -1,0 +1,190 @@
+/**
+ * JDialogNumeroEleccion.java
+ * 17/12/2015
+ */
+package org.dental.pantallas;
+
+import java.awt.Dimension;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JButton;
+
+/**
+ *
+ * @author Henry Salinas A.
+ * @version: 1.0
+ */
+public class JDialogNumeroEleccion extends javax.swing.JDialog {
+
+    private final static Integer ANCHO_BOTON = 50;
+    private final static Integer ALTO_BOTON = 30;
+    private final static Integer ESPACIO_ENTRE_BOTONES = 10;
+
+    private final static Integer MARGEN_ANCHO_INICIO_PANTALLA = 10;
+    private final static Integer MARGEN_ANCHO_FIN_PANTALLA = 10;
+    private final static Integer MARGEN_ALTO_INICIO_PANTALLA = 30;
+    private final static Integer MARGEN_ALTO_FIN_PANTALLA = 15;
+
+    /**
+     * Representa al n&uacute;mero escogido en los botones.
+     */
+    private List<JButton> listaJBotones = new ArrayList<JButton>();
+
+    private Integer numeroSelecionado;
+
+    public Integer getNumeroSelecionado() {
+        return numeroSelecionado;
+    }
+
+    /**
+     * Creates new form JDialogNumeroEleccion
+     *
+     * @param parent
+     * @param modal
+     */
+    public JDialogNumeroEleccion(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
+        initComponents();
+        diseniarVentana(5, 6);
+    }
+
+    public JDialogNumeroEleccion(java.awt.Frame parent, boolean modal, List<Integer> listadoImprimir, int numeroFilas, int numeroColumnas) {
+        super(parent, modal);
+        initComponents();
+        diseniarVentana(numeroFilas, numeroColumnas);
+        dibujarBotones(listadoImprimir, numeroFilas, numeroColumnas);
+    }
+
+    /**
+     * Grafica y ordena botones, esto es una obra maestra.
+     *
+     * @param listadoImprimir
+     * @param numeroFilas
+     * @param numeroColumnas
+     */
+    private void dibujarBotones(List<Integer> listadoImprimir, int numeroFilas, int numeroColumnas) {
+        int posicionX = MARGEN_ANCHO_INICIO_PANTALLA;
+        int posicionY = MARGEN_ALTO_INICIO_PANTALLA;
+        JButton jButtonNuevo;
+        int indiceFilas = 0;
+        int indiceColumnas = 0;
+        for (Integer valorBoton : listadoImprimir) {
+            jButtonNuevo = new JButton();
+            jButtonNuevo.setText(valorBoton.toString());
+            jButtonNuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            jButtonNuevo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+            jButtonNuevo.addActionListener(new java.awt.event.ActionListener() {
+                @Override
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    miActionPerformed(evt);
+                }
+            });
+            if (indiceFilas < numeroFilas) {
+                if (indiceColumnas < numeroColumnas) {
+                    jPanelSuperiorVestibularCuadranteUno.add(jButtonNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(posicionX, posicionY, ANCHO_BOTON, ALTO_BOTON));
+                    posicionX = ANCHO_BOTON + ESPACIO_ENTRE_BOTONES + posicionX;
+                    indiceColumnas++;
+                    continue;
+                } else {
+                    posicionX = MARGEN_ANCHO_INICIO_PANTALLA;
+                    posicionY = posicionY + ALTO_BOTON + ESPACIO_ENTRE_BOTONES;
+                    jPanelSuperiorVestibularCuadranteUno.add(jButtonNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(posicionX, posicionY, ANCHO_BOTON, ALTO_BOTON));
+                    posicionX = ANCHO_BOTON + ESPACIO_ENTRE_BOTONES + posicionX;
+                    indiceColumnas = 1;
+                }
+                indiceFilas++;
+            }
+        }
+    }
+
+    private void miActionPerformed(java.awt.event.ActionEvent evt) {
+        JButton jButton = (JButton) evt.getSource();
+        this.numeroSelecionado = Integer.parseInt(jButton.getText());
+        this.dispose();
+    }
+
+    private void diseniarVentana(int numFilas, int numColumnas) {
+        int anchoBotonesTotal = (numColumnas * ANCHO_BOTON);
+        int anchoEspacios = ESPACIO_ENTRE_BOTONES * (numColumnas - 1);
+        int anchoPantalla = anchoBotonesTotal + anchoEspacios + MARGEN_ANCHO_INICIO_PANTALLA + MARGEN_ANCHO_FIN_PANTALLA;
+
+        int altoBotonesTotal = (numFilas * ALTO_BOTON);
+        int altoEspacios = ESPACIO_ENTRE_BOTONES * (numFilas - 1);
+        int altoPantalla = altoBotonesTotal + altoEspacios + MARGEN_ALTO_INICIO_PANTALLA + MARGEN_ALTO_FIN_PANTALLA;
+
+        int valorAnchoExtra = 15;
+        int valorAltoExtra = 38;
+        Dimension dimension = new Dimension(anchoPantalla + valorAnchoExtra, altoPantalla + valorAltoExtra);
+        this.setSize(dimension);
+        getContentPane().add(jPanelSuperiorVestibularCuadranteUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, anchoPantalla, altoPantalla));
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanelSuperiorVestibularCuadranteUno = new javax.swing.JPanel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanelSuperiorVestibularCuadranteUno.setBackground(java.awt.Color.white);
+        jPanelSuperiorVestibularCuadranteUno.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Seleccione la medida", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Copperplate Gothic Light", 0, 14), new java.awt.Color(0, 153, 153))); // NOI18N
+        jPanelSuperiorVestibularCuadranteUno.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanelSuperiorVestibularCuadranteUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 195));
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(JDialogNumeroEleccion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(JDialogNumeroEleccion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(JDialogNumeroEleccion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(JDialogNumeroEleccion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the dialog */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                JDialogNumeroEleccion dialog = new JDialogNumeroEleccion(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanelSuperiorVestibularCuadranteUno;
+    // End of variables declaration//GEN-END:variables
+
+}

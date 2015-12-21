@@ -18,6 +18,7 @@ import java.awt.Toolkit;
 public final class Constantes {
 
     public static final Font FONT_COPPERPLATE_TYPE = new Font(ConstantesTipoLetra.COPPERPLATE_TYPE, ConstantesTipoLetra.COPPERPLATE_STYLE, 12);
+    public static final Font FONT_CENTURY_TYPE = new Font(ConstantesTipoLetra.CENTURY_GOTHIC_TYPE, ConstantesTipoLetra.CENTURY_GOTHIC_STYLE, 12);
 
     public static Dimension dimensionScreen(GraphicsConfiguration graphicsConfiguration) {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();

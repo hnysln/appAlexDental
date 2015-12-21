@@ -50,6 +50,8 @@ public class JFrmIngreso extends javax.swing.JFrame {
         jTxtUsuario = new javax.swing.JTextField();
         jTxtContrasenia = new javax.swing.JPasswordField();
         jBntIngreso = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLblTitulo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLblImagenFondo = new javax.swing.JLabel();
@@ -97,6 +99,10 @@ public class JFrmIngreso extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("Crear usuario");
+
+        jLabel3.setText("Recordar Usuario");
+
         javax.swing.GroupLayout jPanelIngresoLayout = new javax.swing.GroupLayout(jPanelIngreso);
         jPanelIngreso.setLayout(jPanelIngresoLayout);
         jPanelIngresoLayout.setHorizontalGroup(
@@ -113,8 +119,16 @@ public class JFrmIngreso extends javax.swing.JFrame {
                 .addContainerGap(95, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelIngresoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBntIngreso)
-                .addGap(135, 135, 135))
+                .addGroup(jPanelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelIngresoLayout.createSequentialGroup()
+                        .addComponent(jBntIngreso)
+                        .addGap(135, 135, 135))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelIngresoLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelIngresoLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addContainerGap())))
         );
         jPanelIngresoLayout.setVerticalGroup(
             jPanelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,11 +143,15 @@ public class JFrmIngreso extends javax.swing.JFrame {
                     .addComponent(jTxtContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(jBntIngreso)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addContainerGap())
         );
 
         getContentPane().add(jPanelIngreso);
-        jPanelIngreso.setBounds(220, 110, 410, 224);
+        jPanelIngreso.setBounds(220, 110, 410, 226);
 
         jLblTitulo.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 48)); // NOI18N
         jLblTitulo.setForeground(new java.awt.Color(0, 153, 153));
@@ -270,6 +288,8 @@ public class JFrmIngreso extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBntIngreso;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLblContrasenia;
     private javax.swing.JLabel jLblImagenFondo;
     private javax.swing.JLabel jLblTitulo;

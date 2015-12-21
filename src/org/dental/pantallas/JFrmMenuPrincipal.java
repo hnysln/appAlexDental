@@ -129,7 +129,6 @@ public class JFrmMenuPrincipal extends javax.swing.JFrame {
         jBntPacientes = new javax.swing.JLabel();
         jPanelPacientes = new javax.swing.JLayeredPane();
         jBntNuevoPaciente = new javax.swing.JLabel();
-        jBntBuscarPaciente = new javax.swing.JLabel();
         jBntModificarPaciente = new javax.swing.JLabel();
         jBntExaminadores = new javax.swing.JLabel();
         jBntExamen = new javax.swing.JLabel();
@@ -170,11 +169,11 @@ public class JFrmMenuPrincipal extends javax.swing.JFrame {
         getContentPane().add(jBntUsuarios);
         jBntUsuarios.setBounds(330, 70, 72, 72);
 
-        jPanelGrupoUsuarios.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Grupo Usuarios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Copperplate Gothic Light", 0, 14), new java.awt.Color(0, 153, 153))); // NOI18N
+        jPanelGrupoUsuarios.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuarios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Copperplate Gothic Light", 0, 14), new java.awt.Color(0, 153, 153))); // NOI18N
 
         jBntAgregarUsuario.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jBntAgregarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/Usuarios_24x24.png"))); // NOI18N
-        jBntAgregarUsuario.setText("Agregar");
+        jBntAgregarUsuario.setText("Estudiantes");
         jBntAgregarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBntAgregarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -185,11 +184,11 @@ public class JFrmMenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanelGrupoUsuarios.add(jBntAgregarUsuario);
-        jBntAgregarUsuario.setBounds(30, 40, 120, 30);
+        jBntAgregarUsuario.setBounds(30, 40, 140, 30);
 
         jBntConsultarUsuario.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jBntConsultarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/Usuarios_24x24.png"))); // NOI18N
-        jBntConsultarUsuario.setText("Consultar");
+        jBntConsultarUsuario.setText("Doctores");
         jBntConsultarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBntConsultarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -200,7 +199,7 @@ public class JFrmMenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanelGrupoUsuarios.add(jBntConsultarUsuario);
-        jBntConsultarUsuario.setBounds(30, 70, 120, 30);
+        jBntConsultarUsuario.setBounds(30, 70, 140, 30);
 
         getContentPane().add(jPanelGrupoUsuarios);
         jPanelGrupoUsuarios.setBounds(60, 520, 340, 170);
@@ -241,21 +240,6 @@ public class JFrmMenuPrincipal extends javax.swing.JFrame {
         });
         jPanelPacientes.add(jBntNuevoPaciente);
         jBntNuevoPaciente.setBounds(30, 30, 120, 30);
-
-        jBntBuscarPaciente.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jBntBuscarPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/PacienteNuevo_24x24.png"))); // NOI18N
-        jBntBuscarPaciente.setText("Buscar");
-        jBntBuscarPaciente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBntBuscarPaciente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jBntBuscarPacienteMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jBntBuscarPacienteMouseExited(evt);
-            }
-        });
-        jPanelPacientes.add(jBntBuscarPaciente);
-        jBntBuscarPaciente.setBounds(30, 90, 120, 30);
 
         jBntModificarPaciente.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jBntModificarPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/PacienteNuevo_24x24.png"))); // NOI18N
@@ -533,14 +517,6 @@ public class JFrmMenuPrincipal extends javax.swing.JFrame {
         jBntModificarPaciente.setFont(new java.awt.Font("Century Gothic", 0, TAMANIO_LETRA_12));
     }//GEN-LAST:event_jBntModificarPacienteMouseExited
 
-    private void jBntBuscarPacienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBntBuscarPacienteMouseEntered
-        jBntBuscarPaciente.setFont(new java.awt.Font("Century Gothic", 0, TAMANIO_LETRA_15));
-    }//GEN-LAST:event_jBntBuscarPacienteMouseEntered
-
-    private void jBntBuscarPacienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBntBuscarPacienteMouseExited
-        jBntBuscarPaciente.setFont(new java.awt.Font("Century Gothic", 0, TAMANIO_LETRA_12));
-    }//GEN-LAST:event_jBntBuscarPacienteMouseExited
-
     private void jBntNuevoPacienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBntNuevoPacienteMouseClicked
         jBntNuevoPaciente.setFont(new java.awt.Font("Century Gothic", 0, TAMANIO_LETRA_12));
         JDialogPaciente jDialogPaciente = new JDialogPaciente(this, true);
@@ -557,8 +533,8 @@ public class JFrmMenuPrincipal extends javax.swing.JFrame {
     private void jBntExaminadoresMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBntExaminadoresMouseEntered
         jBntExaminadores.setFont(new java.awt.Font(ConstantesTipoLetra.COPPERPLATE_TYPE, ConstantesTipoLetra.COPPERPLATE_STYLE, ConstantesTipoLetra.TAMANIO_LETRA_MENU));
         jBntExaminadores.setForeground(new java.awt.Color(ConstantesTipoLetra.ColorLetraToolTipTextMenu.RED.toInt(), ConstantesTipoLetra.ColorLetraToolTipTextMenu.GREEN.toInt(), ConstantesTipoLetra.ColorLetraToolTipTextMenu.BLUE.toInt()));
-        jBntExaminadores.setText("Examinadores");
-        jBntExaminadores.setBounds(590, 170, 270, 96);
+        jBntExaminadores.setText("Índice de placa");
+        jBntExaminadores.setBounds(590, 170, 350, 96);
         jBntExaminadores.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLS.RUTA_ICON_EXAMINADOR_96X96)));
     }//GEN-LAST:event_jBntExaminadoresMouseEntered
 
@@ -574,7 +550,7 @@ public class JFrmMenuPrincipal extends javax.swing.JFrame {
 
     private void jBntExamenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBntExamenMouseEntered
         jBntExamen.setFont(new java.awt.Font(ConstantesTipoLetra.COPPERPLATE_TYPE, ConstantesTipoLetra.COPPERPLATE_STYLE, ConstantesTipoLetra.TAMANIO_LETRA_MENU));
-        jBntExamen.setText("Examen");
+        jBntExamen.setText("P.S.R.");
         jBntExamen.setBounds(740, 239, 300, 128);
         jBntExamen.setForeground(new java.awt.Color(255, 255, 255));
         jBntExamen.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLS.RUTA_ICON_EXAMEN_96X96)));
@@ -593,8 +569,8 @@ public class JFrmMenuPrincipal extends javax.swing.JFrame {
     private void jbntReportesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbntReportesMouseEntered
         jbntReportes.setFont(new java.awt.Font(ConstantesTipoLetra.COPPERPLATE_TYPE, ConstantesTipoLetra.COPPERPLATE_STYLE, ConstantesTipoLetra.TAMANIO_LETRA_MENU));
         jbntReportes.setForeground(new java.awt.Color(ConstantesTipoLetra.ColorLetraToolTipTextMenu.RED.toInt(), ConstantesTipoLetra.ColorLetraToolTipTextMenu.GREEN.toInt(), ConstantesTipoLetra.ColorLetraToolTipTextMenu.BLUE.toInt()));
-        jbntReportes.setText("Reportes");
-        jbntReportes.setBounds(890, 320, 250, 128);
+        jbntReportes.setText("Periodontograma");
+        jbntReportes.setBounds(890, 320, 350, 128);
         jbntReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLS.RUTA_ICON_REPORTES_96X96)));
     }//GEN-LAST:event_jbntReportesMouseEntered
 
@@ -783,7 +759,6 @@ public class JFrmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jBntAgregarUsuario;
     private javax.swing.JLabel jBntAlgoAlaja;
     private javax.swing.JLabel jBntBuscarExaminador;
-    private javax.swing.JLabel jBntBuscarPaciente;
     private javax.swing.JLabel jBntConsultarUsuario;
     private javax.swing.JLabel jBntCrearExamen;
     private javax.swing.JLabel jBntExamen;
