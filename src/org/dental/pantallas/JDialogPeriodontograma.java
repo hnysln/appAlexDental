@@ -6,7 +6,10 @@ package org.dental.pantallas;
 
 import java.awt.Dimension;
 import java.awt.Image;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import org.dental.constantes.ConstantesURLDientes;
 import org.dental.constantes.ConstantesURLS;
 
@@ -17,9 +20,15 @@ import org.dental.constantes.ConstantesURLS;
  */
 public class JDialogPeriodontograma extends javax.swing.JDialog {
 
-    private static final Integer ANCHO_PANTALLA = 1300;
-    private static final Integer ALTO_PANTALLA = 670;
+    private static final Integer ANCHO_PANTALLA = 1315;
+    private static final Integer ALTO_PANTALLA = 735;
     private final static Dimension SCREEN_SIZE = new Dimension(ANCHO_PANTALLA, ALTO_PANTALLA);
+
+    private static final int ALTO_IMAGEN_DIENTE = 141;
+    private static final int ANCHO_IMAGEN_DIENTE = 56;
+
+    private static final int ALTO_IMAGEN_FURCA = 15;
+    private static final int ANCHO_IMAGEN_FURCA = 15;
 
     /**
      * Creates new form JDialogExamen
@@ -35,6 +44,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jLblFondo.setIcon(new ImageIcon(imagen));
         jLblFondo.setSize(SCREEN_SIZE);
         this.setSize(SCREEN_SIZE);
+        inicialiarImagenesDientes();
     }
 
     /**
@@ -46,6 +56,8 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPanelCuadrantes = new javax.swing.JTabbedPane();
+        jScrollPanePruebas = new javax.swing.JScrollPane();
         jPanelSuperiorVestibularCuadranteUno = new javax.swing.JPanel();
         jLlbIProfundidadSondaje = new javax.swing.JLabel();
         jLlbTitulo11 = new javax.swing.JLabel();
@@ -112,6 +124,12 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jSpt7 = new javax.swing.JSeparator();
         jSpt8 = new javax.swing.JSeparator();
         jSpt9 = new javax.swing.JSeparator();
+        jLblImagenVestibularDiente11 = new javax.swing.JLabel();
+        jLblImagenVestibularDiente12 = new javax.swing.JLabel();
+        jLblImagenVestibularDiente13 = new javax.swing.JLabel();
+        jLblImagenVestibularDiente14 = new javax.swing.JLabel();
+        jLblImagenVestibularDiente15 = new javax.swing.JLabel();
+        jLblImagenVestibularDiente16 = new javax.swing.JLabel();
         jBtnImplante11 = new javax.swing.JButton();
         jTxtMovilidad11 = new javax.swing.JLabel();
         jTxtPronosticoIndividual11 = new javax.swing.JLabel();
@@ -121,17 +139,116 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtAnchuraEncia11 = new javax.swing.JLabel();
         jTxtMargenGingivalMesial11 = new javax.swing.JLabel();
         jTxtProfundidadMesial11 = new javax.swing.JLabel();
-        jLblImagenVestibularDiente11 = new javax.swing.JLabel();
-        jLblImagenVestibularDiente12 = new javax.swing.JLabel();
-        jLblImagenVestibularDiente13 = new javax.swing.JLabel();
-        jLblImagenVestibularDiente14 = new javax.swing.JLabel();
-        jLblImagenVestibularDiente15 = new javax.swing.JLabel();
-        jLblImagenVestibularDiente16 = new javax.swing.JLabel();
+        jTxtSangradoMedia11 = new javax.swing.JLabel();
+        jTxtPlacaMedia11 = new javax.swing.JLabel();
+        jTxtMargenGingivalMedia11 = new javax.swing.JLabel();
+        jTxtProfundidadMedia11 = new javax.swing.JLabel();
+        jTxtSangradoDistal11 = new javax.swing.JLabel();
+        jTxtPlacaDistal11 = new javax.swing.JLabel();
+        jTxtMargenGingivalDistal11 = new javax.swing.JLabel();
+        jTxtProfundidadDistal11 = new javax.swing.JLabel();
+        jBtnImplante12 = new javax.swing.JButton();
+        jTxtMovilidad12 = new javax.swing.JLabel();
+        jTxtPronosticoIndividual12 = new javax.swing.JLabel();
+        jTxtFurca12 = new javax.swing.JLabel();
+        jTxtSangradoMesial12 = new javax.swing.JLabel();
+        jTxtPlacaMesial12 = new javax.swing.JLabel();
+        jTxtAnchuraEncia12 = new javax.swing.JLabel();
+        jTxtMargenGingivalMesial12 = new javax.swing.JLabel();
+        jTxtProfundidadMesial12 = new javax.swing.JLabel();
+        jBtnImplante13 = new javax.swing.JButton();
+        jTxtMovilidad13 = new javax.swing.JLabel();
+        jTxtPronosticoIndividual13 = new javax.swing.JLabel();
+        jTxtFurca13 = new javax.swing.JLabel();
+        jTxtSangradoMesial13 = new javax.swing.JLabel();
+        jTxtPlacaMesial13 = new javax.swing.JLabel();
+        jTxtAnchuraEncia13 = new javax.swing.JLabel();
+        jTxtMargenGingivalMesial13 = new javax.swing.JLabel();
+        jTxtProfundidadMesial13 = new javax.swing.JLabel();
+        jBtnImplante14 = new javax.swing.JButton();
+        jTxtMovilidad14 = new javax.swing.JLabel();
+        jTxtPronosticoIndividual14 = new javax.swing.JLabel();
+        jTxtFurca14 = new javax.swing.JLabel();
+        jTxtSangradoMesial14 = new javax.swing.JLabel();
+        jTxtAnchuraEncia14 = new javax.swing.JLabel();
+        jTxtPlacaMesial14 = new javax.swing.JLabel();
+        jTxtMargenGingivalMesial14 = new javax.swing.JLabel();
+        jTxtProfundidadMesial14 = new javax.swing.JLabel();
+        jBtnImplante15 = new javax.swing.JButton();
+        jTxtMovilidad15 = new javax.swing.JLabel();
+        jTxtPronosticoIndividual15 = new javax.swing.JLabel();
+        jTxtFurca15 = new javax.swing.JLabel();
+        jTxtPlacaMesial15 = new javax.swing.JLabel();
+        jTxtSangradoMesial15 = new javax.swing.JLabel();
+        jTxtAnchuraEncia15 = new javax.swing.JLabel();
+        jTxtMargenGingivalMesial15 = new javax.swing.JLabel();
+        jTxtProfundidadMesial15 = new javax.swing.JLabel();
+        jBtnImplante16 = new javax.swing.JButton();
+        jTxtMovilidad16 = new javax.swing.JLabel();
+        jTxtPronosticoIndividual16 = new javax.swing.JLabel();
+        jTxtFurca16 = new javax.swing.JLabel();
+        jTxtSangradoMesial16 = new javax.swing.JLabel();
+        jTxtPlacaMesial16 = new javax.swing.JLabel();
+        jTxtAnchuraEncia16 = new javax.swing.JLabel();
+        jTxtMargenGingivalMesial16 = new javax.swing.JLabel();
+        jTxtProfundidadMesial16 = new javax.swing.JLabel();
+        jTxtSangradoMedia12 = new javax.swing.JLabel();
+        jTxtPlacaMedia12 = new javax.swing.JLabel();
+        jTxtMargenGingivalMedia12 = new javax.swing.JLabel();
+        jTxtProfundidadMedia12 = new javax.swing.JLabel();
+        jTxtSangradoDistal12 = new javax.swing.JLabel();
+        jTxtPlacaDistal12 = new javax.swing.JLabel();
+        jTxtMargenGingivalDistal12 = new javax.swing.JLabel();
+        jTxtProfundidadDistal12 = new javax.swing.JLabel();
+        jTxtSangradoMedia13 = new javax.swing.JLabel();
+        jTxtPlacaMedia13 = new javax.swing.JLabel();
+        jTxtMargenGingivalMedia13 = new javax.swing.JLabel();
+        jTxtProfundidadMedia13 = new javax.swing.JLabel();
+        jTxtSangradoDistal13 = new javax.swing.JLabel();
+        jTxtPlacaDistal13 = new javax.swing.JLabel();
+        jTxtMargenGingivalDistal13 = new javax.swing.JLabel();
+        jTxtProfundidadDistal13 = new javax.swing.JLabel();
+        jTxtSangradoMedia14 = new javax.swing.JLabel();
+        jTxtPlacaMedia14 = new javax.swing.JLabel();
+        jTxtMargenGingivalMedia14 = new javax.swing.JLabel();
+        jTxtProfundidadMedia14 = new javax.swing.JLabel();
+        jTxtSangradoDistal14 = new javax.swing.JLabel();
+        jTxtPlacaDistal14 = new javax.swing.JLabel();
+        jTxtMargenGingivalDistal14 = new javax.swing.JLabel();
+        jTxtProfundidadDistal14 = new javax.swing.JLabel();
+        jTxtSangradoMedia15 = new javax.swing.JLabel();
+        jTxtPlacaMedia15 = new javax.swing.JLabel();
+        jTxtMargenGingivalMedia15 = new javax.swing.JLabel();
+        jTxtProfundidadMedia15 = new javax.swing.JLabel();
+        jTxtSangradoDistal15 = new javax.swing.JLabel();
+        jTxtPlacaDistal15 = new javax.swing.JLabel();
+        jTxtMargenGingivalDistal15 = new javax.swing.JLabel();
+        jTxtProfundidadDistal15 = new javax.swing.JLabel();
+        jTxtSangradoMedia16 = new javax.swing.JLabel();
+        jTxtPlacaMedia16 = new javax.swing.JLabel();
+        jTxtMargenGingivalMedia16 = new javax.swing.JLabel();
+        jTxtProfundidadMedia16 = new javax.swing.JLabel();
+        jTxtSangradoDistal16 = new javax.swing.JLabel();
+        jTxtPlacaDistal16 = new javax.swing.JLabel();
+        jTxtMargenGingivalDistal16 = new javax.swing.JLabel();
+        jTxtProfundidadDistal16 = new javax.swing.JLabel();
+        jLlbITituloVestibular = new javax.swing.JLabel();
+        jLblImagenPalatinoDiente18 = new javax.swing.JLabel();
+        jLblImagenPalatinoDiente17 = new javax.swing.JLabel();
+        jLblImagenPalatinoDiente16 = new javax.swing.JLabel();
+        jLblImagenPalatinoDiente15 = new javax.swing.JLabel();
+        jLblImagenPalatinoDiente14 = new javax.swing.JLabel();
+        jLblImagenPalatinoDiente13 = new javax.swing.JLabel();
+        jLblImagenPalatinoDiente12 = new javax.swing.JLabel();
+        jLblImagenPalatinoDiente11 = new javax.swing.JLabel();
+        jLlbITituloPalatino = new javax.swing.JLabel();
         jLblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Periodontograma");
         getContentPane().setLayout(null);
+
+        jTabbedPanelCuadrantes.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
 
         jPanelSuperiorVestibularCuadranteUno.setBackground(java.awt.Color.white);
         jPanelSuperiorVestibularCuadranteUno.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Copperplate Gothic Light", 0, 14), new java.awt.Color(0, 153, 153))); // NOI18N
@@ -140,112 +257,112 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jLlbIProfundidadSondaje.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbIProfundidadSondaje.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLlbIProfundidadSondaje.setText("Profundidad de sondaje");
-        jPanelSuperiorVestibularCuadranteUno.add(jLlbIProfundidadSondaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 160, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbIProfundidadSondaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 160, 20));
 
         jLlbTitulo11.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbTitulo11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLlbTitulo11.setText("1.1");
         jLlbTitulo11.setToolTipText("");
         jLlbTitulo11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLlbTitulo11, new org.netbeans.lib.awtextra.AbsoluteConstraints(767, 10, 40, -1));
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbTitulo11, new org.netbeans.lib.awtextra.AbsoluteConstraints(783, 10, 40, -1));
 
         jLlbIMovilidad.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbIMovilidad.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLlbIMovilidad.setText("Movilidad");
-        jPanelSuperiorVestibularCuadranteUno.add(jLlbIMovilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 160, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbIMovilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 160, 20));
 
         jLlbIPronostico.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbIPronostico.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLlbIPronostico.setText("Pronóstico individual");
-        jPanelSuperiorVestibularCuadranteUno.add(jLlbIPronostico, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 160, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbIPronostico, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 160, 20));
 
         jLlbISangradoSuturacion.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbISangradoSuturacion.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLlbISangradoSuturacion.setText("Sangrado / Supuración");
-        jPanelSuperiorVestibularCuadranteUno.add(jLlbISangradoSuturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 160, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbISangradoSuturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 160, 20));
 
         jLlbIPlaca.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbIPlaca.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLlbIPlaca.setText("Placa");
-        jPanelSuperiorVestibularCuadranteUno.add(jLlbIPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 160, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbIPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 160, 20));
 
         jLlbIAnchuraEncia.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbIAnchuraEncia.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLlbIAnchuraEncia.setText("Anchura encía");
-        jPanelSuperiorVestibularCuadranteUno.add(jLlbIAnchuraEncia, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 160, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbIAnchuraEncia, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 160, 20));
 
         jLlbIMargenGingival.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbIMargenGingival.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLlbIMargenGingival.setText("Margen gingival");
-        jPanelSuperiorVestibularCuadranteUno.add(jLlbIMargenGingival, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 160, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbIMargenGingival, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 160, 20));
 
         jLlbIFurca.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbIFurca.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLlbIFurca.setText("Furca");
-        jPanelSuperiorVestibularCuadranteUno.add(jLlbIFurca, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 160, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbIFurca, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 160, 20));
 
         jLlbIImplante1.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbIImplante1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLlbIImplante1.setText("Implante");
-        jPanelSuperiorVestibularCuadranteUno.add(jLlbIImplante1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 160, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbIImplante1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 160, 20));
 
         jLlbTitulo18.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbTitulo18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLlbTitulo18.setText("1.8");
         jLlbTitulo18.setToolTipText("");
         jLlbTitulo18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLlbTitulo18, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 40, -1));
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbTitulo18, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 10, 40, -1));
 
         jLlbTitulo17.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbTitulo17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLlbTitulo17.setText("1.7");
         jLlbTitulo17.setToolTipText("");
         jLlbTitulo17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLlbTitulo17, new org.netbeans.lib.awtextra.AbsoluteConstraints(281, 10, 40, -1));
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbTitulo17, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 10, 40, -1));
 
         jLlbTitulo16.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbTitulo16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLlbTitulo16.setText("1.6");
         jLlbTitulo16.setToolTipText("");
         jLlbTitulo16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLlbTitulo16, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 10, 40, -1));
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbTitulo16, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 10, 40, -1));
 
         jLlbTitulo15.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbTitulo15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLlbTitulo15.setText("1.5");
         jLlbTitulo15.setToolTipText("");
         jLlbTitulo15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLlbTitulo15, new org.netbeans.lib.awtextra.AbsoluteConstraints(443, 10, 40, -1));
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbTitulo15, new org.netbeans.lib.awtextra.AbsoluteConstraints(451, 10, 40, -1));
 
         jLlbTitulo14.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbTitulo14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLlbTitulo14.setText("1.4");
         jLlbTitulo14.setToolTipText("");
         jLlbTitulo14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLlbTitulo14, new org.netbeans.lib.awtextra.AbsoluteConstraints(524, 10, 40, -1));
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbTitulo14, new org.netbeans.lib.awtextra.AbsoluteConstraints(534, 10, 40, -1));
 
         jLlbTitulo13.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbTitulo13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLlbTitulo13.setText("1.3");
         jLlbTitulo13.setToolTipText("");
         jLlbTitulo13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLlbTitulo13, new org.netbeans.lib.awtextra.AbsoluteConstraints(605, 10, 40, -1));
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbTitulo13, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 10, 40, -1));
 
         jLlbTitulo12.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jLlbTitulo12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLlbTitulo12.setText("1.2");
         jLlbTitulo12.setToolTipText("");
         jLlbTitulo12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLlbTitulo12, new org.netbeans.lib.awtextra.AbsoluteConstraints(686, 10, 40, -1));
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbTitulo12, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, 40, -1));
 
         jSpdTop.setAlignmentX(0.0F);
         jSpdTop.setAlignmentY(0.0F);
-        jPanelSuperiorVestibularCuadranteUno.add(jSpdTop, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 649, -1));
+        jPanelSuperiorVestibularCuadranteUno.add(jSpdTop, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 665, -1));
 
         jSpt1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSpt1.setAlignmentX(0.0F);
         jSpt1.setAlignmentY(0.0F);
-        jPanelSuperiorVestibularCuadranteUno.add(jSpt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 61, 10, 310));
+        jPanelSuperiorVestibularCuadranteUno.add(jSpt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 31, 10, 310));
 
         jBtnImplante18.setText("No");
         jBtnImplante18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -255,111 +372,139 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
                 jBtnImplante18ActionPerformed(evt);
             }
         });
-        jPanelSuperiorVestibularCuadranteUno.add(jBtnImplante18, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 70, 73, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jBtnImplante18, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 40, 73, 20));
 
         jSpt3.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSpt3.setAlignmentX(0.0F);
         jSpt3.setAlignmentY(0.0F);
-        jPanelSuperiorVestibularCuadranteUno.add(jSpt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 61, 10, 310));
+        jPanelSuperiorVestibularCuadranteUno.add(jSpt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(346, 31, 10, 310));
 
         jSpt2.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSpt2.setAlignmentX(0.0F);
         jSpt2.setAlignmentY(0.0F);
-        jPanelSuperiorVestibularCuadranteUno.add(jSpt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 61, 10, 310));
+        jPanelSuperiorVestibularCuadranteUno.add(jSpt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(263, 31, 10, 310));
 
         jLblFurcaSobreImagen18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLblFurcaSobreImagen18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/imagenes/FurcaVacio_18x18.png"))); // NOI18N
-        jPanelSuperiorVestibularCuadranteUno.add(jLblFurcaSobreImagen18, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 405, -1, -1));
+        jPanelSuperiorVestibularCuadranteUno.add(jLblFurcaSobreImagen18, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 375, -1, -1));
 
         jLblImagenVestibularDiente18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblImagenVestibularDiente18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/a/periodontograma-dientes-arriba-18.png"))); // NOI18N
+        jLblImagenVestibularDiente18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/vestibular/periodontograma-dientes-arriba-18.png"))); // NOI18N
         jLblImagenVestibularDiente18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente18, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 335, 56, 141));
+        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente18, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 305, 56, 141));
 
         jTxtMargenGingivalMedia18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jTxtMargenGingivalMedia18.setText("1");
         jTxtMargenGingivalMedia18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtMargenGingivalMedia18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtMargenGingivalMedia18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMedia18, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 280, 23, 20));
+        jTxtMargenGingivalMedia18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtMargenGingivalMedia18MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMedia18, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 23, 20));
 
         jTxtAnchuraEncia18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jTxtAnchuraEncia18.setText("1");
         jTxtAnchuraEncia18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtAnchuraEncia18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtAnchuraEncia18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtAnchuraEncia18, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 250, 73, 20));
+        jTxtAnchuraEncia18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtAnchuraEncia18MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtAnchuraEncia18, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 220, 73, 20));
 
         jTxtMargenGingivalMesial18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jTxtMargenGingivalMesial18.setText("1");
         jTxtMargenGingivalMesial18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtMargenGingivalMesial18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtMargenGingivalMesial18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMesial18, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 280, 23, 20));
+        jTxtMargenGingivalMesial18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtMargenGingivalMesial18MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMesial18, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 250, 23, 20));
 
         jTxtMargenGingivalDistal18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jTxtMargenGingivalDistal18.setText("1");
         jTxtMargenGingivalDistal18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtMargenGingivalDistal18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtMargenGingivalDistal18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalDistal18, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 280, 23, 20));
+        jTxtMargenGingivalDistal18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtMargenGingivalDistal18MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalDistal18, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 250, 23, 20));
 
         jTxtProfundidadMesial18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jTxtProfundidadMesial18.setText("1");
         jTxtProfundidadMesial18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtProfundidadMesial18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtProfundidadMesial18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMesial18, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 310, 23, 20));
+        jTxtProfundidadMesial18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtProfundidadMesial18MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMesial18, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 280, 23, 20));
 
         jTxtProfundidadMedia18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jTxtProfundidadMedia18.setText("1");
         jTxtProfundidadMedia18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtProfundidadMedia18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtProfundidadMedia18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMedia18, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 310, 23, 20));
+        jTxtProfundidadMedia18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtProfundidadMedia18MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMedia18, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 23, 20));
 
         jTxtProfundidadDistal18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jTxtProfundidadDistal18.setText("1");
         jTxtProfundidadDistal18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtProfundidadDistal18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtProfundidadDistal18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadDistal18, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 310, 23, 20));
+        jTxtProfundidadDistal18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtProfundidadDistal18MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadDistal18, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 280, 23, 20));
 
         jTxtPlacaMesial18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtPlacaMesial18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaMesial18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaMesial18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMesial18, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 220, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMesial18, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 190, 23, 20));
 
         jTxtPlacaMedia18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtPlacaMedia18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaMedia18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaMedia18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMedia18, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 220, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMedia18, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 23, 20));
 
         jTxtPlacaDistal18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtPlacaDistal18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaDistal18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaDistal18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaDistal18, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 220, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaDistal18, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 190, 23, 20));
 
         jTxtSangradoMesial18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtSangradoMesial18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtSangradoMesial18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtSangradoMesial18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMesial18, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 190, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMesial18, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 160, 23, 20));
 
         jTxtSangradoMedia18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtSangradoMedia18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtSangradoMedia18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtSangradoMedia18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMedia18, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 190, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMedia18, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 23, 20));
 
         jTxtSangradoDistal18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtSangradoDistal18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtSangradoDistal18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtSangradoDistal18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoDistal18, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 190, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoDistal18, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 160, 23, 20));
 
         jTxtFurca18.setForeground(new java.awt.Color(255, 255, 255));
         jTxtFurca18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -368,36 +513,56 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtFurca18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtFurca18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jTxtFurca18.setName(""); // NOI18N
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtFurca18, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 160, 73, 20));
+        jTxtFurca18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtFurca18MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtFurca18, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 130, 73, 20));
 
         jTxtMovilidad18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtMovilidad18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtMovilidad18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtMovilidad18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtMovilidad18, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 100, 73, 20));
+        jTxtMovilidad18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtMovilidad18MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMovilidad18, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 70, 73, 20));
 
         jTxtPronosticoIndividual18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtPronosticoIndividual18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPronosticoIndividual18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPronosticoIndividual18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtPronosticoIndividual18, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 130, 73, 20));
+        jTxtPronosticoIndividual18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtPronosticoIndividual18MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPronosticoIndividual18, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 100, 73, 20));
 
         jBtnImplante17.setText("No");
         jBtnImplante17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBtnImplante17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jBtnImplante17, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 70, 73, 20));
+        jBtnImplante17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnImplante17MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jBtnImplante17, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 40, 73, 20));
 
         jTxtMovilidad17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtMovilidad17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtMovilidad17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtMovilidad17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtMovilidad17, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 100, 73, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMovilidad17, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 70, 73, 20));
 
         jTxtPronosticoIndividual17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtPronosticoIndividual17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPronosticoIndividual17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPronosticoIndividual17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtPronosticoIndividual17, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 130, 73, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPronosticoIndividual17, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 100, 73, 20));
 
         jTxtFurca17.setForeground(new java.awt.Color(255, 255, 255));
         jTxtFurca17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -406,148 +571,182 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtFurca17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtFurca17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jTxtFurca17.setName(""); // NOI18N
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtFurca17, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 160, 73, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtFurca17, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 130, 73, 20));
 
         jTxtSangradoMesial17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtSangradoMesial17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtSangradoMesial17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtSangradoMesial17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMesial17, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 190, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMesial17, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 160, 23, 20));
 
         jTxtPlacaMesial17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtPlacaMesial17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaMesial17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaMesial17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMesial17, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 220, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMesial17, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 190, 23, 20));
 
         jTxtAnchuraEncia17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jTxtAnchuraEncia17.setText("1");
         jTxtAnchuraEncia17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtAnchuraEncia17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtAnchuraEncia17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtAnchuraEncia17, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 250, 73, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtAnchuraEncia17, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 220, 73, 20));
 
         jTxtMargenGingivalMesial17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtMargenGingivalMesial17.setText("1");
         jTxtMargenGingivalMesial17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtMargenGingivalMesial17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtMargenGingivalMesial17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMesial17, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 280, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMesial17, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 250, 23, 20));
 
         jTxtProfundidadMesial17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtProfundidadMesial17.setText("1");
         jTxtProfundidadMesial17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtProfundidadMesial17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtProfundidadMesial17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMesial17, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 310, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMesial17, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 280, 23, 20));
 
         jLblFurcaSobreImagen17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLblFurcaSobreImagen17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/imagenes/FurcaVacio_18x18.png"))); // NOI18N
-        jPanelSuperiorVestibularCuadranteUno.add(jLblFurcaSobreImagen17, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 405, -1, -1));
+        jPanelSuperiorVestibularCuadranteUno.add(jLblFurcaSobreImagen17, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 375, -1, -1));
 
         jLblImagenVestibularDiente17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblImagenVestibularDiente17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/a/periodontograma-dientes-arriba-17.png"))); // NOI18N
+        jLblImagenVestibularDiente17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/vestibular/periodontograma-dientes-arriba-17.png"))); // NOI18N
         jLblImagenVestibularDiente17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente17, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 335, 56, 141));
+        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente17, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 305, 56, 141));
 
         jTxtPlacaMedia17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtPlacaMedia17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaMedia17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaMedia17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMedia17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMedia17, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 190, 23, 20));
 
         jTxtSangradoMedia17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtSangradoMedia17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtSangradoMedia17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtSangradoMedia17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMedia17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMedia17, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 160, 23, 20));
 
         jTxtSangradoDistal17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtSangradoDistal17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtSangradoDistal17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtSangradoDistal17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoDistal17, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 190, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoDistal17, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 160, 23, 20));
 
         jTxtPlacaDistal17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtPlacaDistal17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaDistal17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaDistal17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaDistal17, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 220, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaDistal17, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 190, 23, 20));
 
         jTxtMargenGingivalMedia17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtMargenGingivalMedia17.setText("1");
         jTxtMargenGingivalMedia17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtMargenGingivalMedia17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtMargenGingivalMedia17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMedia17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMedia17, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 250, 23, 20));
 
         jTxtProfundidadMedia17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtProfundidadMedia17.setText("1");
         jTxtProfundidadMedia17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtProfundidadMedia17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtProfundidadMedia17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMedia17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMedia17, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 280, 23, 20));
 
         jTxtMargenGingivalDistal17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtMargenGingivalDistal17.setText("1");
         jTxtMargenGingivalDistal17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtMargenGingivalDistal17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtMargenGingivalDistal17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalDistal17, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 280, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalDistal17, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 250, 23, 20));
 
         jTxtProfundidadDistal17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtProfundidadDistal17.setText("1");
         jTxtProfundidadDistal17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtProfundidadDistal17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtProfundidadDistal17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadDistal17, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 310, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadDistal17, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 280, 23, 20));
 
         jSpt4.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSpt4.setAlignmentX(0.0F);
         jSpt4.setAlignmentY(0.0F);
-        jPanelSuperiorVestibularCuadranteUno.add(jSpt4, new org.netbeans.lib.awtextra.AbsoluteConstraints(423, 61, 10, 310));
+        jPanelSuperiorVestibularCuadranteUno.add(jSpt4, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 31, 10, 310));
 
         jSpt5.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSpt5.setAlignmentX(0.0F);
         jSpt5.setAlignmentY(0.0F);
-        jPanelSuperiorVestibularCuadranteUno.add(jSpt5, new org.netbeans.lib.awtextra.AbsoluteConstraints(504, 61, 10, 310));
+        jPanelSuperiorVestibularCuadranteUno.add(jSpt5, new org.netbeans.lib.awtextra.AbsoluteConstraints(512, 31, 10, 310));
 
         jSpt6.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSpt6.setAlignmentX(0.0F);
         jSpt6.setAlignmentY(0.0F);
-        jPanelSuperiorVestibularCuadranteUno.add(jSpt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 61, 10, 310));
+        jPanelSuperiorVestibularCuadranteUno.add(jSpt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(595, 31, 10, 310));
 
         jSpt7.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSpt7.setAlignmentX(0.0F);
         jSpt7.setAlignmentY(0.0F);
-        jPanelSuperiorVestibularCuadranteUno.add(jSpt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(666, 61, 10, 310));
+        jPanelSuperiorVestibularCuadranteUno.add(jSpt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(678, 31, 10, 310));
 
         jSpt8.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSpt8.setAlignmentX(0.0F);
         jSpt8.setAlignmentY(0.0F);
-        jPanelSuperiorVestibularCuadranteUno.add(jSpt8, new org.netbeans.lib.awtextra.AbsoluteConstraints(747, 61, 10, 310));
+        jPanelSuperiorVestibularCuadranteUno.add(jSpt8, new org.netbeans.lib.awtextra.AbsoluteConstraints(761, 31, 10, 310));
 
         jSpt9.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSpt9.setAlignmentX(0.0F);
         jSpt9.setAlignmentY(0.0F);
-        jPanelSuperiorVestibularCuadranteUno.add(jSpt9, new org.netbeans.lib.awtextra.AbsoluteConstraints(828, 61, 10, 310));
+        jPanelSuperiorVestibularCuadranteUno.add(jSpt9, new org.netbeans.lib.awtextra.AbsoluteConstraints(844, 31, 10, 310));
+
+        jLblImagenVestibularDiente11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLblImagenVestibularDiente11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/vestibular/periodontograma-dientes-arriba-11.png"))); // NOI18N
+        jLblImagenVestibularDiente11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente11, new org.netbeans.lib.awtextra.AbsoluteConstraints(776, 305, 56, 141));
+
+        jLblImagenVestibularDiente12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLblImagenVestibularDiente12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/vestibular/periodontograma-dientes-arriba-12.png"))); // NOI18N
+        jLblImagenVestibularDiente12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente12, new org.netbeans.lib.awtextra.AbsoluteConstraints(693, 305, 56, 141));
+
+        jLblImagenVestibularDiente13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLblImagenVestibularDiente13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/vestibular/periodontograma-dientes-arriba-13.png"))); // NOI18N
+        jLblImagenVestibularDiente13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente13, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 305, 56, 141));
+
+        jLblImagenVestibularDiente14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLblImagenVestibularDiente14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/vestibular/periodontograma-dientes-arriba-14.png"))); // NOI18N
+        jLblImagenVestibularDiente14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente14, new org.netbeans.lib.awtextra.AbsoluteConstraints(527, 305, 56, 141));
+
+        jLblImagenVestibularDiente15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLblImagenVestibularDiente15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/vestibular/periodontograma-dientes-arriba-15.png"))); // NOI18N
+        jLblImagenVestibularDiente15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente15, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 305, 56, 141));
+
+        jLblImagenVestibularDiente16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLblImagenVestibularDiente16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/vestibular/periodontograma-dientes-arriba-16.png"))); // NOI18N
+        jLblImagenVestibularDiente16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente16, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 305, 56, 141));
 
         jBtnImplante11.setText("No");
         jBtnImplante11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBtnImplante11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jBtnImplante11, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 70, 73, 20));
+        jBtnImplante11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnImplante11MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jBtnImplante11, new org.netbeans.lib.awtextra.AbsoluteConstraints(766, 40, 73, 20));
 
         jTxtMovilidad11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtMovilidad11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtMovilidad11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtMovilidad11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtMovilidad11, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 100, 73, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMovilidad11, new org.netbeans.lib.awtextra.AbsoluteConstraints(766, 70, 73, 20));
 
         jTxtPronosticoIndividual11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtPronosticoIndividual11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPronosticoIndividual11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPronosticoIndividual11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtPronosticoIndividual11, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 130, 73, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPronosticoIndividual11, new org.netbeans.lib.awtextra.AbsoluteConstraints(766, 100, 73, 20));
 
         jTxtFurca11.setForeground(new java.awt.Color(255, 255, 255));
         jTxtFurca11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -556,91 +755,1058 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtFurca11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtFurca11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jTxtFurca11.setName(""); // NOI18N
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtFurca11, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 160, 73, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtFurca11, new org.netbeans.lib.awtextra.AbsoluteConstraints(766, 130, 73, 20));
 
         jTxtSangradoMesial11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtSangradoMesial11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtSangradoMesial11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtSangradoMesial11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMesial11, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 190, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMesial11, new org.netbeans.lib.awtextra.AbsoluteConstraints(766, 160, 23, 20));
 
         jTxtPlacaMesial11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtPlacaMesial11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaMesial11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaMesial11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMesial11, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 220, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMesial11, new org.netbeans.lib.awtextra.AbsoluteConstraints(766, 190, 23, 20));
 
         jTxtAnchuraEncia11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jTxtAnchuraEncia11.setText("1");
         jTxtAnchuraEncia11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtAnchuraEncia11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtAnchuraEncia11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtAnchuraEncia11, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 250, 73, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtAnchuraEncia11, new org.netbeans.lib.awtextra.AbsoluteConstraints(766, 220, 73, 20));
 
         jTxtMargenGingivalMesial11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtMargenGingivalMesial11.setText("1");
         jTxtMargenGingivalMesial11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtMargenGingivalMesial11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtMargenGingivalMesial11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMesial11, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 280, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMesial11, new org.netbeans.lib.awtextra.AbsoluteConstraints(766, 250, 23, 20));
 
         jTxtProfundidadMesial11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtProfundidadMesial11.setText("1");
         jTxtProfundidadMesial11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtProfundidadMesial11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtProfundidadMesial11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMesial11, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 310, 23, 20));
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMesial11, new org.netbeans.lib.awtextra.AbsoluteConstraints(766, 280, 23, 20));
 
-        jLblImagenVestibularDiente11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblImagenVestibularDiente11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/a/periodontograma-dientes-arriba-11.png"))); // NOI18N
-        jLblImagenVestibularDiente11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente11, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 335, 56, 141));
+        jTxtSangradoMedia11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoMedia11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtSangradoMedia11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtSangradoMedia11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMedia11, new org.netbeans.lib.awtextra.AbsoluteConstraints(791, 160, 23, 20));
 
-        jLblImagenVestibularDiente12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblImagenVestibularDiente12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/a/periodontograma-dientes-arriba-12.png"))); // NOI18N
-        jLblImagenVestibularDiente12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente12, new org.netbeans.lib.awtextra.AbsoluteConstraints(679, 335, 56, 141));
+        jTxtPlacaMedia11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMedia11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPlacaMedia11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPlacaMedia11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMedia11, new org.netbeans.lib.awtextra.AbsoluteConstraints(791, 190, 23, 20));
 
-        jLblImagenVestibularDiente13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblImagenVestibularDiente13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/a/periodontograma-dientes-arriba-13.png"))); // NOI18N
-        jLblImagenVestibularDiente13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente13, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 335, 56, 141));
+        jTxtMargenGingivalMedia11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalMedia11.setText("1");
+        jTxtMargenGingivalMedia11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalMedia11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalMedia11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMedia11, new org.netbeans.lib.awtextra.AbsoluteConstraints(791, 250, 23, 20));
 
-        jLblImagenVestibularDiente14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblImagenVestibularDiente14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/a/periodontograma-dientes-arriba-14.png"))); // NOI18N
-        jLblImagenVestibularDiente14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente14, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 335, 56, 141));
+        jTxtProfundidadMedia11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadMedia11.setText("1");
+        jTxtProfundidadMedia11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadMedia11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadMedia11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMedia11, new org.netbeans.lib.awtextra.AbsoluteConstraints(791, 280, 23, 20));
 
-        jLblImagenVestibularDiente15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblImagenVestibularDiente15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/a/periodontograma-dientes-arriba-15.png"))); // NOI18N
-        jLblImagenVestibularDiente15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente15, new org.netbeans.lib.awtextra.AbsoluteConstraints(436, 335, 56, 141));
+        jTxtSangradoDistal11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoDistal11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtSangradoDistal11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtSangradoDistal11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoDistal11, new org.netbeans.lib.awtextra.AbsoluteConstraints(816, 160, 23, 20));
 
-        jLblImagenVestibularDiente16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblImagenVestibularDiente16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/a/periodontograma-dientes-arriba-16.png"))); // NOI18N
-        jLblImagenVestibularDiente16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente16, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 335, 56, 141));
+        jTxtPlacaDistal11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaDistal11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPlacaDistal11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPlacaDistal11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaDistal11, new org.netbeans.lib.awtextra.AbsoluteConstraints(816, 190, 23, 20));
 
-        getContentPane().add(jPanelSuperiorVestibularCuadranteUno);
-        jPanelSuperiorVestibularCuadranteUno.setBounds(260, 10, 860, 580);
+        jTxtMargenGingivalDistal11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalDistal11.setText("1");
+        jTxtMargenGingivalDistal11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalDistal11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalDistal11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalDistal11, new org.netbeans.lib.awtextra.AbsoluteConstraints(816, 250, 23, 20));
+
+        jTxtProfundidadDistal11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadDistal11.setText("1");
+        jTxtProfundidadDistal11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadDistal11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadDistal11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadDistal11, new org.netbeans.lib.awtextra.AbsoluteConstraints(816, 280, 23, 20));
+
+        jBtnImplante12.setText("No");
+        jBtnImplante12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnImplante12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnImplante12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnImplante12MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jBtnImplante12, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 40, 73, 20));
+
+        jTxtMovilidad12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMovilidad12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMovilidad12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMovilidad12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMovilidad12, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 70, 73, 20));
+
+        jTxtPronosticoIndividual12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPronosticoIndividual12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPronosticoIndividual12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPronosticoIndividual12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPronosticoIndividual12, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 100, 73, 20));
+
+        jTxtFurca12.setForeground(new java.awt.Color(255, 255, 255));
+        jTxtFurca12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtFurca12.setAlignmentY(0.0F);
+        jTxtFurca12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtFurca12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtFurca12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtFurca12.setName(""); // NOI18N
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtFurca12, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 130, 73, 20));
+
+        jTxtSangradoMesial12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoMesial12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtSangradoMesial12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtSangradoMesial12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMesial12, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 160, 23, 20));
+
+        jTxtPlacaMesial12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMesial12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPlacaMesial12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPlacaMesial12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMesial12, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 190, 23, 20));
+
+        jTxtAnchuraEncia12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtAnchuraEncia12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtAnchuraEncia12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtAnchuraEncia12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtAnchuraEncia12, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 220, 73, 20));
+
+        jTxtMargenGingivalMesial12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalMesial12.setText("1");
+        jTxtMargenGingivalMesial12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalMesial12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalMesial12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMesial12, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 250, 23, 20));
+
+        jTxtProfundidadMesial12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadMesial12.setText("1");
+        jTxtProfundidadMesial12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadMesial12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadMesial12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMesial12, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 280, 23, 20));
+
+        jBtnImplante13.setText("No");
+        jBtnImplante13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnImplante13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnImplante13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnImplante13MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jBtnImplante13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 40, 73, 20));
+
+        jTxtMovilidad13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMovilidad13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMovilidad13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMovilidad13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMovilidad13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, 73, 20));
+
+        jTxtPronosticoIndividual13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPronosticoIndividual13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPronosticoIndividual13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPronosticoIndividual13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPronosticoIndividual13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 73, 20));
+
+        jTxtFurca13.setForeground(new java.awt.Color(255, 255, 255));
+        jTxtFurca13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtFurca13.setAlignmentY(0.0F);
+        jTxtFurca13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtFurca13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtFurca13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtFurca13.setName(""); // NOI18N
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtFurca13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, 73, 20));
+
+        jTxtSangradoMesial13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoMesial13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtSangradoMesial13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtSangradoMesial13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMesial13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 160, 23, 20));
+
+        jTxtPlacaMesial13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMesial13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPlacaMesial13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPlacaMesial13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMesial13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 190, 23, 20));
+
+        jTxtAnchuraEncia13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtAnchuraEncia13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtAnchuraEncia13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtAnchuraEncia13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtAnchuraEncia13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 220, 73, 20));
+
+        jTxtMargenGingivalMesial13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalMesial13.setText("1");
+        jTxtMargenGingivalMesial13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalMesial13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalMesial13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMesial13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 23, 20));
+
+        jTxtProfundidadMesial13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadMesial13.setText("1");
+        jTxtProfundidadMesial13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadMesial13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadMesial13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMesial13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 280, 23, 20));
+
+        jBtnImplante14.setText("No");
+        jBtnImplante14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnImplante14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnImplante14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnImplante14MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jBtnImplante14, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 40, 73, 20));
+
+        jTxtMovilidad14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMovilidad14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMovilidad14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMovilidad14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMovilidad14, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 70, 73, 20));
+
+        jTxtPronosticoIndividual14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPronosticoIndividual14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPronosticoIndividual14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPronosticoIndividual14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPronosticoIndividual14, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 100, 73, 20));
+
+        jTxtFurca14.setForeground(new java.awt.Color(255, 255, 255));
+        jTxtFurca14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtFurca14.setAlignmentY(0.0F);
+        jTxtFurca14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtFurca14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtFurca14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtFurca14.setName(""); // NOI18N
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtFurca14, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 130, 73, 20));
+
+        jTxtSangradoMesial14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoMesial14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtSangradoMesial14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtSangradoMesial14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMesial14, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 160, 23, 20));
+
+        jTxtAnchuraEncia14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtAnchuraEncia14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtAnchuraEncia14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtAnchuraEncia14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtAnchuraEncia14, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 220, 73, 20));
+
+        jTxtPlacaMesial14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMesial14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPlacaMesial14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPlacaMesial14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMesial14, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 190, 23, 20));
+
+        jTxtMargenGingivalMesial14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalMesial14.setText("1");
+        jTxtMargenGingivalMesial14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalMesial14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalMesial14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMesial14, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 250, 23, 20));
+
+        jTxtProfundidadMesial14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadMesial14.setText("1");
+        jTxtProfundidadMesial14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadMesial14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadMesial14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMesial14, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 280, 23, 20));
+
+        jBtnImplante15.setText("No");
+        jBtnImplante15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnImplante15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnImplante15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnImplante15MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jBtnImplante15, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 40, 73, 20));
+
+        jTxtMovilidad15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMovilidad15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMovilidad15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMovilidad15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMovilidad15, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 70, 73, 20));
+
+        jTxtPronosticoIndividual15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPronosticoIndividual15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPronosticoIndividual15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPronosticoIndividual15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPronosticoIndividual15, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 100, 73, 20));
+
+        jTxtFurca15.setForeground(new java.awt.Color(255, 255, 255));
+        jTxtFurca15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtFurca15.setAlignmentY(0.0F);
+        jTxtFurca15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtFurca15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtFurca15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtFurca15.setName(""); // NOI18N
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtFurca15, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 130, 73, 20));
+
+        jTxtPlacaMesial15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMesial15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPlacaMesial15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPlacaMesial15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMesial15, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 190, 23, 20));
+
+        jTxtSangradoMesial15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoMesial15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtSangradoMesial15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtSangradoMesial15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMesial15, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 160, 23, 20));
+
+        jTxtAnchuraEncia15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtAnchuraEncia15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtAnchuraEncia15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtAnchuraEncia15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtAnchuraEncia15, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 220, 73, 20));
+
+        jTxtMargenGingivalMesial15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalMesial15.setText("1");
+        jTxtMargenGingivalMesial15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalMesial15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalMesial15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMesial15, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 250, 23, 20));
+
+        jTxtProfundidadMesial15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadMesial15.setText("1");
+        jTxtProfundidadMesial15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadMesial15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadMesial15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMesial15, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 280, 23, 20));
+
+        jBtnImplante16.setText("No");
+        jBtnImplante16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnImplante16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnImplante16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnImplante16MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jBtnImplante16, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 40, 73, 20));
+
+        jTxtMovilidad16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMovilidad16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMovilidad16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMovilidad16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMovilidad16, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 70, 73, 20));
+
+        jTxtPronosticoIndividual16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPronosticoIndividual16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPronosticoIndividual16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPronosticoIndividual16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPronosticoIndividual16, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 100, 73, 20));
+
+        jTxtFurca16.setForeground(new java.awt.Color(255, 255, 255));
+        jTxtFurca16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtFurca16.setAlignmentY(0.0F);
+        jTxtFurca16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtFurca16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtFurca16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtFurca16.setName(""); // NOI18N
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtFurca16, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 130, 73, 20));
+
+        jTxtSangradoMesial16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoMesial16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtSangradoMesial16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtSangradoMesial16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMesial16, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 160, 23, 20));
+
+        jTxtPlacaMesial16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMesial16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPlacaMesial16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPlacaMesial16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMesial16, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 190, 23, 20));
+
+        jTxtAnchuraEncia16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtAnchuraEncia16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtAnchuraEncia16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtAnchuraEncia16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtAnchuraEncia16, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 220, 73, 20));
+
+        jTxtMargenGingivalMesial16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalMesial16.setText("1");
+        jTxtMargenGingivalMesial16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalMesial16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalMesial16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMesial16, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 250, 23, 20));
+
+        jTxtProfundidadMesial16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadMesial16.setText("1");
+        jTxtProfundidadMesial16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadMesial16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadMesial16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMesial16, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 280, 23, 20));
+
+        jTxtSangradoMedia12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoMedia12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtSangradoMedia12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtSangradoMedia12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMedia12, new org.netbeans.lib.awtextra.AbsoluteConstraints(708, 160, 23, 20));
+
+        jTxtPlacaMedia12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMedia12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPlacaMedia12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPlacaMedia12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMedia12, new org.netbeans.lib.awtextra.AbsoluteConstraints(708, 190, 23, 20));
+
+        jTxtMargenGingivalMedia12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalMedia12.setText("1");
+        jTxtMargenGingivalMedia12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalMedia12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalMedia12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMedia12, new org.netbeans.lib.awtextra.AbsoluteConstraints(708, 250, 23, 20));
+
+        jTxtProfundidadMedia12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadMedia12.setText("1");
+        jTxtProfundidadMedia12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadMedia12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadMedia12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMedia12, new org.netbeans.lib.awtextra.AbsoluteConstraints(708, 280, 23, 20));
+
+        jTxtSangradoDistal12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoDistal12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtSangradoDistal12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtSangradoDistal12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoDistal12, new org.netbeans.lib.awtextra.AbsoluteConstraints(733, 160, 23, 20));
+
+        jTxtPlacaDistal12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaDistal12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPlacaDistal12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPlacaDistal12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaDistal12, new org.netbeans.lib.awtextra.AbsoluteConstraints(733, 190, 23, 20));
+
+        jTxtMargenGingivalDistal12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalDistal12.setText("1");
+        jTxtMargenGingivalDistal12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalDistal12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalDistal12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalDistal12, new org.netbeans.lib.awtextra.AbsoluteConstraints(733, 250, 23, 20));
+
+        jTxtProfundidadDistal12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadDistal12.setText("1");
+        jTxtProfundidadDistal12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadDistal12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadDistal12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadDistal12, new org.netbeans.lib.awtextra.AbsoluteConstraints(733, 280, 23, 20));
+
+        jTxtSangradoMedia13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoMedia13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtSangradoMedia13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtSangradoMedia13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMedia13, new org.netbeans.lib.awtextra.AbsoluteConstraints(625, 160, 23, 20));
+
+        jTxtPlacaMedia13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMedia13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPlacaMedia13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPlacaMedia13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMedia13, new org.netbeans.lib.awtextra.AbsoluteConstraints(625, 190, 23, 20));
+
+        jTxtMargenGingivalMedia13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalMedia13.setText("1");
+        jTxtMargenGingivalMedia13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalMedia13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalMedia13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMedia13, new org.netbeans.lib.awtextra.AbsoluteConstraints(625, 250, 23, 20));
+
+        jTxtProfundidadMedia13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadMedia13.setText("1");
+        jTxtProfundidadMedia13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadMedia13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadMedia13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMedia13, new org.netbeans.lib.awtextra.AbsoluteConstraints(625, 280, 23, 20));
+
+        jTxtSangradoDistal13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoDistal13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtSangradoDistal13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtSangradoDistal13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoDistal13, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, 23, 20));
+
+        jTxtPlacaDistal13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaDistal13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPlacaDistal13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPlacaDistal13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaDistal13, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 190, 23, 20));
+
+        jTxtMargenGingivalDistal13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalDistal13.setText("1");
+        jTxtMargenGingivalDistal13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalDistal13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalDistal13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalDistal13, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 250, 23, 20));
+
+        jTxtProfundidadDistal13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadDistal13.setText("1");
+        jTxtProfundidadDistal13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadDistal13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadDistal13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadDistal13, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 280, 23, 20));
+
+        jTxtSangradoMedia14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoMedia14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtSangradoMedia14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtSangradoMedia14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMedia14, new org.netbeans.lib.awtextra.AbsoluteConstraints(542, 160, 23, 20));
+
+        jTxtPlacaMedia14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMedia14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPlacaMedia14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPlacaMedia14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMedia14, new org.netbeans.lib.awtextra.AbsoluteConstraints(542, 190, 23, 20));
+
+        jTxtMargenGingivalMedia14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalMedia14.setText("1");
+        jTxtMargenGingivalMedia14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalMedia14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalMedia14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMedia14, new org.netbeans.lib.awtextra.AbsoluteConstraints(542, 250, 23, 20));
+
+        jTxtProfundidadMedia14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadMedia14.setText("1");
+        jTxtProfundidadMedia14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadMedia14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadMedia14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMedia14, new org.netbeans.lib.awtextra.AbsoluteConstraints(542, 280, 23, 20));
+
+        jTxtSangradoDistal14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoDistal14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtSangradoDistal14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtSangradoDistal14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoDistal14, new org.netbeans.lib.awtextra.AbsoluteConstraints(567, 160, 23, 20));
+
+        jTxtPlacaDistal14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaDistal14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPlacaDistal14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPlacaDistal14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaDistal14, new org.netbeans.lib.awtextra.AbsoluteConstraints(567, 190, 23, 20));
+
+        jTxtMargenGingivalDistal14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalDistal14.setText("1");
+        jTxtMargenGingivalDistal14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalDistal14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalDistal14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalDistal14, new org.netbeans.lib.awtextra.AbsoluteConstraints(567, 250, 23, 20));
+
+        jTxtProfundidadDistal14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadDistal14.setText("1");
+        jTxtProfundidadDistal14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadDistal14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadDistal14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadDistal14, new org.netbeans.lib.awtextra.AbsoluteConstraints(567, 280, 23, 20));
+
+        jTxtSangradoMedia15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoMedia15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtSangradoMedia15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtSangradoMedia15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMedia15, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 160, 23, 20));
+
+        jTxtPlacaMedia15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMedia15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPlacaMedia15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPlacaMedia15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMedia15, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 190, 23, 20));
+
+        jTxtMargenGingivalMedia15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalMedia15.setText("1");
+        jTxtMargenGingivalMedia15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalMedia15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalMedia15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMedia15, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 250, 23, 20));
+
+        jTxtProfundidadMedia15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadMedia15.setText("1");
+        jTxtProfundidadMedia15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadMedia15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadMedia15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMedia15, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 280, 23, 20));
+
+        jTxtSangradoDistal15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoDistal15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtSangradoDistal15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtSangradoDistal15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoDistal15, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 160, 23, 20));
+
+        jTxtPlacaDistal15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaDistal15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPlacaDistal15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPlacaDistal15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaDistal15, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 190, 23, 20));
+
+        jTxtMargenGingivalDistal15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalDistal15.setText("1");
+        jTxtMargenGingivalDistal15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalDistal15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalDistal15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalDistal15, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 250, 23, 20));
+
+        jTxtProfundidadDistal15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadDistal15.setText("1");
+        jTxtProfundidadDistal15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadDistal15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadDistal15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadDistal15, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 280, 23, 20));
+
+        jTxtSangradoMedia16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoMedia16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtSangradoMedia16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtSangradoMedia16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMedia16, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 160, 23, 20));
+
+        jTxtPlacaMedia16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMedia16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPlacaMedia16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPlacaMedia16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMedia16, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 190, 23, 20));
+
+        jTxtMargenGingivalMedia16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalMedia16.setText("1");
+        jTxtMargenGingivalMedia16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalMedia16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalMedia16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMedia16, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 250, 23, 20));
+
+        jTxtProfundidadMedia16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadMedia16.setText("1");
+        jTxtProfundidadMedia16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadMedia16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadMedia16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMedia16, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 280, 23, 20));
+
+        jTxtSangradoDistal16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoDistal16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtSangradoDistal16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtSangradoDistal16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoDistal16, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 160, 23, 20));
+
+        jTxtPlacaDistal16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaDistal16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtPlacaDistal16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtPlacaDistal16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaDistal16, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 190, 23, 20));
+
+        jTxtMargenGingivalDistal16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalDistal16.setText("1");
+        jTxtMargenGingivalDistal16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalDistal16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalDistal16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalDistal16, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 250, 23, 20));
+
+        jTxtProfundidadDistal16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadDistal16.setText("1");
+        jTxtProfundidadDistal16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadDistal16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadDistal16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadDistal16, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 280, 23, 20));
+
+        jLlbITituloVestibular.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 13)); // NOI18N
+        jLlbITituloVestibular.setForeground(new java.awt.Color(0, 0, 204));
+        jLlbITituloVestibular.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLlbITituloVestibular.setText("Vestibular");
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbITituloVestibular, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 365, 160, 20));
+
+        jLblImagenPalatinoDiente18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLblImagenPalatinoDiente18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/palatino/periodontograma-dientes-arriba-18b.png"))); // NOI18N
+        jLblImagenPalatinoDiente18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenPalatinoDiente18, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 476, 56, 141));
+
+        jLblImagenPalatinoDiente17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLblImagenPalatinoDiente17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/palatino/periodontograma-dientes-arriba-17b.png"))); // NOI18N
+        jLblImagenPalatinoDiente17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenPalatinoDiente17, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 476, 56, 141));
+
+        jLblImagenPalatinoDiente16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLblImagenPalatinoDiente16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/palatino/periodontograma-dientes-arriba-16b.png"))); // NOI18N
+        jLblImagenPalatinoDiente16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenPalatinoDiente16, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 476, 56, 141));
+
+        jLblImagenPalatinoDiente15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLblImagenPalatinoDiente15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/palatino/periodontograma-dientes-arriba-15b.png"))); // NOI18N
+        jLblImagenPalatinoDiente15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenPalatinoDiente15, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 476, 56, 141));
+
+        jLblImagenPalatinoDiente14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLblImagenPalatinoDiente14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/palatino/periodontograma-dientes-arriba-14b.png"))); // NOI18N
+        jLblImagenPalatinoDiente14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenPalatinoDiente14, new org.netbeans.lib.awtextra.AbsoluteConstraints(527, 476, 56, 141));
+
+        jLblImagenPalatinoDiente13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLblImagenPalatinoDiente13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/palatino/periodontograma-dientes-arriba-13b.png"))); // NOI18N
+        jLblImagenPalatinoDiente13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenPalatinoDiente13, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 476, 56, 141));
+
+        jLblImagenPalatinoDiente12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLblImagenPalatinoDiente12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/palatino/periodontograma-dientes-arriba-12b.png"))); // NOI18N
+        jLblImagenPalatinoDiente12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenPalatinoDiente12, new org.netbeans.lib.awtextra.AbsoluteConstraints(693, 476, 56, 141));
+
+        jLblImagenPalatinoDiente11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLblImagenPalatinoDiente11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/palatino/periodontograma-dientes-arriba-11b.png"))); // NOI18N
+        jLblImagenPalatinoDiente11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenPalatinoDiente11, new org.netbeans.lib.awtextra.AbsoluteConstraints(776, 476, 56, 141));
+
+        jLlbITituloPalatino.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 13)); // NOI18N
+        jLlbITituloPalatino.setForeground(new java.awt.Color(0, 0, 204));
+        jLlbITituloPalatino.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLlbITituloPalatino.setText("Palatino");
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbITituloPalatino, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 536, 160, 20));
+
+        jScrollPanePruebas.setViewportView(jPanelSuperiorVestibularCuadranteUno);
+
+        jTabbedPanelCuadrantes.addTab("Cuadrante Superior 1", jScrollPanePruebas);
+
+        getContentPane().add(jTabbedPanelCuadrantes);
+        jTabbedPanelCuadrantes.setBounds(400, 10, 890, 880);
+        jTabbedPanelCuadrantes.getAccessibleContext().setAccessibleName("");
 
         jLblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/FondoSecundario.jpg"))); // NOI18N
         getContentPane().add(jLblFondo);
-        jLblFondo.setBounds(0, 0, 1300, 670);
+        jLblFondo.setBounds(0, 0, 1300, 900);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnImplante18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnImplante18ActionPerformed
         if (ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante18.getText().trim())) {
-            jLblImagenVestibularDiente18.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLDientes.DIENTE_SUPERIOR_CON_TORNILLO_18)));
+            jLblImagenVestibularDiente18.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_18)));
+            jLblImagenPalatinoDiente18.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_18)));
             jBtnImplante18.setText(ConstantesURLDientes.SI_TIENE_IMPLANTE);
+
+            jTxtFurca18.setEnabled(false);
+            jTxtFurca18.setOpaque(true);
+            jTxtFurca18.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
         } else {
-            jLblImagenVestibularDiente18.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLDientes.DIENTE_SUPERIOR_SIN_TORNILLO_18)));
+            jLblImagenVestibularDiente18.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_18)));
+            jLblImagenPalatinoDiente18.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_18)));
             jBtnImplante18.setText(ConstantesURLDientes.NO_TIENE_IMPLANTE);
+
+            jTxtFurca18.setEnabled(true);
+            jTxtFurca18.setOpaque(false);
+            jTxtFurca18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         }
     }//GEN-LAST:event_jBtnImplante18ActionPerformed
 
+    private void jBtnImplante17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnImplante17MouseClicked
+        if (ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante17.getText().trim())) {
+            agregarIconJLblImages(jLblImagenVestibularDiente17, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_17, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenPalatinoDiente17, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_17, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            jBtnImplante17.setText(ConstantesURLDientes.SI_TIENE_IMPLANTE);
+        } else {
+            agregarIconJLblImages(jLblImagenVestibularDiente17, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_17, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenPalatinoDiente17, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_17, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            jBtnImplante17.setText(ConstantesURLDientes.NO_TIENE_IMPLANTE);
+        }
+    }//GEN-LAST:event_jBtnImplante17MouseClicked
+
+    private void jBtnImplante16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnImplante16MouseClicked
+        if (ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante16.getText().trim())) {
+            agregarIconJLblImages(jLblImagenVestibularDiente16, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_16, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenPalatinoDiente16, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_16, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            jBtnImplante16.setText(ConstantesURLDientes.SI_TIENE_IMPLANTE);
+        } else {
+            agregarIconJLblImages(jLblImagenVestibularDiente16, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_16, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenPalatinoDiente16, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_16, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            jBtnImplante16.setText(ConstantesURLDientes.NO_TIENE_IMPLANTE);
+        }
+    }//GEN-LAST:event_jBtnImplante16MouseClicked
+
+    private void jBtnImplante15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnImplante15MouseClicked
+        if (ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante15.getText().trim())) {
+            agregarIconJLblImages(jLblImagenVestibularDiente15, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_15, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenPalatinoDiente15, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_15, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            jBtnImplante15.setText(ConstantesURLDientes.SI_TIENE_IMPLANTE);
+        } else {
+            agregarIconJLblImages(jLblImagenVestibularDiente15, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_15, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenPalatinoDiente15, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_15, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            jBtnImplante15.setText(ConstantesURLDientes.NO_TIENE_IMPLANTE);
+        }
+    }//GEN-LAST:event_jBtnImplante15MouseClicked
+
+    private void jBtnImplante14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnImplante14MouseClicked
+        if (ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante14.getText().trim())) {
+            agregarIconJLblImages(jLblImagenVestibularDiente14, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_14, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenPalatinoDiente14, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_14, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            jBtnImplante14.setText(ConstantesURLDientes.SI_TIENE_IMPLANTE);
+        } else {
+            agregarIconJLblImages(jLblImagenVestibularDiente14, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_14, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenPalatinoDiente14, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_14, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            jBtnImplante14.setText(ConstantesURLDientes.NO_TIENE_IMPLANTE);
+        }
+    }//GEN-LAST:event_jBtnImplante14MouseClicked
+
+    private void jBtnImplante13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnImplante13MouseClicked
+        if (ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante13.getText().trim())) {
+            agregarIconJLblImages(jLblImagenVestibularDiente13, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_13, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenPalatinoDiente13, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_13, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            jBtnImplante13.setText(ConstantesURLDientes.SI_TIENE_IMPLANTE);
+        } else {
+            agregarIconJLblImages(jLblImagenVestibularDiente13, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_13, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenPalatinoDiente13, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_13, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            jBtnImplante13.setText(ConstantesURLDientes.NO_TIENE_IMPLANTE);
+        }
+    }//GEN-LAST:event_jBtnImplante13MouseClicked
+
+    private void jBtnImplante12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnImplante12MouseClicked
+        if (ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante12.getText().trim())) {
+            agregarIconJLblImages(jLblImagenVestibularDiente12, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_12, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenPalatinoDiente12, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_12, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            jBtnImplante12.setText(ConstantesURLDientes.SI_TIENE_IMPLANTE);
+        } else {
+            agregarIconJLblImages(jLblImagenVestibularDiente12, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_12, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenPalatinoDiente12, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_12, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            jBtnImplante12.setText(ConstantesURLDientes.NO_TIENE_IMPLANTE);
+        }
+    }//GEN-LAST:event_jBtnImplante12MouseClicked
+
+    private void jBtnImplante11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnImplante11MouseClicked
+        if (ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante11.getText().trim())) {
+            agregarIconJLblImages(jLblImagenVestibularDiente11, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_11, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenPalatinoDiente11, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_11, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            jBtnImplante11.setText(ConstantesURLDientes.SI_TIENE_IMPLANTE);
+        } else {
+            agregarIconJLblImages(jLblImagenVestibularDiente11, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_11, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenPalatinoDiente11, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_11, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            jBtnImplante11.setText(ConstantesURLDientes.NO_TIENE_IMPLANTE);
+        }
+    }//GEN-LAST:event_jBtnImplante11MouseClicked
+
+    private void jTxtMovilidad18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtMovilidad18MouseClicked
+        List<Integer> objetosImprimir = new ArrayList<>();
+        for (int i = 0; i < 4; i++) {
+            objetosImprimir.add(i);
+        }
+        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 2, 2);
+        jDialogNumeroEleccion.setLocationRelativeTo(this);
+        jDialogNumeroEleccion.setLocation(585, 100);
+        jDialogNumeroEleccion.setVisible(true);
+        Integer valor = jDialogNumeroEleccion.getNumeroSelecionado();
+        if (valor != null) {
+            jTxtMovilidad18.setText(valor.toString());
+        }
+    }//GEN-LAST:event_jTxtMovilidad18MouseClicked
+
+    private void jTxtPronosticoIndividual18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtPronosticoIndividual18MouseClicked
+        List<Integer> objetosImprimir = new ArrayList<>();
+        for (int i = 1; i <= 5; i++) {
+            objetosImprimir.add(i);
+        }
+        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 3, 2);
+        jDialogNumeroEleccion.setLocationRelativeTo(this);
+        jDialogNumeroEleccion.setLocation(585, 110);
+        jDialogNumeroEleccion.setVisible(true);
+        Integer valor = jDialogNumeroEleccion.getNumeroSelecionado();
+        if (valor != null) {
+            jTxtPronosticoIndividual18.setText(valor.toString());
+        }
+    }//GEN-LAST:event_jTxtPronosticoIndividual18MouseClicked
+
+    private void jTxtAnchuraEncia18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtAnchuraEncia18MouseClicked
+        List<Integer> objetosImprimir = new ArrayList<>();
+        for (int i = 0; i <= 10; i++) {
+            objetosImprimir.add(i);
+        }
+        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 4, 3);
+        jDialogNumeroEleccion.setLocationRelativeTo(this);
+        jDialogNumeroEleccion.setLocation(585, 230);
+        jDialogNumeroEleccion.setVisible(true);
+        Integer valor = jDialogNumeroEleccion.getNumeroSelecionado();
+        if (valor != null) {
+            jTxtAnchuraEncia18.setText(valor.toString());
+        }
+    }//GEN-LAST:event_jTxtAnchuraEncia18MouseClicked
+
+    private void jTxtMargenGingivalMesial18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtMargenGingivalMesial18MouseClicked
+        List<Integer> objetosImprimir = new ArrayList<>();
+        for (int i = -25; i <= 25; i++) {
+            objetosImprimir.add(i);
+        }
+        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 6, 10);
+        jDialogNumeroEleccion.setLocationRelativeTo(this);
+        jDialogNumeroEleccion.setLocation(585, 260);
+        jDialogNumeroEleccion.setVisible(true);
+        Integer valor = jDialogNumeroEleccion.getNumeroSelecionado();
+        if (valor != null) {
+            jTxtMargenGingivalMesial18.setText(valor.toString());
+        }
+    }//GEN-LAST:event_jTxtMargenGingivalMesial18MouseClicked
+
+    private void jTxtMargenGingivalMedia18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtMargenGingivalMedia18MouseClicked
+        List<Integer> objetosImprimir = new ArrayList<>();
+        for (int i = -25; i <= 25; i++) {
+            objetosImprimir.add(i);
+        }
+        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 6, 10);
+        jDialogNumeroEleccion.setLocationRelativeTo(this);
+        jDialogNumeroEleccion.setLocation(605, 260);
+        jDialogNumeroEleccion.setVisible(true);
+        Integer valor = jDialogNumeroEleccion.getNumeroSelecionado();
+        if (valor != null) {
+            jTxtMargenGingivalMedia18.setText(valor.toString());
+        }
+    }//GEN-LAST:event_jTxtMargenGingivalMedia18MouseClicked
+
+    private void jTxtMargenGingivalDistal18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtMargenGingivalDistal18MouseClicked
+        List<Integer> objetosImprimir = new ArrayList<>();
+        for (int i = -25; i <= 25; i++) {
+            objetosImprimir.add(i);
+        }
+        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 6, 10);
+        jDialogNumeroEleccion.setLocationRelativeTo(this);
+        jDialogNumeroEleccion.setLocation(625, 260);
+        jDialogNumeroEleccion.setVisible(true);
+        Integer valor = jDialogNumeroEleccion.getNumeroSelecionado();
+        if (valor != null) {
+            jTxtMargenGingivalDistal18.setText(valor.toString());
+        }
+    }//GEN-LAST:event_jTxtMargenGingivalDistal18MouseClicked
+
+    private void jTxtProfundidadMesial18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtProfundidadMesial18MouseClicked
+        List<Integer> objetosImprimir = new ArrayList<>();
+        for (int i = 1; i <= 10; i++) {
+            objetosImprimir.add(i);
+        }
+        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 4, 3);
+        jDialogNumeroEleccion.setLocationRelativeTo(this);
+        jDialogNumeroEleccion.setLocation(585, 260);
+        jDialogNumeroEleccion.setVisible(true);
+        Integer valor = jDialogNumeroEleccion.getNumeroSelecionado();
+        if (valor != null) {
+            jTxtProfundidadMesial18.setText(valor.toString());
+        }
+    }//GEN-LAST:event_jTxtProfundidadMesial18MouseClicked
+
+    private void jTxtProfundidadMedia18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtProfundidadMedia18MouseClicked
+        List<Integer> objetosImprimir = new ArrayList<>();
+        for (int i = 1; i <= 10; i++) {
+            objetosImprimir.add(i);
+        }
+        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 4, 3);
+        jDialogNumeroEleccion.setLocationRelativeTo(this);
+        jDialogNumeroEleccion.setLocation(605, 260);
+        jDialogNumeroEleccion.setVisible(true);
+        Integer valor = jDialogNumeroEleccion.getNumeroSelecionado();
+        if (valor != null) {
+            jTxtProfundidadMedia18.setText(valor.toString());
+        }
+    }//GEN-LAST:event_jTxtProfundidadMedia18MouseClicked
+
+    private void jTxtProfundidadDistal18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtProfundidadDistal18MouseClicked
+        List<Integer> objetosImprimir = new ArrayList<>();
+        for (int i = 1; i <= 10; i++) {
+            objetosImprimir.add(i);
+        }
+        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 4, 3);
+        jDialogNumeroEleccion.setLocationRelativeTo(this);
+        jDialogNumeroEleccion.setLocation(625, 260);
+        jDialogNumeroEleccion.setVisible(true);
+        Integer valor = jDialogNumeroEleccion.getNumeroSelecionado();
+        if (valor != null) {
+            jTxtProfundidadDistal18.setText(valor.toString());
+        }
+    }//GEN-LAST:event_jTxtProfundidadDistal18MouseClicked
+
+    private void jTxtFurca18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtFurca18MouseClicked
+        System.out.println("Nombre: " + jTxtFurca18.getName());
+        if ("".equals(jTxtFurca18.getName().trim())) {
+            jTxtFurca18.setName("");
+            agregarIconJLblImages(jTxtFurca18, "", 15, 15);
+            agregarIconJLblImages(jLblFurcaSobreImagen18, "", 15, 15);
+            return;
+        }
+        if ("".equals(jTxtFurca18.getName().trim())) {
+            jTxtFurca18.setName("");
+            agregarIconJLblImages(jTxtFurca18, "", 15, 15);
+            agregarIconJLblImages(jLblFurcaSobreImagen18, "", 15, 15);
+            return;
+        }
+
+//        if ("".equals(jTxtAnchuraEncia19.getText())) {
+//            jTxtAnchuraEncia19.setText("Inicial");
+//            jTxtAnchuraEncia19.setName("Inicial-nombre");
+//
+//            System.out.println("Nombre: " + jTxtAnchuraEncia19.getName());
+//            ImageIcon iconoVentana = new ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/imagenes/FurcaVacio_18x18.png"));
+//            Image imagen = iconoVentana.getImage().getScaledInstance(15, 15, Image.SCALE_AREA_AVERAGING);
+//            jTxtAnchuraEncia19.setIcon(new ImageIcon(imagen));
+//            jLabel2.setIcon(new ImageIcon(imagen));
+//            return;
+//        }
+//        if ("Inicial".equals(jTxtAnchuraEncia19.getText())) {
+//            jTxtAnchuraEncia19.setText("Abierta");
+//            ImageIcon iconoVentana = new ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/imagenes/FurcaMitad_18x18.png"));
+//            Image imagen = iconoVentana.getImage().getScaledInstance(15, 15, Image.SCALE_AREA_AVERAGING);
+//            jTxtAnchuraEncia19.setIcon(new ImageIcon(imagen));
+//            return;
+//        }
+//        if ("Abierta".equals(jTxtAnchuraEncia19.getText())) {
+//            jTxtAnchuraEncia19.setText("Completa");
+//            ImageIcon iconoVentana = new ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/imagenes/FurcaLleno_18x18.png"));
+//            Image imagen = iconoVentana.getImage().getScaledInstance(15, 15, Image.SCALE_AREA_AVERAGING);
+//            jTxtAnchuraEncia19.setIcon(new ImageIcon(imagen));
+//            return;
+//        }
+//        if ("Completa".equals(jTxtAnchuraEncia19.getText())) {
+//            jTxtAnchuraEncia19.setIcon(null);
+//            jTxtAnchuraEncia19.setText("");
+//        }
+
+    }//GEN-LAST:event_jTxtFurca18MouseClicked
+
+    /**
+     * Inserta una imagen a un JLabel con una media establecida.
+     *
+     * @param jLabel
+     * @param URLImagen
+     * @param anchoIcono
+     * @param altoIcono
+     */
+    private void agregarIconJLblImages(JLabel jLabel, String URLImagen, Integer anchoIcono, Integer altoIcono) {
+        ImageIcon iconoVentana = new ImageIcon(getClass().getResource(URLImagen));
+        Image imagen = iconoVentana.getImage().getScaledInstance(anchoIcono, altoIcono, Image.SCALE_AREA_AVERAGING);
+        jLabel.setIcon(new ImageIcon(imagen));
+        jLabel.setSize(anchoIcono, altoIcono);
+    }
+
+    /**
+     * Inicializa imagenes que se van utilizar, todas de un solo tamanio.
+     */
+    private void inicialiarImagenesDientes() {
+        agregarIconJLblImages(jLblImagenVestibularDiente18, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_18, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+        agregarIconJLblImages(jLblImagenVestibularDiente17, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_17, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+        agregarIconJLblImages(jLblImagenVestibularDiente16, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_16, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+        agregarIconJLblImages(jLblImagenVestibularDiente15, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_15, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+        agregarIconJLblImages(jLblImagenVestibularDiente14, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_14, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+        agregarIconJLblImages(jLblImagenVestibularDiente13, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_13, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+        agregarIconJLblImages(jLblImagenVestibularDiente12, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_12, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+        agregarIconJLblImages(jLblImagenVestibularDiente11, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_11, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+
+        agregarIconJLblImages(jLblImagenPalatinoDiente18, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_18, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+        agregarIconJLblImages(jLblImagenPalatinoDiente17, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_17, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+        agregarIconJLblImages(jLblImagenPalatinoDiente16, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_16, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+        agregarIconJLblImages(jLblImagenPalatinoDiente15, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_15, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+        agregarIconJLblImages(jLblImagenPalatinoDiente14, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_14, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+        agregarIconJLblImages(jLblImagenPalatinoDiente13, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_13, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+        agregarIconJLblImages(jLblImagenPalatinoDiente12, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_12, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+        agregarIconJLblImages(jLblImagenPalatinoDiente11, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_11, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+    }
 //    @Override
 //    public void paint(Graphics graphics) {
 //        super.paintComponents(graphics);
@@ -653,6 +1819,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
 //        
 //        graphics.drawOval(220, 500, 20, 20);
 //    }
+
     /**
      * @param args the command line arguments
      */
@@ -699,11 +1866,24 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnImplante11;
+    private javax.swing.JButton jBtnImplante12;
+    private javax.swing.JButton jBtnImplante13;
+    private javax.swing.JButton jBtnImplante14;
+    private javax.swing.JButton jBtnImplante15;
+    private javax.swing.JButton jBtnImplante16;
     private javax.swing.JButton jBtnImplante17;
     private javax.swing.JButton jBtnImplante18;
     private javax.swing.JLabel jLblFondo;
     private javax.swing.JLabel jLblFurcaSobreImagen17;
     private javax.swing.JLabel jLblFurcaSobreImagen18;
+    private javax.swing.JLabel jLblImagenPalatinoDiente11;
+    private javax.swing.JLabel jLblImagenPalatinoDiente12;
+    private javax.swing.JLabel jLblImagenPalatinoDiente13;
+    private javax.swing.JLabel jLblImagenPalatinoDiente14;
+    private javax.swing.JLabel jLblImagenPalatinoDiente15;
+    private javax.swing.JLabel jLblImagenPalatinoDiente16;
+    private javax.swing.JLabel jLblImagenPalatinoDiente17;
+    private javax.swing.JLabel jLblImagenPalatinoDiente18;
     private javax.swing.JLabel jLblImagenVestibularDiente11;
     private javax.swing.JLabel jLblImagenVestibularDiente12;
     private javax.swing.JLabel jLblImagenVestibularDiente13;
@@ -721,6 +1901,8 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
     private javax.swing.JLabel jLlbIProfundidadSondaje;
     private javax.swing.JLabel jLlbIPronostico;
     private javax.swing.JLabel jLlbISangradoSuturacion;
+    private javax.swing.JLabel jLlbITituloPalatino;
+    private javax.swing.JLabel jLlbITituloVestibular;
     private javax.swing.JLabel jLlbTitulo11;
     private javax.swing.JLabel jLlbTitulo12;
     private javax.swing.JLabel jLlbTitulo13;
@@ -730,6 +1912,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
     private javax.swing.JLabel jLlbTitulo17;
     private javax.swing.JLabel jLlbTitulo18;
     private javax.swing.JPanel jPanelSuperiorVestibularCuadranteUno;
+    private javax.swing.JScrollPane jScrollPanePruebas;
     private javax.swing.JSeparator jSpdTop;
     private javax.swing.JSeparator jSpt1;
     private javax.swing.JSeparator jSpt2;
@@ -740,44 +1923,133 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
     private javax.swing.JSeparator jSpt7;
     private javax.swing.JSeparator jSpt8;
     private javax.swing.JSeparator jSpt9;
+    private javax.swing.JTabbedPane jTabbedPanelCuadrantes;
     private javax.swing.JLabel jTxtAnchuraEncia11;
+    private javax.swing.JLabel jTxtAnchuraEncia12;
+    private javax.swing.JLabel jTxtAnchuraEncia13;
+    private javax.swing.JLabel jTxtAnchuraEncia14;
+    private javax.swing.JLabel jTxtAnchuraEncia15;
+    private javax.swing.JLabel jTxtAnchuraEncia16;
     private javax.swing.JLabel jTxtAnchuraEncia17;
     private javax.swing.JLabel jTxtAnchuraEncia18;
     private javax.swing.JLabel jTxtFurca11;
+    private javax.swing.JLabel jTxtFurca12;
+    private javax.swing.JLabel jTxtFurca13;
+    private javax.swing.JLabel jTxtFurca14;
+    private javax.swing.JLabel jTxtFurca15;
+    private javax.swing.JLabel jTxtFurca16;
     private javax.swing.JLabel jTxtFurca17;
     private javax.swing.JLabel jTxtFurca18;
+    private javax.swing.JLabel jTxtMargenGingivalDistal11;
+    private javax.swing.JLabel jTxtMargenGingivalDistal12;
+    private javax.swing.JLabel jTxtMargenGingivalDistal13;
+    private javax.swing.JLabel jTxtMargenGingivalDistal14;
+    private javax.swing.JLabel jTxtMargenGingivalDistal15;
+    private javax.swing.JLabel jTxtMargenGingivalDistal16;
     private javax.swing.JLabel jTxtMargenGingivalDistal17;
     private javax.swing.JLabel jTxtMargenGingivalDistal18;
+    private javax.swing.JLabel jTxtMargenGingivalMedia11;
+    private javax.swing.JLabel jTxtMargenGingivalMedia12;
+    private javax.swing.JLabel jTxtMargenGingivalMedia13;
+    private javax.swing.JLabel jTxtMargenGingivalMedia14;
+    private javax.swing.JLabel jTxtMargenGingivalMedia15;
+    private javax.swing.JLabel jTxtMargenGingivalMedia16;
     private javax.swing.JLabel jTxtMargenGingivalMedia17;
     private javax.swing.JLabel jTxtMargenGingivalMedia18;
     private javax.swing.JLabel jTxtMargenGingivalMesial11;
+    private javax.swing.JLabel jTxtMargenGingivalMesial12;
+    private javax.swing.JLabel jTxtMargenGingivalMesial13;
+    private javax.swing.JLabel jTxtMargenGingivalMesial14;
+    private javax.swing.JLabel jTxtMargenGingivalMesial15;
+    private javax.swing.JLabel jTxtMargenGingivalMesial16;
     private javax.swing.JLabel jTxtMargenGingivalMesial17;
     private javax.swing.JLabel jTxtMargenGingivalMesial18;
     private javax.swing.JLabel jTxtMovilidad11;
+    private javax.swing.JLabel jTxtMovilidad12;
+    private javax.swing.JLabel jTxtMovilidad13;
+    private javax.swing.JLabel jTxtMovilidad14;
+    private javax.swing.JLabel jTxtMovilidad15;
+    private javax.swing.JLabel jTxtMovilidad16;
     private javax.swing.JLabel jTxtMovilidad17;
     private javax.swing.JLabel jTxtMovilidad18;
+    private javax.swing.JLabel jTxtPlacaDistal11;
+    private javax.swing.JLabel jTxtPlacaDistal12;
+    private javax.swing.JLabel jTxtPlacaDistal13;
+    private javax.swing.JLabel jTxtPlacaDistal14;
+    private javax.swing.JLabel jTxtPlacaDistal15;
+    private javax.swing.JLabel jTxtPlacaDistal16;
     private javax.swing.JLabel jTxtPlacaDistal17;
     private javax.swing.JLabel jTxtPlacaDistal18;
+    private javax.swing.JLabel jTxtPlacaMedia11;
+    private javax.swing.JLabel jTxtPlacaMedia12;
+    private javax.swing.JLabel jTxtPlacaMedia13;
+    private javax.swing.JLabel jTxtPlacaMedia14;
+    private javax.swing.JLabel jTxtPlacaMedia15;
+    private javax.swing.JLabel jTxtPlacaMedia16;
     private javax.swing.JLabel jTxtPlacaMedia17;
     private javax.swing.JLabel jTxtPlacaMedia18;
     private javax.swing.JLabel jTxtPlacaMesial11;
+    private javax.swing.JLabel jTxtPlacaMesial12;
+    private javax.swing.JLabel jTxtPlacaMesial13;
+    private javax.swing.JLabel jTxtPlacaMesial14;
+    private javax.swing.JLabel jTxtPlacaMesial15;
+    private javax.swing.JLabel jTxtPlacaMesial16;
     private javax.swing.JLabel jTxtPlacaMesial17;
     private javax.swing.JLabel jTxtPlacaMesial18;
+    private javax.swing.JLabel jTxtProfundidadDistal11;
+    private javax.swing.JLabel jTxtProfundidadDistal12;
+    private javax.swing.JLabel jTxtProfundidadDistal13;
+    private javax.swing.JLabel jTxtProfundidadDistal14;
+    private javax.swing.JLabel jTxtProfundidadDistal15;
+    private javax.swing.JLabel jTxtProfundidadDistal16;
     private javax.swing.JLabel jTxtProfundidadDistal17;
     private javax.swing.JLabel jTxtProfundidadDistal18;
+    private javax.swing.JLabel jTxtProfundidadMedia11;
+    private javax.swing.JLabel jTxtProfundidadMedia12;
+    private javax.swing.JLabel jTxtProfundidadMedia13;
+    private javax.swing.JLabel jTxtProfundidadMedia14;
+    private javax.swing.JLabel jTxtProfundidadMedia15;
+    private javax.swing.JLabel jTxtProfundidadMedia16;
     private javax.swing.JLabel jTxtProfundidadMedia17;
     private javax.swing.JLabel jTxtProfundidadMedia18;
     private javax.swing.JLabel jTxtProfundidadMesial11;
+    private javax.swing.JLabel jTxtProfundidadMesial12;
+    private javax.swing.JLabel jTxtProfundidadMesial13;
+    private javax.swing.JLabel jTxtProfundidadMesial14;
+    private javax.swing.JLabel jTxtProfundidadMesial15;
+    private javax.swing.JLabel jTxtProfundidadMesial16;
     private javax.swing.JLabel jTxtProfundidadMesial17;
     private javax.swing.JLabel jTxtProfundidadMesial18;
     private javax.swing.JLabel jTxtPronosticoIndividual11;
+    private javax.swing.JLabel jTxtPronosticoIndividual12;
+    private javax.swing.JLabel jTxtPronosticoIndividual13;
+    private javax.swing.JLabel jTxtPronosticoIndividual14;
+    private javax.swing.JLabel jTxtPronosticoIndividual15;
+    private javax.swing.JLabel jTxtPronosticoIndividual16;
     private javax.swing.JLabel jTxtPronosticoIndividual17;
     private javax.swing.JLabel jTxtPronosticoIndividual18;
+    private javax.swing.JLabel jTxtSangradoDistal11;
+    private javax.swing.JLabel jTxtSangradoDistal12;
+    private javax.swing.JLabel jTxtSangradoDistal13;
+    private javax.swing.JLabel jTxtSangradoDistal14;
+    private javax.swing.JLabel jTxtSangradoDistal15;
+    private javax.swing.JLabel jTxtSangradoDistal16;
     private javax.swing.JLabel jTxtSangradoDistal17;
     private javax.swing.JLabel jTxtSangradoDistal18;
+    private javax.swing.JLabel jTxtSangradoMedia11;
+    private javax.swing.JLabel jTxtSangradoMedia12;
+    private javax.swing.JLabel jTxtSangradoMedia13;
+    private javax.swing.JLabel jTxtSangradoMedia14;
+    private javax.swing.JLabel jTxtSangradoMedia15;
+    private javax.swing.JLabel jTxtSangradoMedia16;
     private javax.swing.JLabel jTxtSangradoMedia17;
     private javax.swing.JLabel jTxtSangradoMedia18;
     private javax.swing.JLabel jTxtSangradoMesial11;
+    private javax.swing.JLabel jTxtSangradoMesial12;
+    private javax.swing.JLabel jTxtSangradoMesial13;
+    private javax.swing.JLabel jTxtSangradoMesial14;
+    private javax.swing.JLabel jTxtSangradoMesial15;
+    private javax.swing.JLabel jTxtSangradoMesial16;
     private javax.swing.JLabel jTxtSangradoMesial17;
     private javax.swing.JLabel jTxtSangradoMesial18;
     // End of variables declaration//GEN-END:variables

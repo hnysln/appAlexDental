@@ -29,10 +29,11 @@ public class JDialogExample extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JScrollPane();
         jPanelSuperiorVestibularCuadranteUno = new javax.swing.JPanel();
         jLlbIProfundidadSondaje = new javax.swing.JLabel();
         jLlbTitulo11 = new javax.swing.JLabel();
@@ -56,8 +57,6 @@ public class JDialogExample extends javax.swing.JDialog {
         jBtnImplante18 = new javax.swing.JButton();
         jSpt3 = new javax.swing.JSeparator();
         jSpt2 = new javax.swing.JSeparator();
-        jLblFurcaSobreImagen18 = new javax.swing.JLabel();
-        jLblImagenVestibularDiente18 = new javax.swing.JLabel();
         jTxtMargenGingivalMedia18 = new javax.swing.JLabel();
         jTxtAnchuraEncia18 = new javax.swing.JLabel();
         jTxtMargenGingivalMesial18 = new javax.swing.JLabel();
@@ -83,8 +82,6 @@ public class JDialogExample extends javax.swing.JDialog {
         jTxtAnchuraEncia17 = new javax.swing.JLabel();
         jTxtMargenGingivalMesial17 = new javax.swing.JLabel();
         jTxtProfundidadMesial17 = new javax.swing.JLabel();
-        jLblFurcaSobreImagen17 = new javax.swing.JLabel();
-        jLblImagenVestibularDiente17 = new javax.swing.JLabel();
         jTxtPlacaMedia17 = new javax.swing.JLabel();
         jTxtSangradoMedia17 = new javax.swing.JLabel();
         jTxtSangradoDistal17 = new javax.swing.JLabel();
@@ -109,12 +106,10 @@ public class JDialogExample extends javax.swing.JDialog {
         jTxtAnchuraEncia11 = new javax.swing.JLabel();
         jTxtMargenGingivalMesial11 = new javax.swing.JLabel();
         jTxtProfundidadMesial11 = new javax.swing.JLabel();
-        jLblImagenVestibularDiente11 = new javax.swing.JLabel();
-        jLblImagenVestibularDiente12 = new javax.swing.JLabel();
-        jLblImagenVestibularDiente13 = new javax.swing.JLabel();
-        jLblImagenVestibularDiente14 = new javax.swing.JLabel();
-        jLblImagenVestibularDiente15 = new javax.swing.JLabel();
-        jLblImagenVestibularDiente16 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -279,15 +274,6 @@ public class JDialogExample extends javax.swing.JDialog {
         jSpt2.setAlignmentX(0.0F);
         jSpt2.setAlignmentY(0.0F);
         jPanelSuperiorVestibularCuadranteUno.add(jSpt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 61, 10, 310));
-
-        jLblFurcaSobreImagen18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblFurcaSobreImagen18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/imagenes/FurcaVacio_18x18.png"))); // NOI18N
-        jPanelSuperiorVestibularCuadranteUno.add(jLblFurcaSobreImagen18, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 405, -1, -1));
-
-        jLblImagenVestibularDiente18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblImagenVestibularDiente18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/a/periodontograma-dientes-arriba-18.png"))); // NOI18N
-        jLblImagenVestibularDiente18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente18, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 335, 56, 141));
 
         jTxtMargenGingivalMedia18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtMargenGingivalMedia18.setText("1");
@@ -454,15 +440,6 @@ public class JDialogExample extends javax.swing.JDialog {
         jTxtProfundidadMesial17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMesial17, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 310, 23, 20));
 
-        jLblFurcaSobreImagen17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblFurcaSobreImagen17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/imagenes/FurcaVacio_18x18.png"))); // NOI18N
-        jPanelSuperiorVestibularCuadranteUno.add(jLblFurcaSobreImagen17, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 405, -1, -1));
-
-        jLblImagenVestibularDiente17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblImagenVestibularDiente17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/a/periodontograma-dientes-arriba-17.png"))); // NOI18N
-        jLblImagenVestibularDiente17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente17, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 335, 56, 141));
-
         jTxtPlacaMedia17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtPlacaMedia17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaMedia17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -609,38 +586,20 @@ public class JDialogExample extends javax.swing.JDialog {
         jTxtProfundidadMesial11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMesial11, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 310, 23, 20));
 
-        jLblImagenVestibularDiente11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblImagenVestibularDiente11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/a/periodontograma-dientes-arriba-11.png"))); // NOI18N
-        jLblImagenVestibularDiente11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente11, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 335, 56, 141));
+        jTextField1.setText("jTextField1");
+        jPanelSuperiorVestibularCuadranteUno.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, -1, -1));
 
-        jLblImagenVestibularDiente12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblImagenVestibularDiente12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/a/periodontograma-dientes-arriba-12.png"))); // NOI18N
-        jLblImagenVestibularDiente12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente12, new org.netbeans.lib.awtextra.AbsoluteConstraints(679, 335, 56, 141));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanelSuperiorVestibularCuadranteUno.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, -1, -1));
 
-        jLblImagenVestibularDiente13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblImagenVestibularDiente13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/a/periodontograma-dientes-arriba-13.png"))); // NOI18N
-        jLblImagenVestibularDiente13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente13, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 335, 56, 141));
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
-        jLblImagenVestibularDiente14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblImagenVestibularDiente14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/a/periodontograma-dientes-arriba-14.png"))); // NOI18N
-        jLblImagenVestibularDiente14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente14, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 335, 56, 141));
+        jPanelSuperiorVestibularCuadranteUno.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, -1, -1));
 
-        jLblImagenVestibularDiente15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblImagenVestibularDiente15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/a/periodontograma-dientes-arriba-15.png"))); // NOI18N
-        jLblImagenVestibularDiente15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente15, new org.netbeans.lib.awtextra.AbsoluteConstraints(436, 335, 56, 141));
-
-        jLblImagenVestibularDiente16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblImagenVestibularDiente16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/a/periodontograma-dientes-arriba-16.png"))); // NOI18N
-        jLblImagenVestibularDiente16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente16, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 335, 56, 141));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3.getViewport());
+        jPanel3.getViewport().setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1272, Short.MAX_VALUE)
@@ -682,13 +641,7 @@ public class JDialogExample extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnImplante18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnImplante18ActionPerformed
-        if (ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante18.getText().trim())) {
-            jLblImagenVestibularDiente18.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLDientes.DIENTE_SUPERIOR_CON_TORNILLO_18)));
-            jBtnImplante18.setText(ConstantesURLDientes.SI_TIENE_IMPLANTE);
-        } else {
-            jLblImagenVestibularDiente18.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLDientes.DIENTE_SUPERIOR_SIN_TORNILLO_18)));
-            jBtnImplante18.setText(ConstantesURLDientes.NO_TIENE_IMPLANTE);
-        }        
+      
     }//GEN-LAST:event_jBtnImplante18ActionPerformed
 
     /**
@@ -734,19 +687,11 @@ public class JDialogExample extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jBtnImplante11;
     private javax.swing.JButton jBtnImplante17;
     private javax.swing.JButton jBtnImplante18;
-    private javax.swing.JLabel jLblFurcaSobreImagen17;
-    private javax.swing.JLabel jLblFurcaSobreImagen18;
-    private javax.swing.JLabel jLblImagenVestibularDiente11;
-    private javax.swing.JLabel jLblImagenVestibularDiente12;
-    private javax.swing.JLabel jLblImagenVestibularDiente13;
-    private javax.swing.JLabel jLblImagenVestibularDiente14;
-    private javax.swing.JLabel jLblImagenVestibularDiente15;
-    private javax.swing.JLabel jLblImagenVestibularDiente16;
-    private javax.swing.JLabel jLblImagenVestibularDiente17;
-    private javax.swing.JLabel jLblImagenVestibularDiente18;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLlbIAnchuraEncia;
     private javax.swing.JLabel jLlbIFurca;
     private javax.swing.JLabel jLlbIImplante1;
@@ -766,8 +711,9 @@ public class JDialogExample extends javax.swing.JDialog {
     private javax.swing.JLabel jLlbTitulo18;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jPanel3;
     private javax.swing.JPanel jPanelSuperiorVestibularCuadranteUno;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSpdTop;
     private javax.swing.JSeparator jSpt1;
     private javax.swing.JSeparator jSpt10;
@@ -780,6 +726,8 @@ public class JDialogExample extends javax.swing.JDialog {
     private javax.swing.JSeparator jSpt8;
     private javax.swing.JSeparator jSpt9;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel jTxtAnchuraEncia11;
     private javax.swing.JLabel jTxtAnchuraEncia17;
     private javax.swing.JLabel jTxtAnchuraEncia18;
