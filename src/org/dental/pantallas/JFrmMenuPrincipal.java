@@ -132,7 +132,7 @@ public class JFrmMenuPrincipal extends javax.swing.JFrame {
         jBntModificarPaciente = new javax.swing.JLabel();
         jBntExaminadores = new javax.swing.JLabel();
         jBntExamen = new javax.swing.JLabel();
-        jbntReportes = new javax.swing.JLabel();
+        jbntPeriodontograma = new javax.swing.JLabel();
         jbntMantenimiento = new javax.swing.JLabel();
         jbntSalir = new javax.swing.JLabel();
         jPanelExamen = new javax.swing.JLayeredPane();
@@ -291,21 +291,21 @@ public class JFrmMenuPrincipal extends javax.swing.JFrame {
         getContentPane().add(jBntExamen);
         jBntExamen.setBounds(760, 260, 72, 72);
 
-        jbntReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/Reportes_64x64.png"))); // NOI18N
-        jbntReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jbntReportes.addMouseListener(new java.awt.event.MouseAdapter() {
+        jbntPeriodontograma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/Reportes_64x64.png"))); // NOI18N
+        jbntPeriodontograma.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbntPeriodontograma.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jbntReportesMouseClicked(evt);
+                jbntPeriodontogramaMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jbntReportesMouseEntered(evt);
+                jbntPeriodontogramaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jbntReportesMouseExited(evt);
+                jbntPeriodontogramaMouseExited(evt);
             }
         });
-        getContentPane().add(jbntReportes);
-        jbntReportes.setBounds(910, 355, 72, 72);
+        getContentPane().add(jbntPeriodontograma);
+        jbntPeriodontograma.setBounds(910, 355, 72, 72);
 
         jbntMantenimiento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/Mantenimiento_64x64.png"))); // NOI18N
         jbntMantenimiento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -562,23 +562,27 @@ public class JFrmMenuPrincipal extends javax.swing.JFrame {
         jBntExamen.setBounds(760, 260, 72, 72);
     }//GEN-LAST:event_jBntExamenMouseExited
 
-    private void jbntReportesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbntReportesMouseClicked
-        changeJpanelGroups(ConstantesMenuPrincipal.opcionesSubMenu.REPORTES);
-    }//GEN-LAST:event_jbntReportesMouseClicked
+    private void jbntPeriodontogramaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbntPeriodontogramaMouseClicked
+        //changeJpanelGroups(ConstantesMenuPrincipal.opcionesSubMenu.REPORTES);
+        JDialogPeriodontograma jDialogPeriodontograma = new JDialogPeriodontograma(this, true);
+        jDialogPeriodontograma.setLocationRelativeTo(this);
+        jDialogPeriodontograma.setVisible(true);
+        
+    }//GEN-LAST:event_jbntPeriodontogramaMouseClicked
 
-    private void jbntReportesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbntReportesMouseEntered
-        jbntReportes.setFont(new java.awt.Font(ConstantesTipoLetra.COPPERPLATE_TYPE, ConstantesTipoLetra.COPPERPLATE_STYLE, ConstantesTipoLetra.TAMANIO_LETRA_MENU));
-        jbntReportes.setForeground(new java.awt.Color(ConstantesTipoLetra.ColorLetraToolTipTextMenu.RED.toInt(), ConstantesTipoLetra.ColorLetraToolTipTextMenu.GREEN.toInt(), ConstantesTipoLetra.ColorLetraToolTipTextMenu.BLUE.toInt()));
-        jbntReportes.setText("Periodontograma");
-        jbntReportes.setBounds(890, 320, 350, 128);
-        jbntReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLS.RUTA_ICON_REPORTES_96X96)));
-    }//GEN-LAST:event_jbntReportesMouseEntered
+    private void jbntPeriodontogramaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbntPeriodontogramaMouseEntered
+        jbntPeriodontograma.setFont(new java.awt.Font(ConstantesTipoLetra.COPPERPLATE_TYPE, ConstantesTipoLetra.COPPERPLATE_STYLE, ConstantesTipoLetra.TAMANIO_LETRA_MENU));
+        jbntPeriodontograma.setForeground(new java.awt.Color(ConstantesTipoLetra.ColorLetraToolTipTextMenu.RED.toInt(), ConstantesTipoLetra.ColorLetraToolTipTextMenu.GREEN.toInt(), ConstantesTipoLetra.ColorLetraToolTipTextMenu.BLUE.toInt()));
+        jbntPeriodontograma.setText("Periodontograma");
+        jbntPeriodontograma.setBounds(890, 320, 350, 128);
+        jbntPeriodontograma.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLS.RUTA_ICON_REPORTES_96X96)));
+    }//GEN-LAST:event_jbntPeriodontogramaMouseEntered
 
-    private void jbntReportesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbntReportesMouseExited
-        jbntReportes.setText("");
-        jbntReportes.setBounds(910, 355, 72, 72);
-        jbntReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLS.RUTA_ICON_REPORTES_64X64)));
-    }//GEN-LAST:event_jbntReportesMouseExited
+    private void jbntPeriodontogramaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbntPeriodontogramaMouseExited
+        jbntPeriodontograma.setText("");
+        jbntPeriodontograma.setBounds(910, 355, 72, 72);
+        jbntPeriodontograma.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLS.RUTA_ICON_REPORTES_64X64)));
+    }//GEN-LAST:event_jbntPeriodontogramaMouseExited
 
     private void jbntMantenimientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbntMantenimientoMouseClicked
         changeJpanelGroups(ConstantesMenuPrincipal.opcionesSubMenu.MANTENIMIENTO);
@@ -776,7 +780,7 @@ public class JFrmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jPanelGrupoUsuarios;
     private javax.swing.JLayeredPane jPanelPacientes;
     private javax.swing.JLabel jbntMantenimiento;
-    private javax.swing.JLabel jbntReportes;
+    private javax.swing.JLabel jbntPeriodontograma;
     private javax.swing.JLabel jbntSalir;
     // End of variables declaration//GEN-END:variables
 }

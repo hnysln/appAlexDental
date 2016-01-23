@@ -14,6 +14,12 @@ public final class ConstantesURLDientes {
     public static final String NO_TIENE_IMPLANTE = "No";
     public static final String SI_TIENE_IMPLANTE = "Si";
     /**
+     * Imagenes FURCA
+     */
+    public static final String IMAGENEN_FURCA_INICIAL = "/org/dental/imagenes/dientes/imagenes/FurcaInicial_18x18.png";
+    public static final String IMAGENEN_FURCA_ABIERTA = "/org/dental/imagenes/dientes/imagenes/FurcaAbierta_18x18.png";
+    public static final String IMAGENEN_FURCA_COMPLETA = "/org/dental/imagenes/dientes/imagenes/FurcaCompleta_18x18.png";
+    /**
      * Vestibular cuadrante 1 <b>Con tornillo</b>
      */
     public static final String DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_18 = "/org/dental/imagenes/dientes/dientes_superior/con_tornillo/vestibular/periodontograma-dientes-arriba-tornillo-18.png";

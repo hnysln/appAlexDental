@@ -6,6 +6,7 @@ package org.dental.pantallas;
 
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
@@ -29,6 +30,11 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
 
     private static final int ALTO_IMAGEN_FURCA = 15;
     private static final int ANCHO_IMAGEN_FURCA = 15;
+
+    private final static String ESTADO_FURCA_VACIO = "";
+    private final static String ESTADO_FURCA_INICIAL = "INICIAL";
+    private final static String ESTADO_FURCA_ABIERTA = "ABIERTA";
+    private final static String ESTADO_FURCA_COMPLETA = "COMPLETO";
 
     /**
      * Creates new form JDialogExamen
@@ -109,7 +115,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtMargenGingivalMesial17 = new javax.swing.JLabel();
         jTxtProfundidadMesial17 = new javax.swing.JLabel();
         jLblFurcaSobreImagen17 = new javax.swing.JLabel();
-        jLblImagenVestibularDiente17 = new javax.swing.JLabel();
+        jLblFurcaSobreImagen16 = new javax.swing.JLabel();
         jTxtPlacaMedia17 = new javax.swing.JLabel();
         jTxtSangradoMedia17 = new javax.swing.JLabel();
         jTxtSangradoDistal17 = new javax.swing.JLabel();
@@ -130,6 +136,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jLblImagenVestibularDiente14 = new javax.swing.JLabel();
         jLblImagenVestibularDiente15 = new javax.swing.JLabel();
         jLblImagenVestibularDiente16 = new javax.swing.JLabel();
+        jLblImagenVestibularDiente17 = new javax.swing.JLabel();
         jBtnImplante11 = new javax.swing.JButton();
         jTxtMovilidad11 = new javax.swing.JLabel();
         jTxtPronosticoIndividual11 = new javax.swing.JLabel();
@@ -242,6 +249,14 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jLblImagenPalatinoDiente12 = new javax.swing.JLabel();
         jLblImagenPalatinoDiente11 = new javax.swing.JLabel();
         jLlbITituloPalatino = new javax.swing.JLabel();
+        jLlbIProfundidadSondajePalatino = new javax.swing.JLabel();
+        jTxtProfundidadMesialPalatino18 = new javax.swing.JLabel();
+        jTxtProfundidadMediaPalatino19 = new javax.swing.JLabel();
+        jTxtProfundidadDistalPalatino18 = new javax.swing.JLabel();
+        jLlbIMargenGingivalPalatino = new javax.swing.JLabel();
+        jTxtMargenGingivalMesialPalatino18 = new javax.swing.JLabel();
+        jTxtMargenGingivalMediaPalatino18 = new javax.swing.JLabel();
+        jTxtMargenGingivalDistalPalatino18 = new javax.swing.JLabel();
         jLblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -362,7 +377,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jSpt1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSpt1.setAlignmentX(0.0F);
         jSpt1.setAlignmentY(0.0F);
-        jPanelSuperiorVestibularCuadranteUno.add(jSpt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 31, 10, 310));
+        jPanelSuperiorVestibularCuadranteUno.add(jSpt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 31, 10, 800));
 
         jBtnImplante18.setText("No");
         jBtnImplante18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -382,11 +397,10 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jSpt2.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSpt2.setAlignmentX(0.0F);
         jSpt2.setAlignmentY(0.0F);
-        jPanelSuperiorVestibularCuadranteUno.add(jSpt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(263, 31, 10, 310));
+        jPanelSuperiorVestibularCuadranteUno.add(jSpt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(263, 31, 10, 800));
 
         jLblFurcaSobreImagen18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblFurcaSobreImagen18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/imagenes/FurcaVacio_18x18.png"))); // NOI18N
-        jPanelSuperiorVestibularCuadranteUno.add(jLblFurcaSobreImagen18, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 375, -1, -1));
+        jPanelSuperiorVestibularCuadranteUno.add(jLblFurcaSobreImagen18, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 372, 20, 20));
 
         jLblImagenVestibularDiente18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLblImagenVestibularDiente18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/vestibular/periodontograma-dientes-arriba-18.png"))); // NOI18N
@@ -571,6 +585,11 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtFurca17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtFurca17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jTxtFurca17.setName(""); // NOI18N
+        jTxtFurca17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtFurca17MouseClicked(evt);
+            }
+        });
         jPanelSuperiorVestibularCuadranteUno.add(jTxtFurca17, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 130, 73, 20));
 
         jTxtSangradoMesial17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -606,13 +625,10 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMesial17, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 280, 23, 20));
 
         jLblFurcaSobreImagen17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblFurcaSobreImagen17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/imagenes/FurcaVacio_18x18.png"))); // NOI18N
-        jPanelSuperiorVestibularCuadranteUno.add(jLblFurcaSobreImagen17, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 375, -1, -1));
+        jPanelSuperiorVestibularCuadranteUno.add(jLblFurcaSobreImagen17, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 372, 20, 20));
 
-        jLblImagenVestibularDiente17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblImagenVestibularDiente17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/vestibular/periodontograma-dientes-arriba-17.png"))); // NOI18N
-        jLblImagenVestibularDiente17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente17, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 305, 56, 141));
+        jLblFurcaSobreImagen16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jLblFurcaSobreImagen16, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 368, 20, 20));
 
         jTxtPlacaMedia17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtPlacaMedia17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -726,6 +742,11 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jLblImagenVestibularDiente16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente16, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 305, 56, 141));
 
+        jLblImagenVestibularDiente17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLblImagenVestibularDiente17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/dientes_superior/sin_tornillo/vestibular/periodontograma-dientes-arriba-17.png"))); // NOI18N
+        jLblImagenVestibularDiente17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jLblImagenVestibularDiente17, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 305, 56, 141));
+
         jBtnImplante11.setText("No");
         jBtnImplante11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBtnImplante11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -752,7 +773,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtFurca11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtFurca11.setAlignmentY(0.0F);
         jTxtFurca11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTxtFurca11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtFurca11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTxtFurca11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jTxtFurca11.setName(""); // NOI18N
         jPanelSuperiorVestibularCuadranteUno.add(jTxtFurca11, new org.netbeans.lib.awtextra.AbsoluteConstraints(766, 130, 73, 20));
@@ -867,7 +888,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtFurca12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtFurca12.setAlignmentY(0.0F);
         jTxtFurca12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTxtFurca12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtFurca12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTxtFurca12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jTxtFurca12.setName(""); // NOI18N
         jPanelSuperiorVestibularCuadranteUno.add(jTxtFurca12, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 130, 73, 20));
@@ -930,7 +951,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtFurca13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtFurca13.setAlignmentY(0.0F);
         jTxtFurca13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTxtFurca13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtFurca13.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTxtFurca13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jTxtFurca13.setName(""); // NOI18N
         jPanelSuperiorVestibularCuadranteUno.add(jTxtFurca13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, 73, 20));
@@ -993,7 +1014,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtFurca14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtFurca14.setAlignmentY(0.0F);
         jTxtFurca14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTxtFurca14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtFurca14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTxtFurca14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jTxtFurca14.setName(""); // NOI18N
         jPanelSuperiorVestibularCuadranteUno.add(jTxtFurca14, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 130, 73, 20));
@@ -1056,7 +1077,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtFurca15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtFurca15.setAlignmentY(0.0F);
         jTxtFurca15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTxtFurca15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtFurca15.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTxtFurca15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jTxtFurca15.setName(""); // NOI18N
         jPanelSuperiorVestibularCuadranteUno.add(jTxtFurca15, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 130, 73, 20));
@@ -1122,6 +1143,11 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtFurca16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtFurca16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jTxtFurca16.setName(""); // NOI18N
+        jTxtFurca16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtFurca16MouseClicked(evt);
+            }
+        });
         jPanelSuperiorVestibularCuadranteUno.add(jTxtFurca16, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 130, 73, 20));
 
         jTxtSangradoMesial16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1468,17 +1494,78 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jLlbITituloPalatino.setText("Palatino");
         jPanelSuperiorVestibularCuadranteUno.add(jLlbITituloPalatino, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 536, 160, 20));
 
+        jLlbIProfundidadSondajePalatino.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
+        jLlbIProfundidadSondajePalatino.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLlbIProfundidadSondajePalatino.setText("Profundidad de sondaje");
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbIProfundidadSondajePalatino, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 630, 160, 20));
+
+        jTxtProfundidadMesialPalatino18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadMesialPalatino18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadMesialPalatino18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadMesialPalatino18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMesialPalatino18, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 630, 23, 20));
+
+        jTxtProfundidadMediaPalatino19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadMediaPalatino19.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadMediaPalatino19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadMediaPalatino19.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadMediaPalatino19, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 630, 23, 20));
+
+        jTxtProfundidadDistalPalatino18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtProfundidadDistalPalatino18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtProfundidadDistalPalatino18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtProfundidadDistalPalatino18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadDistalPalatino18, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 630, 23, 20));
+
+        jLlbIMargenGingivalPalatino.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
+        jLlbIMargenGingivalPalatino.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLlbIMargenGingivalPalatino.setText("Margen gingival");
+        jPanelSuperiorVestibularCuadranteUno.add(jLlbIMargenGingivalPalatino, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, 160, 20));
+
+        jTxtMargenGingivalMesialPalatino18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalMesialPalatino18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalMesialPalatino18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalMesialPalatino18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalMesialPalatino18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtMargenGingivalMesialPalatino18MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMesialPalatino18, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 660, 23, 20));
+
+        jTxtMargenGingivalMediaPalatino18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalMediaPalatino18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalMediaPalatino18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalMediaPalatino18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalMediaPalatino18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtMargenGingivalMediaPalatino18MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalMediaPalatino18, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 660, 23, 20));
+
+        jTxtMargenGingivalDistalPalatino18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalDistalPalatino18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTxtMargenGingivalDistalPalatino18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTxtMargenGingivalDistalPalatino18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtMargenGingivalDistalPalatino18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtMargenGingivalDistalPalatino18MouseClicked(evt);
+            }
+        });
+        jPanelSuperiorVestibularCuadranteUno.add(jTxtMargenGingivalDistalPalatino18, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 660, 23, 20));
+
         jScrollPanePruebas.setViewportView(jPanelSuperiorVestibularCuadranteUno);
 
         jTabbedPanelCuadrantes.addTab("Cuadrante Superior 1", jScrollPanePruebas);
 
         getContentPane().add(jTabbedPanelCuadrantes);
-        jTabbedPanelCuadrantes.setBounds(400, 10, 890, 880);
+        jTabbedPanelCuadrantes.setBounds(400, 10, 890, 750);
         jTabbedPanelCuadrantes.getAccessibleContext().setAccessibleName("");
 
         jLblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/dental/imagenes/FondoSecundario.jpg"))); // NOI18N
         getContentPane().add(jLblFondo);
-        jLblFondo.setBounds(0, 0, 1300, 900);
+        jLblFondo.setBounds(0, 0, 1300, 790);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1488,7 +1575,6 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
             jLblImagenVestibularDiente18.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_18)));
             jLblImagenPalatinoDiente18.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_18)));
             jBtnImplante18.setText(ConstantesURLDientes.SI_TIENE_IMPLANTE);
-
             jTxtFurca18.setEnabled(false);
             jTxtFurca18.setOpaque(true);
             jTxtFurca18.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -1501,89 +1587,122 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
             jTxtFurca18.setEnabled(true);
             jTxtFurca18.setOpaque(false);
             jTxtFurca18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            jLblFurcaSobreImagen18.setIcon(null);
+
         }
+        jTxtFurca18.setName(ESTADO_FURCA_VACIO);
+        jTxtFurca18.setIcon(null);
+        jLblFurcaSobreImagen18.setIcon(null);
     }//GEN-LAST:event_jBtnImplante18ActionPerformed
 
     private void jBtnImplante17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnImplante17MouseClicked
         if (ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante17.getText().trim())) {
-            agregarIconJLblImages(jLblImagenVestibularDiente17, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_17, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-            agregarIconJLblImages(jLblImagenPalatinoDiente17, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_17, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            jLblImagenVestibularDiente17.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_17)));
+            jLblImagenPalatinoDiente17.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_17)));
             jBtnImplante17.setText(ConstantesURLDientes.SI_TIENE_IMPLANTE);
+            jTxtFurca17.setEnabled(false);
+            jTxtFurca17.setOpaque(true);
+            jTxtFurca17.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
         } else {
-            agregarIconJLblImages(jLblImagenVestibularDiente17, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_17, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-            agregarIconJLblImages(jLblImagenPalatinoDiente17, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_17, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            jLblImagenVestibularDiente17.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_17)));
+            jLblImagenPalatinoDiente17.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_17)));
             jBtnImplante17.setText(ConstantesURLDientes.NO_TIENE_IMPLANTE);
+
+            jTxtFurca17.setEnabled(true);
+            jTxtFurca17.setOpaque(false);
+            jTxtFurca17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            jLblFurcaSobreImagen17.setIcon(null);
+
         }
+        jTxtFurca17.setName(ESTADO_FURCA_VACIO);
+        jTxtFurca17.setIcon(null);
+        jLblFurcaSobreImagen17.setIcon(null);
+        jLblFurcaSobreImagen17.setIcon(null);
     }//GEN-LAST:event_jBtnImplante17MouseClicked
 
     private void jBtnImplante16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnImplante16MouseClicked
         if (ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante16.getText().trim())) {
-            agregarIconJLblImages(jLblImagenVestibularDiente16, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_16, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-            agregarIconJLblImages(jLblImagenPalatinoDiente16, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_16, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            jLblImagenVestibularDiente16.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_16)));
+            jLblImagenPalatinoDiente16.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_16)));
             jBtnImplante16.setText(ConstantesURLDientes.SI_TIENE_IMPLANTE);
+            jTxtFurca16.setEnabled(false);
+            jTxtFurca16.setOpaque(true);
+            jTxtFurca16.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
         } else {
-            agregarIconJLblImages(jLblImagenVestibularDiente16, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_16, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-            agregarIconJLblImages(jLblImagenPalatinoDiente16, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_16, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            jLblImagenVestibularDiente16.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_16)));
+            jLblImagenPalatinoDiente16.setIcon(new javax.swing.ImageIcon(getClass().getResource(ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_16)));
             jBtnImplante16.setText(ConstantesURLDientes.NO_TIENE_IMPLANTE);
+
+            jTxtFurca16.setEnabled(true);
+            jTxtFurca16.setOpaque(false);
+            jTxtFurca16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            jLblFurcaSobreImagen16.setIcon(null);
+
         }
+        jTxtFurca16.setName(ESTADO_FURCA_VACIO);
+        jTxtFurca16.setIcon(null);
+        jLblFurcaSobreImagen16.setIcon(null);
+        jLblFurcaSobreImagen16.setIcon(null);
     }//GEN-LAST:event_jBtnImplante16MouseClicked
 
     private void jBtnImplante15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnImplante15MouseClicked
         if (ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante15.getText().trim())) {
-            agregarIconJLblImages(jLblImagenVestibularDiente15, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_15, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-            agregarIconJLblImages(jLblImagenPalatinoDiente15, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_15, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenVestibularDiente15, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_15, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenVestibularDiente15.getBounds());
+            agregarIconJLblImages(jLblImagenPalatinoDiente15, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_15, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenPalatinoDiente15.getBounds());
             jBtnImplante15.setText(ConstantesURLDientes.SI_TIENE_IMPLANTE);
         } else {
-            agregarIconJLblImages(jLblImagenVestibularDiente15, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_15, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-            agregarIconJLblImages(jLblImagenPalatinoDiente15, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_15, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenVestibularDiente15, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_15, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenVestibularDiente15.getBounds());
+            agregarIconJLblImages(jLblImagenPalatinoDiente15, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_15, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenPalatinoDiente15.getBounds());
             jBtnImplante15.setText(ConstantesURLDientes.NO_TIENE_IMPLANTE);
         }
     }//GEN-LAST:event_jBtnImplante15MouseClicked
 
     private void jBtnImplante14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnImplante14MouseClicked
         if (ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante14.getText().trim())) {
-            agregarIconJLblImages(jLblImagenVestibularDiente14, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_14, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-            agregarIconJLblImages(jLblImagenPalatinoDiente14, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_14, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenVestibularDiente14, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_14, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenVestibularDiente14.getBounds());
+            agregarIconJLblImages(jLblImagenPalatinoDiente14, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_14, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenPalatinoDiente14.getBounds());
             jBtnImplante14.setText(ConstantesURLDientes.SI_TIENE_IMPLANTE);
         } else {
-            agregarIconJLblImages(jLblImagenVestibularDiente14, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_14, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-            agregarIconJLblImages(jLblImagenPalatinoDiente14, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_14, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenVestibularDiente14, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_14, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenVestibularDiente14.getBounds());
+            agregarIconJLblImages(jLblImagenPalatinoDiente14, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_14, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenPalatinoDiente14.getBounds());
             jBtnImplante14.setText(ConstantesURLDientes.NO_TIENE_IMPLANTE);
         }
     }//GEN-LAST:event_jBtnImplante14MouseClicked
 
     private void jBtnImplante13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnImplante13MouseClicked
         if (ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante13.getText().trim())) {
-            agregarIconJLblImages(jLblImagenVestibularDiente13, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_13, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-            agregarIconJLblImages(jLblImagenPalatinoDiente13, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_13, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenVestibularDiente13, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_13, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenVestibularDiente13.getBounds());
+            agregarIconJLblImages(jLblImagenPalatinoDiente13, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_13, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenPalatinoDiente13.getBounds());
             jBtnImplante13.setText(ConstantesURLDientes.SI_TIENE_IMPLANTE);
         } else {
-            agregarIconJLblImages(jLblImagenVestibularDiente13, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_13, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-            agregarIconJLblImages(jLblImagenPalatinoDiente13, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_13, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenVestibularDiente13, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_13, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenVestibularDiente13.getBounds());
+            agregarIconJLblImages(jLblImagenPalatinoDiente13, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_13, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenPalatinoDiente13.getBounds());
             jBtnImplante13.setText(ConstantesURLDientes.NO_TIENE_IMPLANTE);
         }
     }//GEN-LAST:event_jBtnImplante13MouseClicked
 
     private void jBtnImplante12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnImplante12MouseClicked
         if (ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante12.getText().trim())) {
-            agregarIconJLblImages(jLblImagenVestibularDiente12, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_12, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-            agregarIconJLblImages(jLblImagenPalatinoDiente12, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_12, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenVestibularDiente12, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_12, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenVestibularDiente12.getBounds());
+            agregarIconJLblImages(jLblImagenPalatinoDiente12, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_12, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenPalatinoDiente12.getBounds());
             jBtnImplante12.setText(ConstantesURLDientes.SI_TIENE_IMPLANTE);
         } else {
-            agregarIconJLblImages(jLblImagenVestibularDiente12, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_12, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-            agregarIconJLblImages(jLblImagenPalatinoDiente12, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_12, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenVestibularDiente12, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_12, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenVestibularDiente12.getBounds());
+            agregarIconJLblImages(jLblImagenPalatinoDiente12, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_12, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenPalatinoDiente12.getBounds());
             jBtnImplante12.setText(ConstantesURLDientes.NO_TIENE_IMPLANTE);
         }
     }//GEN-LAST:event_jBtnImplante12MouseClicked
 
     private void jBtnImplante11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnImplante11MouseClicked
         if (ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante11.getText().trim())) {
-            agregarIconJLblImages(jLblImagenVestibularDiente11, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_11, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-            agregarIconJLblImages(jLblImagenPalatinoDiente11, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_11, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenVestibularDiente11, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_CON_TORNILLO_11, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenVestibularDiente11.getBounds());
+            agregarIconJLblImages(jLblImagenPalatinoDiente11, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_CON_TORNILLO_11, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenPalatinoDiente11.getBounds());
             jBtnImplante11.setText(ConstantesURLDientes.SI_TIENE_IMPLANTE);
         } else {
-            agregarIconJLblImages(jLblImagenVestibularDiente11, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_11, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-            agregarIconJLblImages(jLblImagenPalatinoDiente11, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_11, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+            agregarIconJLblImages(jLblImagenVestibularDiente11, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_11, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenVestibularDiente11.getBounds());
+            agregarIconJLblImages(jLblImagenPalatinoDiente11, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_11, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenPalatinoDiente11.getBounds());
             jBtnImplante11.setText(ConstantesURLDientes.NO_TIENE_IMPLANTE);
         }
     }//GEN-LAST:event_jBtnImplante11MouseClicked
@@ -1635,10 +1754,10 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
 
     private void jTxtMargenGingivalMesial18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtMargenGingivalMesial18MouseClicked
         List<Integer> objetosImprimir = new ArrayList<>();
-        for (int i = -25; i <= 25; i++) {
+        for (int i = -9; i <= 9; i++) {
             objetosImprimir.add(i);
         }
-        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 6, 10);
+        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 5, 4);
         jDialogNumeroEleccion.setLocationRelativeTo(this);
         jDialogNumeroEleccion.setLocation(585, 260);
         jDialogNumeroEleccion.setVisible(true);
@@ -1650,10 +1769,10 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
 
     private void jTxtMargenGingivalMedia18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtMargenGingivalMedia18MouseClicked
         List<Integer> objetosImprimir = new ArrayList<>();
-        for (int i = -25; i <= 25; i++) {
+        for (int i = -9; i <= 9; i++) {
             objetosImprimir.add(i);
         }
-        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 6, 10);
+        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 5, 4);
         jDialogNumeroEleccion.setLocationRelativeTo(this);
         jDialogNumeroEleccion.setLocation(605, 260);
         jDialogNumeroEleccion.setVisible(true);
@@ -1665,10 +1784,10 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
 
     private void jTxtMargenGingivalDistal18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtMargenGingivalDistal18MouseClicked
         List<Integer> objetosImprimir = new ArrayList<>();
-        for (int i = -25; i <= 25; i++) {
+        for (int i = -9; i <= 9; i++) {
             objetosImprimir.add(i);
         }
-        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 6, 10);
+        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 5, 4);
         jDialogNumeroEleccion.setLocationRelativeTo(this);
         jDialogNumeroEleccion.setLocation(625, 260);
         jDialogNumeroEleccion.setVisible(true);
@@ -1724,51 +1843,104 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
     }//GEN-LAST:event_jTxtProfundidadDistal18MouseClicked
 
     private void jTxtFurca18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtFurca18MouseClicked
-        System.out.println("Nombre: " + jTxtFurca18.getName());
-        if ("".equals(jTxtFurca18.getName().trim())) {
-            jTxtFurca18.setName("");
-            agregarIconJLblImages(jTxtFurca18, "", 15, 15);
-            agregarIconJLblImages(jLblFurcaSobreImagen18, "", 15, 15);
+        if (!ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante18.getText().trim())) {
             return;
         }
         if ("".equals(jTxtFurca18.getName().trim())) {
-            jTxtFurca18.setName("");
-            agregarIconJLblImages(jTxtFurca18, "", 15, 15);
-            agregarIconJLblImages(jLblFurcaSobreImagen18, "", 15, 15);
+            jTxtFurca18.setName(ESTADO_FURCA_INICIAL);
+            agregarIconJLblImages(jTxtFurca18, ConstantesURLDientes.IMAGENEN_FURCA_INICIAL, ANCHO_IMAGEN_FURCA, ALTO_IMAGEN_FURCA, jTxtFurca18.getBounds());
+            agregarIconJLblImages(jLblFurcaSobreImagen18, ConstantesURLDientes.IMAGENEN_FURCA_INICIAL, ANCHO_IMAGEN_FURCA, ALTO_IMAGEN_FURCA, jLblFurcaSobreImagen18.getBounds());
             return;
         }
-
-//        if ("".equals(jTxtAnchuraEncia19.getText())) {
-//            jTxtAnchuraEncia19.setText("Inicial");
-//            jTxtAnchuraEncia19.setName("Inicial-nombre");
-//
-//            System.out.println("Nombre: " + jTxtAnchuraEncia19.getName());
-//            ImageIcon iconoVentana = new ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/imagenes/FurcaVacio_18x18.png"));
-//            Image imagen = iconoVentana.getImage().getScaledInstance(15, 15, Image.SCALE_AREA_AVERAGING);
-//            jTxtAnchuraEncia19.setIcon(new ImageIcon(imagen));
-//            jLabel2.setIcon(new ImageIcon(imagen));
-//            return;
-//        }
-//        if ("Inicial".equals(jTxtAnchuraEncia19.getText())) {
-//            jTxtAnchuraEncia19.setText("Abierta");
-//            ImageIcon iconoVentana = new ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/imagenes/FurcaMitad_18x18.png"));
-//            Image imagen = iconoVentana.getImage().getScaledInstance(15, 15, Image.SCALE_AREA_AVERAGING);
-//            jTxtAnchuraEncia19.setIcon(new ImageIcon(imagen));
-//            return;
-//        }
-//        if ("Abierta".equals(jTxtAnchuraEncia19.getText())) {
-//            jTxtAnchuraEncia19.setText("Completa");
-//            ImageIcon iconoVentana = new ImageIcon(getClass().getResource("/org/dental/imagenes/dientes/imagenes/FurcaLleno_18x18.png"));
-//            Image imagen = iconoVentana.getImage().getScaledInstance(15, 15, Image.SCALE_AREA_AVERAGING);
-//            jTxtAnchuraEncia19.setIcon(new ImageIcon(imagen));
-//            return;
-//        }
-//        if ("Completa".equals(jTxtAnchuraEncia19.getText())) {
-//            jTxtAnchuraEncia19.setIcon(null);
-//            jTxtAnchuraEncia19.setText("");
-//        }
+        if (ESTADO_FURCA_INICIAL.equals(jTxtFurca18.getName().trim())) {
+            jTxtFurca18.setName(ESTADO_FURCA_ABIERTA);
+            agregarIconJLblImages(jTxtFurca18, ConstantesURLDientes.IMAGENEN_FURCA_ABIERTA, ANCHO_IMAGEN_FURCA, ALTO_IMAGEN_FURCA, jTxtFurca18.getBounds());
+            agregarIconJLblImages(jLblFurcaSobreImagen18, ConstantesURLDientes.IMAGENEN_FURCA_ABIERTA, ANCHO_IMAGEN_FURCA, ALTO_IMAGEN_FURCA, jLblFurcaSobreImagen18.getBounds());
+            return;
+        }
+        if (ESTADO_FURCA_ABIERTA.equals(jTxtFurca18.getName().trim())) {
+            jTxtFurca18.setName(ESTADO_FURCA_COMPLETA);
+            agregarIconJLblImages(jTxtFurca18, ConstantesURLDientes.IMAGENEN_FURCA_COMPLETA, ANCHO_IMAGEN_FURCA, ALTO_IMAGEN_FURCA, jTxtFurca18.getBounds());
+            agregarIconJLblImages(jLblFurcaSobreImagen18, ConstantesURLDientes.IMAGENEN_FURCA_COMPLETA, ANCHO_IMAGEN_FURCA, ALTO_IMAGEN_FURCA, jLblFurcaSobreImagen18.getBounds());
+            return;
+        }
+        if (ESTADO_FURCA_COMPLETA.equals(jTxtFurca18.getName().trim())) {
+            jTxtFurca18.setName(ESTADO_FURCA_VACIO);
+            jTxtFurca18.setIcon(null);
+            jLblFurcaSobreImagen18.setIcon(null);
+        }
 
     }//GEN-LAST:event_jTxtFurca18MouseClicked
+
+    private void jTxtFurca17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtFurca17MouseClicked
+        if (!ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante17.getText().trim())) {
+            return;
+        }
+        if ("".equals(jTxtFurca17.getName().trim())) {
+            jTxtFurca17.setName(ESTADO_FURCA_INICIAL);
+            agregarIconJLblImages(jTxtFurca17, ConstantesURLDientes.IMAGENEN_FURCA_INICIAL, ANCHO_IMAGEN_FURCA, ALTO_IMAGEN_FURCA, jTxtFurca17.getBounds());
+            agregarIconJLblImages(jLblFurcaSobreImagen17, ConstantesURLDientes.IMAGENEN_FURCA_INICIAL, ANCHO_IMAGEN_FURCA, ALTO_IMAGEN_FURCA, jLblFurcaSobreImagen17.getBounds());
+            return;
+        }
+        if (ESTADO_FURCA_INICIAL.equals(jTxtFurca17.getName().trim())) {
+            jTxtFurca17.setName(ESTADO_FURCA_ABIERTA);
+            agregarIconJLblImages(jTxtFurca17, ConstantesURLDientes.IMAGENEN_FURCA_ABIERTA, ANCHO_IMAGEN_FURCA, ALTO_IMAGEN_FURCA, jTxtFurca17.getBounds());
+            agregarIconJLblImages(jLblFurcaSobreImagen17, ConstantesURLDientes.IMAGENEN_FURCA_ABIERTA, ANCHO_IMAGEN_FURCA, ALTO_IMAGEN_FURCA, jLblFurcaSobreImagen17.getBounds());
+            return;
+        }
+        if (ESTADO_FURCA_ABIERTA.equals(jTxtFurca17.getName().trim())) {
+            jTxtFurca17.setName(ESTADO_FURCA_COMPLETA);
+            agregarIconJLblImages(jTxtFurca17, ConstantesURLDientes.IMAGENEN_FURCA_COMPLETA, ANCHO_IMAGEN_FURCA, ALTO_IMAGEN_FURCA, jTxtFurca17.getBounds());
+            agregarIconJLblImages(jLblFurcaSobreImagen17, ConstantesURLDientes.IMAGENEN_FURCA_COMPLETA, ANCHO_IMAGEN_FURCA, ALTO_IMAGEN_FURCA, jLblFurcaSobreImagen17.getBounds());
+            return;
+        }
+        if (ESTADO_FURCA_COMPLETA.equals(jTxtFurca17.getName().trim())) {
+            jTxtFurca17.setName(ESTADO_FURCA_VACIO);
+            jTxtFurca17.setIcon(null);
+            jLblFurcaSobreImagen17.setIcon(null);
+        }
+    }//GEN-LAST:event_jTxtFurca17MouseClicked
+
+    private void jTxtFurca16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtFurca16MouseClicked
+        if (!ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante16.getText().trim())) {
+            return;
+        }
+        if ("".equals(jTxtFurca16.getName().trim())) {
+            jTxtFurca16.setName(ESTADO_FURCA_INICIAL);
+            agregarIconJLblImages(jTxtFurca16, ConstantesURLDientes.IMAGENEN_FURCA_INICIAL, ANCHO_IMAGEN_FURCA, ALTO_IMAGEN_FURCA, jTxtFurca16.getBounds());
+            agregarIconJLblImages(jLblFurcaSobreImagen16, ConstantesURLDientes.IMAGENEN_FURCA_INICIAL, ANCHO_IMAGEN_FURCA, ALTO_IMAGEN_FURCA, jLblFurcaSobreImagen16.getBounds());
+            return;
+        }
+        if (ESTADO_FURCA_INICIAL.equals(jTxtFurca16.getName().trim())) {
+            jTxtFurca16.setName(ESTADO_FURCA_ABIERTA);
+            agregarIconJLblImages(jTxtFurca16, ConstantesURLDientes.IMAGENEN_FURCA_ABIERTA, ANCHO_IMAGEN_FURCA, ALTO_IMAGEN_FURCA, jTxtFurca16.getBounds());
+            agregarIconJLblImages(jLblFurcaSobreImagen16, ConstantesURLDientes.IMAGENEN_FURCA_ABIERTA, ANCHO_IMAGEN_FURCA, ALTO_IMAGEN_FURCA, jLblFurcaSobreImagen16.getBounds());
+            return;
+        }
+        if (ESTADO_FURCA_ABIERTA.equals(jTxtFurca16.getName().trim())) {
+            jTxtFurca16.setName(ESTADO_FURCA_COMPLETA);
+            agregarIconJLblImages(jTxtFurca16, ConstantesURLDientes.IMAGENEN_FURCA_COMPLETA, ANCHO_IMAGEN_FURCA, ALTO_IMAGEN_FURCA, jTxtFurca16.getBounds());
+            agregarIconJLblImages(jLblFurcaSobreImagen16, ConstantesURLDientes.IMAGENEN_FURCA_COMPLETA, ANCHO_IMAGEN_FURCA, ALTO_IMAGEN_FURCA, jLblFurcaSobreImagen16.getBounds());
+            return;
+        }
+        if (ESTADO_FURCA_COMPLETA.equals(jTxtFurca16.getName().trim())) {
+            jTxtFurca16.setName(ESTADO_FURCA_VACIO);
+            jTxtFurca16.setIcon(null);
+            jLblFurcaSobreImagen16.setIcon(null);
+        }
+    }//GEN-LAST:event_jTxtFurca16MouseClicked
+
+    private void jTxtMargenGingivalMesialPalatino18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtMargenGingivalMesialPalatino18MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtMargenGingivalMesialPalatino18MouseClicked
+
+    private void jTxtMargenGingivalMediaPalatino18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtMargenGingivalMediaPalatino18MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtMargenGingivalMediaPalatino18MouseClicked
+
+    private void jTxtMargenGingivalDistalPalatino18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtMargenGingivalDistalPalatino18MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtMargenGingivalDistalPalatino18MouseClicked
 
     /**
      * Inserta una imagen a un JLabel con una media establecida.
@@ -1778,34 +1950,35 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
      * @param anchoIcono
      * @param altoIcono
      */
-    private void agregarIconJLblImages(JLabel jLabel, String URLImagen, Integer anchoIcono, Integer altoIcono) {
+    private void agregarIconJLblImages(JLabel jLabel, String URLImagen, Integer anchoIcono, Integer altoIcono, Rectangle rentangleJLabel) {
         ImageIcon iconoVentana = new ImageIcon(getClass().getResource(URLImagen));
         Image imagen = iconoVentana.getImage().getScaledInstance(anchoIcono, altoIcono, Image.SCALE_AREA_AVERAGING);
         jLabel.setIcon(new ImageIcon(imagen));
         jLabel.setSize(anchoIcono, altoIcono);
+        jLabel.setBounds(rentangleJLabel);
     }
 
     /**
      * Inicializa imagenes que se van utilizar, todas de un solo tamanio.
      */
     private void inicialiarImagenesDientes() {
-        agregarIconJLblImages(jLblImagenVestibularDiente18, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_18, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-        agregarIconJLblImages(jLblImagenVestibularDiente17, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_17, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-        agregarIconJLblImages(jLblImagenVestibularDiente16, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_16, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-        agregarIconJLblImages(jLblImagenVestibularDiente15, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_15, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-        agregarIconJLblImages(jLblImagenVestibularDiente14, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_14, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-        agregarIconJLblImages(jLblImagenVestibularDiente13, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_13, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-        agregarIconJLblImages(jLblImagenVestibularDiente12, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_12, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-        agregarIconJLblImages(jLblImagenVestibularDiente11, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_11, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+        agregarIconJLblImages(jLblImagenVestibularDiente18, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_18, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenVestibularDiente18.getBounds());
+        agregarIconJLblImages(jLblImagenVestibularDiente17, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_17, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenVestibularDiente17.getBounds());
+        agregarIconJLblImages(jLblImagenVestibularDiente16, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_16, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenVestibularDiente16.getBounds());
+        agregarIconJLblImages(jLblImagenVestibularDiente15, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_15, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenVestibularDiente15.getBounds());
+        agregarIconJLblImages(jLblImagenVestibularDiente14, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_14, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenVestibularDiente14.getBounds());
+        agregarIconJLblImages(jLblImagenVestibularDiente13, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_13, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenVestibularDiente13.getBounds());
+        agregarIconJLblImages(jLblImagenVestibularDiente12, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_12, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenVestibularDiente12.getBounds());
+        agregarIconJLblImages(jLblImagenVestibularDiente11, ConstantesURLDientes.DIENTE_SUPERIOR_VESTIBULAR_SIN_TORNILLO_11, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenVestibularDiente11.getBounds());
 
-        agregarIconJLblImages(jLblImagenPalatinoDiente18, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_18, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-        agregarIconJLblImages(jLblImagenPalatinoDiente17, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_17, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-        agregarIconJLblImages(jLblImagenPalatinoDiente16, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_16, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-        agregarIconJLblImages(jLblImagenPalatinoDiente15, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_15, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-        agregarIconJLblImages(jLblImagenPalatinoDiente14, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_14, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-        agregarIconJLblImages(jLblImagenPalatinoDiente13, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_13, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-        agregarIconJLblImages(jLblImagenPalatinoDiente12, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_12, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
-        agregarIconJLblImages(jLblImagenPalatinoDiente11, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_11, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE);
+        agregarIconJLblImages(jLblImagenPalatinoDiente18, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_18, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenPalatinoDiente18.getBounds());
+        agregarIconJLblImages(jLblImagenPalatinoDiente17, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_17, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenPalatinoDiente18.getBounds());
+        agregarIconJLblImages(jLblImagenPalatinoDiente16, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_16, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenPalatinoDiente18.getBounds());
+        agregarIconJLblImages(jLblImagenPalatinoDiente15, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_15, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenPalatinoDiente18.getBounds());
+        agregarIconJLblImages(jLblImagenPalatinoDiente14, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_14, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenPalatinoDiente18.getBounds());
+        agregarIconJLblImages(jLblImagenPalatinoDiente13, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_13, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenPalatinoDiente18.getBounds());
+        agregarIconJLblImages(jLblImagenPalatinoDiente12, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_12, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenPalatinoDiente18.getBounds());
+        agregarIconJLblImages(jLblImagenPalatinoDiente11, ConstantesURLDientes.DIENTE_SUPERIOR_PALATINO_SIN_TORNILLO_11, ANCHO_IMAGEN_DIENTE, ALTO_IMAGEN_DIENTE, jLblImagenPalatinoDiente18.getBounds());
     }
 //    @Override
 //    public void paint(Graphics graphics) {
@@ -1874,6 +2047,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
     private javax.swing.JButton jBtnImplante17;
     private javax.swing.JButton jBtnImplante18;
     private javax.swing.JLabel jLblFondo;
+    private javax.swing.JLabel jLblFurcaSobreImagen16;
     private javax.swing.JLabel jLblFurcaSobreImagen17;
     private javax.swing.JLabel jLblFurcaSobreImagen18;
     private javax.swing.JLabel jLblImagenPalatinoDiente11;
@@ -1896,9 +2070,11 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
     private javax.swing.JLabel jLlbIFurca;
     private javax.swing.JLabel jLlbIImplante1;
     private javax.swing.JLabel jLlbIMargenGingival;
+    private javax.swing.JLabel jLlbIMargenGingivalPalatino;
     private javax.swing.JLabel jLlbIMovilidad;
     private javax.swing.JLabel jLlbIPlaca;
     private javax.swing.JLabel jLlbIProfundidadSondaje;
+    private javax.swing.JLabel jLlbIProfundidadSondajePalatino;
     private javax.swing.JLabel jLlbIPronostico;
     private javax.swing.JLabel jLlbISangradoSuturacion;
     private javax.swing.JLabel jLlbITituloPalatino;
@@ -1939,7 +2115,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
     private javax.swing.JLabel jTxtFurca15;
     private javax.swing.JLabel jTxtFurca16;
     private javax.swing.JLabel jTxtFurca17;
-    private javax.swing.JLabel jTxtFurca18;
+    protected javax.swing.JLabel jTxtFurca18;
     private javax.swing.JLabel jTxtMargenGingivalDistal11;
     private javax.swing.JLabel jTxtMargenGingivalDistal12;
     private javax.swing.JLabel jTxtMargenGingivalDistal13;
@@ -1948,6 +2124,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
     private javax.swing.JLabel jTxtMargenGingivalDistal16;
     private javax.swing.JLabel jTxtMargenGingivalDistal17;
     private javax.swing.JLabel jTxtMargenGingivalDistal18;
+    private javax.swing.JLabel jTxtMargenGingivalDistalPalatino18;
     private javax.swing.JLabel jTxtMargenGingivalMedia11;
     private javax.swing.JLabel jTxtMargenGingivalMedia12;
     private javax.swing.JLabel jTxtMargenGingivalMedia13;
@@ -1956,6 +2133,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
     private javax.swing.JLabel jTxtMargenGingivalMedia16;
     private javax.swing.JLabel jTxtMargenGingivalMedia17;
     private javax.swing.JLabel jTxtMargenGingivalMedia18;
+    private javax.swing.JLabel jTxtMargenGingivalMediaPalatino18;
     private javax.swing.JLabel jTxtMargenGingivalMesial11;
     private javax.swing.JLabel jTxtMargenGingivalMesial12;
     private javax.swing.JLabel jTxtMargenGingivalMesial13;
@@ -1964,6 +2142,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
     private javax.swing.JLabel jTxtMargenGingivalMesial16;
     private javax.swing.JLabel jTxtMargenGingivalMesial17;
     private javax.swing.JLabel jTxtMargenGingivalMesial18;
+    private javax.swing.JLabel jTxtMargenGingivalMesialPalatino18;
     private javax.swing.JLabel jTxtMovilidad11;
     private javax.swing.JLabel jTxtMovilidad12;
     private javax.swing.JLabel jTxtMovilidad13;
@@ -2004,6 +2183,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
     private javax.swing.JLabel jTxtProfundidadDistal16;
     private javax.swing.JLabel jTxtProfundidadDistal17;
     private javax.swing.JLabel jTxtProfundidadDistal18;
+    private javax.swing.JLabel jTxtProfundidadDistalPalatino18;
     private javax.swing.JLabel jTxtProfundidadMedia11;
     private javax.swing.JLabel jTxtProfundidadMedia12;
     private javax.swing.JLabel jTxtProfundidadMedia13;
@@ -2012,6 +2192,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
     private javax.swing.JLabel jTxtProfundidadMedia16;
     private javax.swing.JLabel jTxtProfundidadMedia17;
     private javax.swing.JLabel jTxtProfundidadMedia18;
+    private javax.swing.JLabel jTxtProfundidadMediaPalatino19;
     private javax.swing.JLabel jTxtProfundidadMesial11;
     private javax.swing.JLabel jTxtProfundidadMesial12;
     private javax.swing.JLabel jTxtProfundidadMesial13;
@@ -2020,6 +2201,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
     private javax.swing.JLabel jTxtProfundidadMesial16;
     private javax.swing.JLabel jTxtProfundidadMesial17;
     private javax.swing.JLabel jTxtProfundidadMesial18;
+    private javax.swing.JLabel jTxtProfundidadMesialPalatino18;
     private javax.swing.JLabel jTxtPronosticoIndividual11;
     private javax.swing.JLabel jTxtPronosticoIndividual12;
     private javax.swing.JLabel jTxtPronosticoIndividual13;

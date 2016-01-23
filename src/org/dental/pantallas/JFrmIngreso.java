@@ -50,8 +50,8 @@ public class JFrmIngreso extends javax.swing.JFrame {
         jTxtUsuario = new javax.swing.JTextField();
         jTxtContrasenia = new javax.swing.JPasswordField();
         jBntIngreso = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jBtnCrearUsuario = new javax.swing.JLabel();
+        jLblContrasenia2 = new javax.swing.JLabel();
         jLblTitulo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLblImagenFondo = new javax.swing.JLabel();
@@ -99,36 +99,59 @@ public class JFrmIngreso extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Crear usuario");
+        jBtnCrearUsuario.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jBtnCrearUsuario.setText("Crear usuario");
+        jBtnCrearUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnCrearUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnCrearUsuarioMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jBtnCrearUsuarioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jBtnCrearUsuarioMouseExited(evt);
+            }
+        });
 
-        jLabel3.setText("Recordar Usuario");
+        jLblContrasenia2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLblContrasenia2.setText("Recordar usuario");
+        jLblContrasenia2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLblContrasenia2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLblContrasenia2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLblContrasenia2MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelIngresoLayout = new javax.swing.GroupLayout(jPanelIngreso);
         jPanelIngreso.setLayout(jPanelIngresoLayout);
         jPanelIngresoLayout.setHorizontalGroup(
             jPanelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelIngresoLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
                 .addGroup(jPanelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLblUsuario)
-                    .addComponent(jLblContrasenia))
-                .addGap(28, 28, 28)
-                .addGroup(jPanelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTxtUsuario)
-                    .addComponent(jTxtContrasenia, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
-                .addContainerGap(95, Short.MAX_VALUE))
+                    .addGroup(jPanelIngresoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jBtnCrearUsuario))
+                    .addGroup(jPanelIngresoLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLblUsuario)
+                            .addComponent(jLblContrasenia))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTxtUsuario)
+                            .addComponent(jTxtContrasenia, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)))
+                    .addGroup(jPanelIngresoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLblContrasenia2, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelIngresoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelIngresoLayout.createSequentialGroup()
-                        .addComponent(jBntIngreso)
-                        .addGap(135, 135, 135))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelIngresoLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelIngresoLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addContainerGap())))
+                .addGap(0, 178, Short.MAX_VALUE)
+                .addComponent(jBntIngreso)
+                .addGap(137, 137, 137))
         );
         jPanelIngresoLayout.setVerticalGroup(
             jPanelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,17 +164,17 @@ public class JFrmIngreso extends javax.swing.JFrame {
                 .addGroup(jPanelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLblContrasenia)
                     .addComponent(jTxtContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jBntIngreso)
+                .addGap(22, 22, 22)
+                .addComponent(jBtnCrearUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addContainerGap())
+                .addComponent(jLblContrasenia2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelIngreso);
-        jPanelIngreso.setBounds(220, 110, 410, 226);
+        jPanelIngreso.setBounds(220, 110, 420, 270);
 
         jLblTitulo.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 48)); // NOI18N
         jLblTitulo.setForeground(new java.awt.Color(0, 153, 153));
@@ -170,85 +193,105 @@ public class JFrmIngreso extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTxtUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTxtUsuarioKeyTyped
-        Util.validarSoloLetras(evt);
-//        if (jTxtUsuario.getText().trim().length() == Constantes.LONGITUD_NOMBRE_USUARIO) {
-//            evt.consume();
-//        }
-    }//GEN-LAST:event_jTxtUsuarioKeyTyped
-
-    private void jTxtContraseniaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTxtContraseniaKeyPressed
-//        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-//            jButton1MouseClicked(null);
-//        }
-    }//GEN-LAST:event_jTxtContraseniaKeyPressed
-
-    private void jBntIngresoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBntIngresoMouseClicked
-//        UsuarioDao usuarioDaoImplemen = new UsuarioDaoImplemen();
-//        int numeroIntentos = 0;
-//        try {
-//            Usuario usuario = usuarioDaoImplemen.consultarUsuarioByNombre(jTxtUsuario.getText().trim());
-//            if (usuario == null) {
-//                JOptionPane.showMessageDialog(this, Util.mensajeShowOptionPanel("El usuario y/o contraseña son incorrectos."), "Información", JOptionPane.INFORMATION_MESSAGE, new ImageIcon(getClass().getResource("/com/imagenes/Success-icon.png")));
-//
-//            } else {
-//                Usuario autenticado = usuarioDaoImplemen.consultarUsuarioByNombreAndPassw(jTxtUsuario.getText().trim(), jTxtContrasenia.getText());
-//                if (autenticado == null) {
-//                    JOptionPane.showMessageDialog(this, Util.mensajeShowOptionPanel("El usuario y/o contraseña son incorrectos."), "Información", JOptionPane.INFORMATION_MESSAGE, new ImageIcon(getClass().getResource("/com/imagenes/Success-icon.png")));
-//
-//                } else {
-//                    this.setVisible(false);
-//                    jFrmMenuPrincipal frmMenuPrincipal = new jFrmMenuPrincipal();
-//                    frmMenuPrincipal.setVisible(true);
-//                    frmMenuPrincipal.setUsuario(usuario);
-//
-//                }
-//                //                LOG.info(usuario.getEstadousuario());
-//                //                if (usuario.getEstadousuario()) {
-//                    //                    if (!usuario.getValidacioningreso()) {
-//                        //                        if (usuario.getPasswordusuario().toString().equals(jTxtPswd.getText())) {
-//                            //                            usuario.setNumerointentos(Constantes.NUMERO_INTENTOS_DEFECTO);
-//                            //                            usuario.setValidacioningreso(true);
-//                            //                            usuarioDaoImplemen.update(usuario);
-//                            //                            jFrmMenuPrincipal frmMenuPrincipal = new jFrmMenuPrincipal();
-//                            //                            frmMenuPrincipal.setVisible(true);
-//                            //                            frmMenuPrincipal.setUsuario(usuario);
-//                            //                            this.setVisible(false);
-//                            //                        } else {
-//                            //
-//                            //                            numeroIntentos = usuario.getNumerointentos() + 1;
-//                            //                            usuario.setNumerointentos(numeroIntentos);
-//                            //                            usuario.setValidacioningreso(false);
-//                            //                            if (numeroIntentos == Constantes.MAXIMO_NUMERO_INTENTOS) {
-//                                //                                usuario.setEstadousuario(false);
-//                                //                            }
-//                            //                            usuarioDaoImplemen.update(usuario);
-//                            //                            cleanFields("");
-//                            //                            JOptionPane.showMessageDialog(this, Util.mensajeShowOptionPanel("El usuario y/o contraseña son incorrectos."), "Información", JOptionPane.INFORMATION_MESSAGE, new ImageIcon(getClass().getResource("/com/imagenes/Success-icon.png")));
-//                            //
-//                            //                        }
-//                        //                    } else {
-//                        //                        JOptionPane.showMessageDialog(this, Util.mensajeShowOptionPanel("El usuario ya se encuentra autenticado."), "Información", JOptionPane.INFORMATION_MESSAGE, new ImageIcon(getClass().getResource("/com/imagenes/Success-icon.png")));
-//                        //
-//                        //                    }
-//                    //
-//                    //                } else {
-//                    //                    JOptionPane.showMessageDialog(this, Util.mensajeShowOptionPanel("Usuario bloqueado."), "Información", JOptionPane.INFORMATION_MESSAGE, new ImageIcon(getClass().getResource("/com/imagenes/Success-icon.png")));
-//                    //                }
-//            }
-//
-//        } catch (Exception ex) {
-//            LOG.error(ex);
-//            JOptionPane.showMessageDialog(this, Util.mensajeShowOptionPanel("El usuario y/o contraseña son incorrectos."), "Información", JOptionPane.INFORMATION_MESSAGE, new ImageIcon(getClass().getResource("/com/imagenes/Success-icon.png")));
-//
-//        }
-    }//GEN-LAST:event_jBntIngresoMouseClicked
-
     private void jBntIngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBntIngresoActionPerformed
         JFrmMenuPrincipal jFrmMenuPrincipal = new JFrmMenuPrincipal();
         jFrmMenuPrincipal.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jBntIngresoActionPerformed
+
+    private void jBntIngresoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBntIngresoMouseClicked
+        //        UsuarioDao usuarioDaoImplemen = new UsuarioDaoImplemen();
+        //        int numeroIntentos = 0;
+        //        try {
+        //            Usuario usuario = usuarioDaoImplemen.consultarUsuarioByNombre(jTxtUsuario.getText().trim());
+        //            if (usuario == null) {
+        //                JOptionPane.showMessageDialog(this, Util.mensajeShowOptionPanel("El usuario y/o contraseña son incorrectos."), "Información", JOptionPane.INFORMATION_MESSAGE, new ImageIcon(getClass().getResource("/com/imagenes/Success-icon.png")));
+        //
+        //            } else {
+        //                Usuario autenticado = usuarioDaoImplemen.consultarUsuarioByNombreAndPassw(jTxtUsuario.getText().trim(), jTxtContrasenia.getText());
+        //                if (autenticado == null) {
+        //                    JOptionPane.showMessageDialog(this, Util.mensajeShowOptionPanel("El usuario y/o contraseña son incorrectos."), "Información", JOptionPane.INFORMATION_MESSAGE, new ImageIcon(getClass().getResource("/com/imagenes/Success-icon.png")));
+        //
+        //                } else {
+        //                    this.setVisible(false);
+        //                    jFrmMenuPrincipal frmMenuPrincipal = new jFrmMenuPrincipal();
+        //                    frmMenuPrincipal.setVisible(true);
+        //                    frmMenuPrincipal.setUsuario(usuario);
+        //
+        //                }
+        //                //                LOG.info(usuario.getEstadousuario());
+        //                //                if (usuario.getEstadousuario()) {
+        //                    //                    if (!usuario.getValidacioningreso()) {
+        //                        //                        if (usuario.getPasswordusuario().toString().equals(jTxtPswd.getText())) {
+        //                            //                            usuario.setNumerointentos(Constantes.NUMERO_INTENTOS_DEFECTO);
+        //                            //                            usuario.setValidacioningreso(true);
+        //                            //                            usuarioDaoImplemen.update(usuario);
+        //                            //                            jFrmMenuPrincipal frmMenuPrincipal = new jFrmMenuPrincipal();
+        //                            //                            frmMenuPrincipal.setVisible(true);
+        //                            //                            frmMenuPrincipal.setUsuario(usuario);
+        //                            //                            this.setVisible(false);
+        //                            //                        } else {
+        //                            //
+        //                            //                            numeroIntentos = usuario.getNumerointentos() + 1;
+        //                            //                            usuario.setNumerointentos(numeroIntentos);
+        //                            //                            usuario.setValidacioningreso(false);
+        //                            //                            if (numeroIntentos == Constantes.MAXIMO_NUMERO_INTENTOS) {
+        //                                //                                usuario.setEstadousuario(false);
+        //                                //                            }
+        //                            //                            usuarioDaoImplemen.update(usuario);
+        //                            //                            cleanFields("");
+        //                            //                            JOptionPane.showMessageDialog(this, Util.mensajeShowOptionPanel("El usuario y/o contraseña son incorrectos."), "Información", JOptionPane.INFORMATION_MESSAGE, new ImageIcon(getClass().getResource("/com/imagenes/Success-icon.png")));
+        //                            //
+        //                            //                        }
+        //                        //                    } else {
+        //                        //                        JOptionPane.showMessageDialog(this, Util.mensajeShowOptionPanel("El usuario ya se encuentra autenticado."), "Información", JOptionPane.INFORMATION_MESSAGE, new ImageIcon(getClass().getResource("/com/imagenes/Success-icon.png")));
+        //                        //
+        //                        //                    }
+        //                    //
+        //                    //                } else {
+        //                    //                    JOptionPane.showMessageDialog(this, Util.mensajeShowOptionPanel("Usuario bloqueado."), "Información", JOptionPane.INFORMATION_MESSAGE, new ImageIcon(getClass().getResource("/com/imagenes/Success-icon.png")));
+        //                    //                }
+        //            }
+        //
+        //        } catch (Exception ex) {
+        //            LOG.error(ex);
+        //            JOptionPane.showMessageDialog(this, Util.mensajeShowOptionPanel("El usuario y/o contraseña son incorrectos."), "Información", JOptionPane.INFORMATION_MESSAGE, new ImageIcon(getClass().getResource("/com/imagenes/Success-icon.png")));
+        //
+        //        }
+    }//GEN-LAST:event_jBntIngresoMouseClicked
+
+    private void jTxtContraseniaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTxtContraseniaKeyPressed
+        //        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        //            jButton1MouseClicked(null);
+        //        }
+    }//GEN-LAST:event_jTxtContraseniaKeyPressed
+
+    private void jTxtUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTxtUsuarioKeyTyped
+        Util.validarSoloLetras(evt);
+        //        if (jTxtUsuario.getText().trim().length() == Constantes.LONGITUD_NOMBRE_USUARIO) {
+        //            evt.consume();
+        //        }
+    }//GEN-LAST:event_jTxtUsuarioKeyTyped
+
+    private void jBtnCrearUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnCrearUsuarioMouseClicked
+
+    }//GEN-LAST:event_jBtnCrearUsuarioMouseClicked
+
+    private void jBtnCrearUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnCrearUsuarioMouseEntered
+        jBtnCrearUsuario.setForeground(new java.awt.Color(0, 0, 255));
+    }//GEN-LAST:event_jBtnCrearUsuarioMouseEntered
+
+    private void jBtnCrearUsuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnCrearUsuarioMouseExited
+        jBtnCrearUsuario.setForeground(new java.awt.Color(0, 0, 00));
+    }//GEN-LAST:event_jBtnCrearUsuarioMouseExited
+
+    private void jLblContrasenia2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblContrasenia2MouseEntered
+        jLblContrasenia2.setForeground(new java.awt.Color(0, 0, 255));
+    }//GEN-LAST:event_jLblContrasenia2MouseEntered
+
+    private void jLblContrasenia2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblContrasenia2MouseExited
+        jLblContrasenia2.setForeground(new java.awt.Color(0, 0, 0));
+    }//GEN-LAST:event_jLblContrasenia2MouseExited
 
     /**
      * @param args the command line arguments
@@ -287,10 +330,10 @@ public class JFrmIngreso extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBntIngreso;
+    private javax.swing.JLabel jBtnCrearUsuario;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLblContrasenia;
+    private javax.swing.JLabel jLblContrasenia2;
     private javax.swing.JLabel jLblImagenFondo;
     private javax.swing.JLabel jLblTitulo;
     private javax.swing.JLabel jLblUsuario;
