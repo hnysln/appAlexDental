@@ -6,13 +6,16 @@ package org.dental.pantallas;
 
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 import org.dental.constantes.ConstantesURLDientes;
 import org.dental.constantes.ConstantesURLS;
+import org.dental.constantes.ValoresMedicion;
 
 /**
  *
@@ -31,10 +34,23 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
     private static final int ALTO_IMAGEN_FURCA = 15;
     private static final int ANCHO_IMAGEN_FURCA = 15;
 
+    private static final int ALTO_IMAGEN_PLACA = 20;
+    private static final int ANCHO_IMAGEN_PLACA = 23;
+
+    private static final int ALTO_IMAGEN_SANGRADO = 20;
+    private static final int ANCHO_IMAGEN_SANGRADO = 23;
+
     private final static String ESTADO_FURCA_VACIO = "";
     private final static String ESTADO_FURCA_INICIAL = "INICIAL";
     private final static String ESTADO_FURCA_ABIERTA = "ABIERTA";
     private final static String ESTADO_FURCA_COMPLETA = "COMPLETO";
+
+    private final static String ESTADO_SIN_SANGRADO = "SIN_SANGRADO";
+    private final static String ESTADO_CON_SANGRADO = "CON_SANGRADO";
+    private final static String ESTADO_MEDIO_SANGRADO = "MEDIO_SANGRADO";
+
+    private final static String ESTADO_CON_PLACA = "CON_PLACA";
+    private final static String ESTADO_SIN_PLACA = "SIN_PLACA";
 
     /**
      * Creates new form JDialogExamen
@@ -485,39 +501,76 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jPanelSuperiorVestibularCuadranteUno.add(jTxtProfundidadDistal18, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 280, 23, 20));
 
         jTxtPlacaMesial18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMesial18.setAlignmentY(0.0F);
         jTxtPlacaMesial18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaMesial18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaMesial18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMesial18.setName("SIN_PLACA"); // NOI18N
+        jTxtPlacaMesial18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtPlacaMesial18MouseClicked(evt);
+            }
+        });
         jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMesial18, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 190, 23, 20));
 
         jTxtPlacaMedia18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtPlacaMedia18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaMedia18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaMedia18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMedia18.setName("SIN_PLACA"); // NOI18N
+        jTxtPlacaMedia18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtPlacaMedia18MouseClicked(evt);
+            }
+        });
         jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMedia18, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 23, 20));
 
         jTxtPlacaDistal18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtPlacaDistal18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaDistal18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaDistal18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaDistal18.setName("SIN_PLACA"); // NOI18N
+        jTxtPlacaDistal18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtPlacaDistal18MouseClicked(evt);
+            }
+        });
         jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaDistal18, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 190, 23, 20));
 
         jTxtSangradoMesial18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtSangradoMesial18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtSangradoMesial18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtSangradoMesial18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoMesial18.setName("SIN_SANGRADO"); // NOI18N
+        jTxtSangradoMesial18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtSangradoMesial18MouseClicked(evt);
+            }
+        });
         jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMesial18, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 160, 23, 20));
 
         jTxtSangradoMedia18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtSangradoMedia18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtSangradoMedia18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtSangradoMedia18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoMedia18.setName("SIN_SANGRADO"); // NOI18N
+        jTxtSangradoMedia18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtSangradoMedia18MouseClicked(evt);
+            }
+        });
         jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoMedia18, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 23, 20));
 
         jTxtSangradoDistal18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jTxtSangradoDistal18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtSangradoDistal18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtSangradoDistal18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtSangradoDistal18.setName("SIN_SANGRADO"); // NOI18N
+        jTxtSangradoDistal18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTxtSangradoDistal18MouseClicked(evt);
+            }
+        });
         jPanelSuperiorVestibularCuadranteUno.add(jTxtSangradoDistal18, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 160, 23, 20));
 
         jTxtFurca18.setForeground(new java.awt.Color(255, 255, 255));
@@ -602,6 +655,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtPlacaMesial17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaMesial17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaMesial17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMesial17.setName("SIN_PLACA"); // NOI18N
         jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMesial17, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 190, 23, 20));
 
         jTxtAnchuraEncia17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -634,6 +688,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtPlacaMedia17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaMedia17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaMedia17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMedia17.setName("SIN_PLACA"); // NOI18N
         jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMedia17, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 190, 23, 20));
 
         jTxtSangradoMedia17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -652,6 +707,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtPlacaDistal17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaDistal17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaDistal17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaDistal17.setName("SIN_PLACA"); // NOI18N
         jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaDistal17, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 190, 23, 20));
 
         jTxtMargenGingivalMedia17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1086,6 +1142,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtPlacaMesial15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaMesial15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaMesial15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMesial15.setName("SIN_PLACA"); // NOI18N
         jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMesial15, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 190, 23, 20));
 
         jTxtSangradoMesial15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1160,6 +1217,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtPlacaMesial16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaMesial16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaMesial16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMesial16.setName("SIN_PLACA"); // NOI18N
         jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMesial16, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 190, 23, 20));
 
         jTxtAnchuraEncia16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1348,6 +1406,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtPlacaMedia15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaMedia15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaMedia15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMedia15.setName("SIN_PLACA"); // NOI18N
         jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMedia15, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 190, 23, 20));
 
         jTxtMargenGingivalMedia15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1374,6 +1433,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtPlacaDistal15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaDistal15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaDistal15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaDistal15.setName("SIN_PLACA"); // NOI18N
         jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaDistal15, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 190, 23, 20));
 
         jTxtMargenGingivalDistal15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1400,6 +1460,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtPlacaMedia16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaMedia16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaMedia16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaMedia16.setName("SIN_PLACA"); // NOI18N
         jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaMedia16, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 190, 23, 20));
 
         jTxtMargenGingivalMedia16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1426,6 +1487,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
         jTxtPlacaDistal16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTxtPlacaDistal16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTxtPlacaDistal16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTxtPlacaDistal16.setName("SIN_PLACA"); // NOI18N
         jPanelSuperiorVestibularCuadranteUno.add(jTxtPlacaDistal16, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 190, 23, 20));
 
         jTxtMargenGingivalDistal16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1708,139 +1770,68 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
     }//GEN-LAST:event_jBtnImplante11MouseClicked
 
     private void jTxtMovilidad18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtMovilidad18MouseClicked
-        List<Integer> objetosImprimir = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
-            objetosImprimir.add(i);
-        }
-        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 2, 2);
-        jDialogNumeroEleccion.setLocationRelativeTo(this);
-        jDialogNumeroEleccion.setLocation(585, 100);
-        jDialogNumeroEleccion.setVisible(true);
-        Integer valor = jDialogNumeroEleccion.getNumeroSelecionado();
+        Integer valor = JDialogNumerosEscoger(ValoresMedicion.MOVILIDAD_INICIO, ValoresMedicion.MOVILIDAD_FIN, ValoresMedicion.MOVILIDAD_FILAS, ValoresMedicion.MOVILIDAD_COLUMNAS, evt);
         if (valor != null) {
             jTxtMovilidad18.setText(valor.toString());
         }
     }//GEN-LAST:event_jTxtMovilidad18MouseClicked
 
     private void jTxtPronosticoIndividual18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtPronosticoIndividual18MouseClicked
-        List<Integer> objetosImprimir = new ArrayList<>();
-        for (int i = 1; i <= 5; i++) {
-            objetosImprimir.add(i);
-        }
-        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 3, 2);
-        jDialogNumeroEleccion.setLocationRelativeTo(this);
-        jDialogNumeroEleccion.setLocation(585, 110);
-        jDialogNumeroEleccion.setVisible(true);
-        Integer valor = jDialogNumeroEleccion.getNumeroSelecionado();
+        Integer valor = JDialogNumerosEscoger(ValoresMedicion.PRONOSTICO_INDIVIDUAL_INICIO, ValoresMedicion.PRONOSTICO_INDIVIDUAL_FIN, ValoresMedicion.PRONOSTICO_INDIVIDUAL_FILAS, ValoresMedicion.PRONOSTICO_INDIVIDUAL_COLUMNAS, evt);
         if (valor != null) {
             jTxtPronosticoIndividual18.setText(valor.toString());
         }
     }//GEN-LAST:event_jTxtPronosticoIndividual18MouseClicked
 
     private void jTxtAnchuraEncia18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtAnchuraEncia18MouseClicked
-        List<Integer> objetosImprimir = new ArrayList<>();
-        for (int i = 0; i <= 10; i++) {
-            objetosImprimir.add(i);
-        }
-        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 4, 3);
-        jDialogNumeroEleccion.setLocationRelativeTo(this);
-        jDialogNumeroEleccion.setLocation(585, 230);
-        jDialogNumeroEleccion.setVisible(true);
-        Integer valor = jDialogNumeroEleccion.getNumeroSelecionado();
+        Integer valor = JDialogNumerosEscoger(ValoresMedicion.ANCHURA_ENCIA_INICIO, ValoresMedicion.ANCHURA_ENCIA_FIN, ValoresMedicion.ANCHURA_ENCIA_FILAS, ValoresMedicion.ANCHURA_ENCIA_COLUMNAS, evt);
         if (valor != null) {
             jTxtAnchuraEncia18.setText(valor.toString());
         }
     }//GEN-LAST:event_jTxtAnchuraEncia18MouseClicked
 
     private void jTxtMargenGingivalMesial18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtMargenGingivalMesial18MouseClicked
-        List<Integer> objetosImprimir = new ArrayList<>();
-        for (int i = -9; i <= 9; i++) {
-            objetosImprimir.add(i);
-        }
-        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 5, 4);
-        jDialogNumeroEleccion.setLocationRelativeTo(this);
-        jDialogNumeroEleccion.setLocation(585, 260);
-        jDialogNumeroEleccion.setVisible(true);
-        Integer valor = jDialogNumeroEleccion.getNumeroSelecionado();
+        Integer valor = JDialogNumerosEscoger(ValoresMedicion.MARGEN_GINGIVAL_INICIO, ValoresMedicion.MARGEN_GINGIVAL_FIN, ValoresMedicion.MARGEN_GINGIVAL_FILAS, ValoresMedicion.MARGEN_GINGIVAL_COLUMNAS, evt);
         if (valor != null) {
             jTxtMargenGingivalMesial18.setText(valor.toString());
         }
     }//GEN-LAST:event_jTxtMargenGingivalMesial18MouseClicked
 
     private void jTxtMargenGingivalMedia18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtMargenGingivalMedia18MouseClicked
-        List<Integer> objetosImprimir = new ArrayList<>();
-        for (int i = -9; i <= 9; i++) {
-            objetosImprimir.add(i);
-        }
-        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 5, 4);
-        jDialogNumeroEleccion.setLocationRelativeTo(this);
-        jDialogNumeroEleccion.setLocation(605, 260);
-        jDialogNumeroEleccion.setVisible(true);
-        Integer valor = jDialogNumeroEleccion.getNumeroSelecionado();
+        Integer valor = JDialogNumerosEscoger(ValoresMedicion.MARGEN_GINGIVAL_INICIO, ValoresMedicion.MARGEN_GINGIVAL_FIN, ValoresMedicion.MARGEN_GINGIVAL_FILAS, ValoresMedicion.MARGEN_GINGIVAL_COLUMNAS, evt);
         if (valor != null) {
             jTxtMargenGingivalMedia18.setText(valor.toString());
         }
     }//GEN-LAST:event_jTxtMargenGingivalMedia18MouseClicked
 
     private void jTxtMargenGingivalDistal18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtMargenGingivalDistal18MouseClicked
-        List<Integer> objetosImprimir = new ArrayList<>();
-        for (int i = -9; i <= 9; i++) {
-            objetosImprimir.add(i);
-        }
-        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 5, 4);
-        jDialogNumeroEleccion.setLocationRelativeTo(this);
-        jDialogNumeroEleccion.setLocation(625, 260);
-        jDialogNumeroEleccion.setVisible(true);
-        Integer valor = jDialogNumeroEleccion.getNumeroSelecionado();
+        Integer valor = JDialogNumerosEscoger(ValoresMedicion.MARGEN_GINGIVAL_INICIO, ValoresMedicion.MARGEN_GINGIVAL_FIN, ValoresMedicion.MARGEN_GINGIVAL_FILAS, ValoresMedicion.MARGEN_GINGIVAL_COLUMNAS, evt);
         if (valor != null) {
             jTxtMargenGingivalDistal18.setText(valor.toString());
         }
     }//GEN-LAST:event_jTxtMargenGingivalDistal18MouseClicked
 
     private void jTxtProfundidadMesial18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtProfundidadMesial18MouseClicked
-        List<Integer> objetosImprimir = new ArrayList<>();
-        for (int i = 1; i <= 10; i++) {
-            objetosImprimir.add(i);
-        }
-        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 4, 3);
-        jDialogNumeroEleccion.setLocationRelativeTo(this);
-        jDialogNumeroEleccion.setLocation(585, 260);
-        jDialogNumeroEleccion.setVisible(true);
-        Integer valor = jDialogNumeroEleccion.getNumeroSelecionado();
+        Integer valor = JDialogNumerosEscoger(ValoresMedicion.PROFUNDIDAD_SONDAJE_INICIO, ValoresMedicion.PROFUNDIDAD_SONDAJE_FIN, ValoresMedicion.PROFUNDIDAD_SONDAJE_FILAS, ValoresMedicion.PROFUNDIDAD_SONDAJE_COLUMNAS, evt);
         if (valor != null) {
             jTxtProfundidadMesial18.setText(valor.toString());
         }
     }//GEN-LAST:event_jTxtProfundidadMesial18MouseClicked
 
     private void jTxtProfundidadMedia18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtProfundidadMedia18MouseClicked
-        List<Integer> objetosImprimir = new ArrayList<>();
-        for (int i = 1; i <= 10; i++) {
-            objetosImprimir.add(i);
-        }
-        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 4, 3);
-        jDialogNumeroEleccion.setLocationRelativeTo(this);
-        jDialogNumeroEleccion.setLocation(605, 260);
-        jDialogNumeroEleccion.setVisible(true);
-        Integer valor = jDialogNumeroEleccion.getNumeroSelecionado();
+        Integer valor = JDialogNumerosEscoger(ValoresMedicion.PROFUNDIDAD_SONDAJE_INICIO, ValoresMedicion.PROFUNDIDAD_SONDAJE_FIN, ValoresMedicion.PROFUNDIDAD_SONDAJE_FILAS, ValoresMedicion.PROFUNDIDAD_SONDAJE_COLUMNAS, evt);
         if (valor != null) {
             jTxtProfundidadMedia18.setText(valor.toString());
         }
     }//GEN-LAST:event_jTxtProfundidadMedia18MouseClicked
 
     private void jTxtProfundidadDistal18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtProfundidadDistal18MouseClicked
-        List<Integer> objetosImprimir = new ArrayList<>();
-        for (int i = 1; i <= 10; i++) {
-            objetosImprimir.add(i);
-        }
-        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, 4, 3);
-        jDialogNumeroEleccion.setLocationRelativeTo(this);
-        jDialogNumeroEleccion.setLocation(625, 260);
-        jDialogNumeroEleccion.setVisible(true);
-        Integer valor = jDialogNumeroEleccion.getNumeroSelecionado();
+        Integer valor = JDialogNumerosEscoger(ValoresMedicion.PROFUNDIDAD_SONDAJE_INICIO, ValoresMedicion.PROFUNDIDAD_SONDAJE_FIN, ValoresMedicion.PROFUNDIDAD_SONDAJE_FILAS, ValoresMedicion.PROFUNDIDAD_SONDAJE_COLUMNAS, evt);
         if (valor != null) {
             jTxtProfundidadDistal18.setText(valor.toString());
         }
     }//GEN-LAST:event_jTxtProfundidadDistal18MouseClicked
+
 
     private void jTxtFurca18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtFurca18MouseClicked
         if (!ConstantesURLDientes.NO_TIENE_IMPLANTE.equals(jBtnImplante18.getText().trim())) {
@@ -1941,6 +1932,121 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
     private void jTxtMargenGingivalDistalPalatino18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtMargenGingivalDistalPalatino18MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jTxtMargenGingivalDistalPalatino18MouseClicked
+
+    private void jTxtPlacaMesial18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtPlacaMesial18MouseClicked
+        parametrizacionPlaca(jTxtPlacaMesial18);
+//        if (ESTADO_SIN_PLACA.equals(jTxtPlacaMesial18.getName().trim())) {
+//            jTxtPlacaMesial18.setName(ESTADO_CON_PLACA);
+//            agregarIconJLblImages(jTxtPlacaMesial18, ConstantesURLDientes.IMAGEN_PLACA, ANCHO_IMAGEN_PLACA, ALTO_IMAGEN_PLACA, jTxtPlacaMesial18.getBounds());
+//            return;
+//        }
+//        if (ESTADO_CON_PLACA.equals(jTxtPlacaMesial18.getName().trim())) {
+//            jTxtPlacaMesial18.setName(ESTADO_SIN_PLACA);
+//            jTxtPlacaMesial18.setIcon(null);
+//        }
+    }//GEN-LAST:event_jTxtPlacaMesial18MouseClicked
+
+    private void jTxtSangradoMesial18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtSangradoMesial18MouseClicked
+        parametrizacionSangrado(jTxtSangradoMesial18);
+//        if (ESTADO_SIN_SANGRADO.equals(jTxtSangradoMesial18.getName().trim())) {
+//            jTxtSangradoMesial18.setName(ESTADO_CON_SANGRADO);
+//            agregarIconJLblImages(jTxtSangradoMesial18, ConstantesURLDientes.IMAGEN_CON_SANGRADO, ANCHO_IMAGEN_SANGRADO, ALTO_IMAGEN_SANGRADO, jTxtSangradoMesial18.getBounds());
+//            return;
+//        }
+//        if (ESTADO_CON_SANGRADO.equals(jTxtSangradoMesial18.getName().trim())) {
+//            jTxtSangradoMesial18.setName(ESTADO_MEDIO_SANGRADO);
+//            agregarIconJLblImages(jTxtSangradoMesial18, ConstantesURLDientes.IMAGEN_MEDIO_SANGRADO, ANCHO_IMAGEN_SANGRADO, ALTO_IMAGEN_SANGRADO, jTxtSangradoMesial18.getBounds());
+//            return;
+//        }
+//        if (ESTADO_MEDIO_SANGRADO.equals(jTxtSangradoMesial18.getName().trim())) {
+//            jTxtSangradoMesial18.setName(ESTADO_SIN_SANGRADO);
+//            jTxtSangradoMesial18.setIcon(null);
+//        }
+    }//GEN-LAST:event_jTxtSangradoMesial18MouseClicked
+
+    private void jTxtSangradoMedia18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtSangradoMedia18MouseClicked
+        parametrizacionSangrado(jTxtSangradoMedia18);
+    }//GEN-LAST:event_jTxtSangradoMedia18MouseClicked
+
+    private void jTxtSangradoDistal18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtSangradoDistal18MouseClicked
+        parametrizacionSangrado(jTxtSangradoDistal18);
+    }//GEN-LAST:event_jTxtSangradoDistal18MouseClicked
+
+    private void jTxtPlacaMedia18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtPlacaMedia18MouseClicked
+        parametrizacionPlaca(jTxtPlacaMedia18);
+    }//GEN-LAST:event_jTxtPlacaMedia18MouseClicked
+
+    private void jTxtPlacaDistal18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTxtPlacaDistal18MouseClicked
+        parametrizacionPlaca(jTxtPlacaDistal18);
+    }//GEN-LAST:event_jTxtPlacaDistal18MouseClicked
+
+    /**
+     * M&eacute;todo gen&eacute;rico para la parametrizaci&oacute;n de los
+     * JLabel de placa(mesial, media, distal)
+     *
+     * @param jLabel
+     */
+    private void parametrizacionPlaca(JLabel jLabel) {
+        if (ESTADO_SIN_PLACA.equals(jLabel.getName().trim())) {
+            jLabel.setName(ESTADO_CON_PLACA);
+            agregarIconJLblImages(jLabel, ConstantesURLDientes.IMAGEN_PLACA, ANCHO_IMAGEN_PLACA, ALTO_IMAGEN_PLACA, jLabel.getBounds());
+            return;
+        }
+        if (ESTADO_CON_PLACA.equals(jLabel.getName().trim())) {
+            jLabel.setName(ESTADO_SIN_PLACA);
+            jLabel.setIcon(null);
+        }
+    }
+
+    /**
+     * M&eacute;todo gen&eacute;rico para la parametrizaci&oacute;n de los
+     * JLabel de sangrado(mesial, media, distal)
+     *
+     * @param jLabel
+     */
+    private void parametrizacionSangrado(JLabel jLabel) {
+        if (ESTADO_SIN_SANGRADO.equals(jLabel.getName().trim())) {
+            jLabel.setName(ESTADO_CON_SANGRADO);
+            agregarIconJLblImages(jLabel, ConstantesURLDientes.IMAGEN_CON_SANGRADO, ANCHO_IMAGEN_SANGRADO, ALTO_IMAGEN_SANGRADO, jLabel.getBounds());
+            return;
+        }
+        if (ESTADO_CON_SANGRADO.equals(jLabel.getName().trim())) {
+            jLabel.setName(ESTADO_MEDIO_SANGRADO);
+            agregarIconJLblImages(jLabel, ConstantesURLDientes.IMAGEN_MEDIO_SANGRADO, ANCHO_IMAGEN_SANGRADO, ALTO_IMAGEN_SANGRADO, jLabel.getBounds());
+            return;
+        }
+        if (ESTADO_MEDIO_SANGRADO.equals(jLabel.getName().trim())) {
+            jLabel.setName(ESTADO_SIN_SANGRADO);
+            jLabel.setIcon(null);
+        }
+    }
+
+    /**
+     * M&eacute;todo gen&eacute;rico para abri un cuadro de di&aacute;logo y
+     * recuperar un n&uacute;mero seleccionado.
+     *
+     * @param inicio
+     * @param fin
+     * @param filas
+     * @param columnas
+     * @param evt
+     * @return
+     */
+    private Integer JDialogNumerosEscoger(Integer inicio, Integer fin, Integer filas, Integer columnas, java.awt.event.MouseEvent evt) {
+        List<Integer> objetosImprimir = new ArrayList<>();
+        for (int i = inicio; i <= fin; i++) {
+            objetosImprimir.add(i);
+        }
+        double x = evt.getLocationOnScreen().getX() - 100;
+        double y = evt.getLocationOnScreen().getY() - 100;
+        Point point = new Point();
+        point.setLocation(x, y);
+        JDialogNumeroEleccion jDialogNumeroEleccion = new JDialogNumeroEleccion(null, true, objetosImprimir, filas, columnas);
+        jDialogNumeroEleccion.setLocationRelativeTo(this);
+        jDialogNumeroEleccion.setLocation(point);
+        jDialogNumeroEleccion.setVisible(true);
+        return jDialogNumeroEleccion.getNumeroSelecionado();
+    }
 
     /**
      * Inserta una imagen a un JLabel con una media establecida.
@@ -2115,7 +2221,7 @@ public class JDialogPeriodontograma extends javax.swing.JDialog {
     private javax.swing.JLabel jTxtFurca15;
     private javax.swing.JLabel jTxtFurca16;
     private javax.swing.JLabel jTxtFurca17;
-    protected javax.swing.JLabel jTxtFurca18;
+    private javax.swing.JLabel jTxtFurca18;
     private javax.swing.JLabel jTxtMargenGingivalDistal11;
     private javax.swing.JLabel jTxtMargenGingivalDistal12;
     private javax.swing.JLabel jTxtMargenGingivalDistal13;
