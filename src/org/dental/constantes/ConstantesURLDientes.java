@@ -13,6 +13,18 @@ public final class ConstantesURLDientes {
 
     public static final String NO_TIENE_IMPLANTE = "No";
     public static final String SI_TIENE_IMPLANTE = "Si";
+
+    /**
+     * Imagenes PLACA
+     */
+    public static final String IMAGEN_PLACA = "/org/dental/imagenes/dientes/imagenes/placa_25x25.png";
+
+    /**
+     * Imagenes SANGRADO
+     */
+    public static final String IMAGEN_CON_SANGRADO = "/org/dental/imagenes/dientes/imagenes/sangrado_25x25.png";
+    public static final String IMAGEN_MEDIO_SANGRADO = "/org/dental/imagenes/dientes/imagenes/medio_sangrado_25x25.jpg";
+
     /**
      * Imagenes FURCA
      */
